@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Jump();
+        FlipSprite();
     }
 
     void FixedUpdate()
@@ -62,6 +63,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             rb.velocity = new(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+    }
+
+    void FlipSprite()
+    {
+        bool isRunning = horizontalInput != 0;
+        if (isRunning)
+        {
+            transform.localScale = new Vector2(-horizontalInput, 1);
         }
     }
 }
