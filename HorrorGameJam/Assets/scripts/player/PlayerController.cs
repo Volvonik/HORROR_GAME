@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     float horizontalInput;
+    [SerializeField] float currentSize = 0.5f;
 
     [Header("Jumping")]
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] GameObject groundCheck;
+    [SerializeField] float coyoteTime = 0.1f;
+    [SerializeField] float coyoteTimeCounter;
 
     [Header("Gravity")]
     [SerializeField] float velocityWhenIncreasingGravity;
@@ -54,7 +57,16 @@ public class PlayerController : MonoBehaviour
     {
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.05f, groundLayer);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if(isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && coyoteTimeCounter > 0f)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -71,7 +83,7 @@ public class PlayerController : MonoBehaviour
         bool isRunning = horizontalInput != 0;
         if (isRunning)
         {
-            transform.localScale = new Vector2(-horizontalInput, 1);
+            transform.localScale = new Vector2(-horizontalInput * currentSize, currentSize);
         }
     }
 }
