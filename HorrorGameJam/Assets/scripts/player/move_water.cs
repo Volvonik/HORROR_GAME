@@ -14,8 +14,11 @@ public class move_water : MonoBehaviour
 
     public static Vector2 movement;
 
+    float MoveHorizontal;
+    float MoveVertical;
 
-    [Header("Flashlight")]
+
+   [Header("Flashlight")]
     bool hasFlashlight;
     [SerializeField] LayerMask flashlightLayer;
     [SerializeField] float raycastLength;
@@ -33,12 +36,14 @@ public class move_water : MonoBehaviour
 
     void Update()
     {
-        float MoveHorizontal = Input.GetAxis("Horizontal");
-        float MoveVertical = Input.GetAxis("Vertical");
+        MoveHorizontal = Input.GetAxis("Horizontal");
+        MoveVertical = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(speed * MoveHorizontal * force.x, MoveVertical * speed * force.y);
 
         PickFlashLight();
+
+        FlipSprite();
     }
 
     void PickFlashLight()
@@ -72,5 +77,15 @@ public class move_water : MonoBehaviour
         }
 
         spriteRenderer.sprite = defaultSprite;
+    }
+
+    void FlipSprite()
+    {
+        bool isRunning =MoveHorizontal != 0;
+        if (isRunning)
+        {
+            transform.rotation = (MoveHorizontal > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+            //transform.localScale = new Vector2(-horizontalInput * currentSize, currentSize);
+        }
     }
 }
