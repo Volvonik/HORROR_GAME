@@ -614,7 +614,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -934,7 +934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.38, y: 4.57, z: -10}
+  m_LocalPosition: {x: 12, y: 4.57, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1218,7 +1218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050627445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.38, y: 4.57, z: -10}
+  m_LocalPosition: {x: 12, y: 4.57, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1518,18 +1518,18 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -1.5339268, y: 0.86924684, z: 0}
-      leftTangent: {x: 0.53597325, y: -0.00048220158, z: 0}
-      rightTangent: {x: -0.53597486, y: 0.00048214197, z: 0}
-      mode: 1
+    - position: {x: -2.337723, y: 0.876464, z: 0}
+      leftTangent: {x: 0.53597426, y: -0.0004823804, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 2
       height: 1
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -2, y: 1, z: 0}
-      leftTangent: {x: -1.0023332, y: 0.0010559559, z: 0}
-      rightTangent: {x: 1.0023332, y: -0.0010559559, z: -0}
-      mode: 1
+    - position: {x: -2.3457193, y: 1.0000001, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 1.0023357, y: -0.0010560155, z: 0}
+      mode: 2
       height: 1
       spriteIndex: 0
       corner: 1
@@ -1567,15 +1567,13 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -1.5339268, y: 0.86924684}
-  - {x: -2.218198, y: 0.9157845}
-  - {x: -2.4333236, y: 0.9775947}
-  - {x: -2, y: 1}
+  - {x: -2.337723, y: 0.876464}
+  - {x: -2.3457193, y: 1.0000001}
   - {x: 2, y: 1}
   - {x: 2.5506704, y: 0.97929394}
   - {x: 2.6123242, y: 0.9097691}
   - {x: 2.2001107, y: 0.8774273}
-  - {x: -1.5339268, y: 0.86924684}
+  - {x: -2.337723, y: 0.876464}
 --- !u!1971053207 &1731563288
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -1586,7 +1584,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1631,8 +1629,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.11714673, y: 0.9346234, z: 0}
-    m_Extent: {x: 2.5608997, y: 0.06537658, z: 0}
+    m_Center: {x: 0.16616368, y: 0.9381693, z: 0}
+    m_Extent: {x: 2.511883, y: 0.06183082, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &1731563289
 Transform:
@@ -1693,16 +1691,66 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.5339268, y: 0.86924684}
-      - {x: -2.218198, y: 0.9157845}
-      - {x: -2.4333236, y: 0.9775947}
-      - {x: -2, y: 1}
+    - - {x: -2.337723, y: 0.876464}
+      - {x: -2.3457193, y: 1.0000001}
       - {x: 2, y: 1}
       - {x: 2.5506704, y: 0.97929394}
       - {x: 2.6123242, y: 0.9097691}
       - {x: 2.2001107, y: 0.8774273}
-      - {x: -1.5339268, y: 0.86924684}
+      - {x: -2.337723, y: 0.876464}
   m_UseDelaunayMesh: 0
+--- !u!1 &1742088942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742088944}
+  - component: {fileID: 1742088943}
+  m_Layer: 0
+  m_Name: PanasEManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1742088943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742088942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0266b8ce63e8f074a88ba163f0b10ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panasE: {fileID: 1429905618354843347, guid: 50a6a9e4499e1e54181553ab72ba6c95, type: 3}
+  xPosition: 40
+  yPositionBorders:
+  - 15
+  - -10
+  spawnDelays:
+  - 6
+  - 10
+--- !u!4 &1742088944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742088942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806885684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1907,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2042,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.38
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y

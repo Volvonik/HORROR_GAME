@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     float horizontalInput;
-    [SerializeField] float currentSize = 0.5f;
 
     [Header("Jumping")]
     [SerializeField] float jumpForce;
