@@ -60,3 +60,6 @@ TagManager:
   - name: water
     uniqueID: 2620451603
     locked: 0
+  - name: baby
+    uniqueID: 3459439631
+    locked: 0
