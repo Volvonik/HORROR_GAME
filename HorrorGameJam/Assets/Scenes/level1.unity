@@ -4416,7 +4416,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1054317835, guid: 90aec0739a47a0e4891820b8588f2e84, type: 3}
+  m_Sprite: {fileID: 1190310131, guid: 90aec0739a47a0e4891820b8588f2e84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15050,7 +15050,7 @@ Transform:
   m_Children:
   - {fileID: 407696154}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.042}
 --- !u!1 &2115805054
 GameObject:
