@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class move_water : MonoBehaviour
 {
-
+    [SerializeField] GameObject transition;
     Rigidbody2D rb;
     [SerializeField] GameObject creepyBobCutscene;
 
@@ -30,6 +31,8 @@ public class move_water : MonoBehaviour
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite hasFlashlightSprite;
     [SerializeField] GameObject flashlightLight2D;
+
+    
 
     void Start()
     {
@@ -165,6 +168,12 @@ public class move_water : MonoBehaviour
             FindObjectOfType<PanasEManager>().stopSpawning = false;
             FindObjectOfType<PanasEManager>().inBallsPool = true;
         }
+
+        if(other.CompareTag("Respawn"))
+        {
+            transition.SetActive(true);
+            Invoke("destroy", 2);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -181,6 +190,8 @@ public class move_water : MonoBehaviour
         }
     }
 
+    
+
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
     {
         GetComponent<SpriteRenderer>().enabled = true;
@@ -194,5 +205,10 @@ public class move_water : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
 
         Instantiate(tinok);
+    }
+
+    private void destroy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
