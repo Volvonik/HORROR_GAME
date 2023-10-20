@@ -20,6 +20,8 @@ public class move_water : MonoBehaviour
 
     float defaultGravityScale;
 
+    [SerializeField] GameObject tinok;
+
     [Header("Flashlight")]
     bool hasFlashlight;
     [SerializeField] LayerMask flashlightLayer;
@@ -110,15 +112,11 @@ public class move_water : MonoBehaviour
 
             disableControls = true;
             GameObject prefab = Instantiate(creepyBobCutscene, transform.position, Quaternion.identity);
+            prefab.GetComponent<Animator>().SetTrigger("creepyBob");
+
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             flashlightLight2D.SetActive(false);
-
-            if(hasFlashlight)
-            {
-                prefab.GetComponentInChildren<SpriteRenderer>().sprite = hasFlashlightSprite;
-                prefab.GetComponent<Animator>().SetTrigger("creepyBob");
-            }
         }
     }
 
@@ -131,5 +129,9 @@ public class move_water : MonoBehaviour
 
         transform.position = cutscenePlayer.transform.position;
         transform.rotation = cutscenePlayer.transform.rotation;
+
+        rb.gravityScale = defaultGravityScale;
+
+        Instantiate(tinok);
     }
 }
