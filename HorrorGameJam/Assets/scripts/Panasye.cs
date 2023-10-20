@@ -15,7 +15,7 @@ public class Panasye : MonoBehaviour
     {
         if(FindObjectOfType<PanasEManager>().inBallsPool)
         {
-            transform.Translate(transform.up * moveSpeed);
+            transform.Translate(transform.up * moveSpeed * 1.5f);
 
             if(random == 0)
             {
