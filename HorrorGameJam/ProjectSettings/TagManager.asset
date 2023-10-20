@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CreepyBob
+  - ContinueGame
+  - RestartScene
   layers:
   - Default
   - TransparentFX
