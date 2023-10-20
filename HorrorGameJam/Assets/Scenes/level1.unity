@@ -3396,7 +3396,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -14428,9 +14428,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: falshlightText
       value: 
       objectReference: {fileID: 2115805054}
+    - target: {fileID: 5371112894987202315, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5371112894987202315, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_SleepingMode
       value: 1
