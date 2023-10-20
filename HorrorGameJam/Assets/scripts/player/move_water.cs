@@ -34,9 +34,9 @@ public class move_water : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        force = new Vector2(0, 0);
-        hasFlashlight = true;
+        force = new Vector2(1, 1);
         defaultGravityScale = rb.gravityScale;
+        //hasFlashlight = true;
     }
 
     void Update()
