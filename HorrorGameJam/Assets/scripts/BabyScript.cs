@@ -7,12 +7,19 @@ public class BabyScript : MonoBehaviour
     Vector2 direction;
     Vector2 finalMoveSpeed;
     float angle;
+    bool disableMovement;
 
     private void Update()
     {
+        if (disableMovement)
+        {
+            transform.localScale = Vector3.one;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            return;
+        }
+
         direction = (FindObjectOfType<move_water>().gameObject.transform.position - transform.position);
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 180;
-        
 
         if(Mathf.Abs(direction.x) > .6f)
         {
@@ -23,6 +30,8 @@ public class BabyScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (disableMovement) return;
+
         float distance = Vector3.Distance(transform.position, FindObjectOfType<move_water>().gameObject.transform.position);
         if(distance < .6f)
         {
@@ -33,5 +42,14 @@ public class BabyScript : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.time / 100);
         finalMoveSpeed = direction.normalized * moveSpeed;
         GetComponent<Rigidbody2D>().velocity = finalMoveSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("BallPool"))
+        {
+            GetComponent<Animator>().SetTrigger("playWithBalls");
+            disableMovement = true;
+        }
     }
 }

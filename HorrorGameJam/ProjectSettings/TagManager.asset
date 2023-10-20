@@ -9,6 +9,7 @@ TagManager:
   - RestartScene
   - Cave
   - BallPoolSpawn
+  - BallPool
   layers:
   - Default
   - TransparentFX

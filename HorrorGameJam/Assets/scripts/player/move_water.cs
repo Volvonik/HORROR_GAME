@@ -26,7 +26,7 @@ public class move_water : MonoBehaviour
     [SerializeField] LayerMask flashlightLayer;
     [SerializeField] float raycastLength;
     [SerializeField] GameObject flashlightCheck;
-    [SerializeField] GameObject falshlightText;
+    [SerializeField] GameObject flashlightText;
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite hasFlashlightSprite;
     [SerializeField] GameObject flashlightLight2D;
@@ -61,25 +61,28 @@ public class move_water : MonoBehaviour
     void PickFlashLight()
     {
         if (flashlightCheck == null) return;
+
         RaycastHit2D flashlightRaycast = Physics2D.Raycast(flashlightCheck.transform.position, -transform.right, raycastLength, flashlightLayer);
         Debug.DrawRay(flashlightCheck.transform.position, -transform.right * raycastLength, Color.green);
 
         if (flashlightRaycast)
         {
-            falshlightText.SetActive(true);
+            flashlightText.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 hasFlashlight = true;
 
+                Destroy(flashlightText);
                 Destroy(flashlightCheck);
+                Destroy(flashlightRaycast.transform.gameObject);
             }
         }
         else
         {
-            if (falshlightText == null) return;
+            if (flashlightText == null) return;
 
-            falshlightText.SetActive(false);
+            flashlightText.SetActive(false);
         }
 
         if(!disableControls)
