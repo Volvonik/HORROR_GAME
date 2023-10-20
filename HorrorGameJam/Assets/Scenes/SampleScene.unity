@@ -1659,9 +1659,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 446143867290541235, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261349461950607057, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270227079786408759, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5216753293985003766, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_Name
       value: BOB
+      objectReference: {fileID: 0}
+    - target: {fileID: 5216753293985003766, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6743536083409344155, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: transition
