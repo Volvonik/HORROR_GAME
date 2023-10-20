@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 529012818995395570}
   - component: {fileID: 7120764367363218816}
   - component: {fileID: 6743536083409344155}
+  - component: {fileID: 3151890033002452937}
   m_Layer: 0
   m_Name: BOB_Earth
   m_TagString: Untagged
@@ -309,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  currentSize: 0.7
+  spawnPoint: {x: 0, y: 0, z: 0}
   jumpForce: 15
   groundLayer:
     serializedVersion: 2
@@ -320,12 +321,11 @@ MonoBehaviour:
   velocityWhenIncreasingGravity: 13
   defaultGravityScale: 2
   fallingGravityScale: 4
-  flashlightLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  raycastLength: 0.3
-  flashlightCheck: {fileID: 4261349461950607057}
-  falshlightText: {fileID: 0}
-  defaultSprite: {fileID: 21300000, guid: 23d2a59d0c622104d90b75386405e7fd, type: 3}
-  hasFlashlightSprite: {fileID: 21300000, guid: cc36131c9baa7004d9d83b534ff3866e, type: 3}
-  flashlightLight2D: {fileID: 4270227079786408759}
+--- !u!81 &3151890033002452937
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216753293985003766}
+  m_Enabled: 1
