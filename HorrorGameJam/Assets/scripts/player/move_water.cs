@@ -48,7 +48,7 @@ public class move_water : MonoBehaviour
 
         rb.velocity = new Vector2(speed * MoveHorizontal * force.x, MoveVertical * speed * force.y);
 
-        FlipSprite();
+        FlipSprite(); 
     }
 
     void PickFlashLight()
