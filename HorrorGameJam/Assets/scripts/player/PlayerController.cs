@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] GameObject transition;
+
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     float horizontalInput;
     [SerializeField] Vector3 spawnPoint;
+
 
     [Header("Jumping")]
     [SerializeField] float jumpForce;
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Components")]
     Rigidbody2D rb;
+
+
 
     void Start()
     {
@@ -93,11 +98,17 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("ContinueGame"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            transition.SetActive(true);
+            Invoke("NextScene", 2);
         }
         else if(other.CompareTag("RestartScene"))
         {
             transform.position = spawnPoint;
         }
+
+    }
+    private void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
