@@ -22,7 +22,7 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject tinok;
 
     [Header("Flashlight")]
-    bool hasFlashlight;
+    private static bool hasFlashlight;
     [SerializeField] LayerMask flashlightLayer;
     [SerializeField] float raycastLength;
     [SerializeField] GameObject flashlightCheck;
@@ -37,6 +37,13 @@ public class move_water : MonoBehaviour
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
         //hasFlashlight = true;
+
+
+        //checkpoint
+        if(checkpoint.didsave)
+        {
+            transform.position = checkpoint.position;
+        }
     }
 
     void Update()
