@@ -46,6 +46,7 @@ public class move_water : MonoBehaviour
 
         PickFlashLight();
         FlipSprite();
+        
     }
     void FixedUpdate()
     {
@@ -55,7 +56,10 @@ public class move_water : MonoBehaviour
             rb.gravityScale = 0f;
             return;
         }
-        rb.velocity = new Vector2(speed * MoveHorizontal + force.x, MoveVertical * speed + force.y);
+       
+      
+        
+        rb.velocity = new Vector2(MoveHorizontal * speed + force.x, MoveVertical * speed + force.y);
     }
 
     void PickFlashLight()
