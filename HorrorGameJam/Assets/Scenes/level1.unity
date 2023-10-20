@@ -4892,11 +4892,11 @@ MonoBehaviour:
   panasE: {fileID: 1429905618354843347, guid: 50a6a9e4499e1e54181553ab72ba6c95, type: 3}
   xPosition: 15
   yPositionBorders:
-  - 5
-  - -5
+  - 3
+  - -7
   spawnDelays:
-  - 4
-  - 7
+  - 3
+  - 6
 --- !u!4 &1742088944
 Transform:
   m_ObjectHideFlags: 0
@@ -4905,7 +4905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742088942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.06, y: 9.87, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
