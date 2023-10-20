@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000002b2462bc7967fdc70d56461f13eb309c
+  m_ApplyToSortingLayers: 000000002b2462bc7967fdc70d56461f13eb309c0fdc32ce
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -90,6 +90,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 446143867290541235, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_Color.b
       value: 0.6556604
@@ -112,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LightVolumeIntensity
-      value: 0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_PointLightInnerAngle
@@ -127,16 +131,24 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_ShadowVolumeIntensity
+      value: 0.718
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LightVolumeIntensityEnabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[4]
       value: -1674515693
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862539369919687452, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[5]
+      value: -835527665
       objectReference: {fileID: 0}
     - target: {fileID: 3033361311525499081, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -150,6 +162,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 102.335
       objectReference: {fileID: 0}
+    - target: {fileID: 4261349461950607057, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270227079786408759, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4270227079786408759, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -158,21 +178,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOB_Water Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5216753293985003766, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120764367363218816, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7848323668756030967, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cc36131c9baa7004d9d83b534ff3866e, type: 3}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.28
+      value: -42.7
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.03
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -250,11 +278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e16a755e256b24c8f0023fbe53aba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creepyBobCutscene: {fileID: 5879279876364127161, guid: a33491a530c1ea44c8168eee9bab0c8f, type: 3}
   speed: 5
+  tinok: {fileID: 3964522570983770079, guid: 0b9d2092652859349883e98cc1a372ec, type: 3}
   flashlightLayer:
     serializedVersion: 2
     m_Bits: 128
-  raycastLength: 0.3
+  raycastLength: 0.2
   flashlightCheck: {fileID: 1403809221041249370}
   falshlightText: {fileID: 0}
   defaultSprite: {fileID: 21300000, guid: 23d2a59d0c622104d90b75386405e7fd, type: 3}

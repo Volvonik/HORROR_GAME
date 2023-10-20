@@ -35,7 +35,7 @@ public class move_water : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         force = new Vector2(1, 1);
-        //hasFlashlight = true;
+        hasFlashlight = true;
         defaultGravityScale = rb.gravityScale;
     }
 
@@ -71,7 +71,7 @@ public class move_water : MonoBehaviour
             {
                 hasFlashlight = true;
 
-                Destroy(flashlightRaycast.transform.gameObject);
+                Destroy(flashlightCheck);
             }
         }
         else
@@ -81,7 +81,11 @@ public class move_water : MonoBehaviour
             falshlightText.SetActive(false);
         }
 
-        flashlightLight2D.SetActive(hasFlashlight);
+        if(!disableControls)
+        {
+            flashlightLight2D.SetActive(hasFlashlight);
+        }
+
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (hasFlashlight)
@@ -99,7 +103,6 @@ public class move_water : MonoBehaviour
         if (isRunning)
         {
             transform.rotation = (MoveHorizontal > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
-            //transform.localScale = new Vector2(-horizontalInput * currentSize, currentSize);
         }
     }
 

@@ -18,7 +18,7 @@ TagManager:
   - Ground
   - Flashlight
   - Cave
-  - PostProcessing
+  - 
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 524703245
+    locked: 0
+  - name: toys
+    uniqueID: 3725535497
     locked: 0
   - name: bath
     uniqueID: 778051421
