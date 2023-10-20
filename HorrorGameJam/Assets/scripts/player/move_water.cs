@@ -36,12 +36,17 @@ public class move_water : MonoBehaviour
 
     void Update()
     {
+
+        PickFlashLight();
+
+        
+    }
+    void FixedUpdate()
+    {
         MoveHorizontal = Input.GetAxis("Horizontal");
         MoveVertical = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(speed * MoveHorizontal * force.x, MoveVertical * speed * force.y);
-
-        PickFlashLight();
 
         FlipSprite();
     }
