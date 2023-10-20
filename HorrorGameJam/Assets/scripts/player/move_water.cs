@@ -144,6 +144,12 @@ public class move_water : MonoBehaviour
                 }
             }
         }
+
+        else if(other.CompareTag("BallPoolSpawn"))
+        {
+            FindObjectOfType<PanasEManager>().stopSpawning = false;
+            FindObjectOfType<PanasEManager>().inBallsPool = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -153,6 +159,11 @@ public class move_water : MonoBehaviour
             FindObjectOfType<PanasEManager>().stopSpawning = true;
         }
 
+        else if (other.CompareTag("BallPoolSpawn"))
+        {
+            FindObjectOfType<PanasEManager>().stopSpawning = true;
+            FindObjectOfType<PanasEManager>().inBallsPool = false;
+        }
     }
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
