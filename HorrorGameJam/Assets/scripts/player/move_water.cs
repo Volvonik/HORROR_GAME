@@ -34,7 +34,7 @@ public class move_water : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        force = new Vector2(1, 1);
+        force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
         //hasFlashlight = true;
     }
@@ -60,6 +60,7 @@ public class move_water : MonoBehaviour
 
     void PickFlashLight()
     {
+        if (flashlightCheck == null) return;
         RaycastHit2D flashlightRaycast = Physics2D.Raycast(flashlightCheck.transform.position, -transform.right, raycastLength, flashlightLayer);
         Debug.DrawRay(flashlightCheck.transform.position, -transform.right * raycastLength, Color.green);
 

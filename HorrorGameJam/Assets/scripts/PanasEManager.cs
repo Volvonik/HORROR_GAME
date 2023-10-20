@@ -21,7 +21,7 @@ public class PanasEManager : MonoBehaviour
 
     private void Start()
     {
-        random = Random.Range(spawnDelays[0], spawnDelays[1]);
+        Spawn();
     }
 
     private void Update()
@@ -29,6 +29,7 @@ public class PanasEManager : MonoBehaviour
         if (stopSpawning)
         {
             timer = 0;
+            random = 0;
             return;
         }
 
@@ -49,7 +50,14 @@ public class PanasEManager : MonoBehaviour
         float currentYPosition = /*FindObjectOfType<move_water>().transform.position.y + */Random.Range(yPositionBorders[0], yPositionBorders[1]);
         float currentXPosition = FindObjectOfType<move_water>().transform.position.x + xPosition;
 
-        if(!inBallsPool)
+        if(inBallsPool)
+        {
+            random = Random.Range(spawnDelaysInBallsPool[0], spawnDelaysInBallsPool[1]);
+
+            currentYPosition = FindObjectOfType<move_water>().transform.position.y + yDistanceInBallsPool;
+            currentXPosition = Random.Range(xPositionBordersInBallPool[0], xPositionBordersInBallPool[1]);
+        }
+        else
         {
             random = Random.Range(spawnDelays[0], spawnDelays[1]);
 
@@ -57,13 +65,6 @@ public class PanasEManager : MonoBehaviour
             {
                 currentYPosition = Random.Range(caveYPositionBorders[0], caveYPositionBorders[1]);
             }
-        }
-        else
-        {
-            random = Random.Range(spawnDelaysInBallsPool[0], spawnDelaysInBallsPool[1]);
-
-            currentYPosition = FindObjectOfType<move_water>().transform.position.y + yDistanceInBallsPool;
-            currentXPosition = Random.Range(xPositionBordersInBallPool[0], xPositionBordersInBallPool[1]);
         }
 
         Vector3 prefabPosition = new Vector3(currentXPosition, currentYPosition, 0f);
