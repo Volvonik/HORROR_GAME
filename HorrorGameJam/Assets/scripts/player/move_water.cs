@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class move_water : MonoBehaviour
 {
@@ -108,7 +109,11 @@ public class move_water : MonoBehaviour
     {
         if(other.CompareTag("CreepyBob"))
         {
-            other.enabled = false;
+            BoxCollider2D[] colliders = other.gameObject.GetComponents<BoxCollider2D>();
+            for(int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].enabled = false;
+            }
 
             disableControls = true;
             GameObject prefab = Instantiate(creepyBobCutscene, transform.position, Quaternion.identity);
@@ -117,6 +122,26 @@ public class move_water : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             flashlightLight2D.SetActive(false);
+
+            Light2D[] pregabLights = prefab.GetComponentsInChildren<Light2D>();
+            if (!hasFlashlight)
+            {
+                prefab.GetComponentInChildren<SpriteRenderer>().sprite = defaultSprite;
+
+                for(int i = 0; i < pregabLights.Length; i++)
+                {
+                    pregabLights[i].enabled = false;
+                }
+            }
+            else
+            {
+                prefab.GetComponentInChildren<SpriteRenderer>().sprite = hasFlashlightSprite;
+
+                for (int i = 0; i < pregabLights.Length; i++)
+                {
+                    pregabLights[i].enabled = true;
+                }
+            }
         }
     }
 
