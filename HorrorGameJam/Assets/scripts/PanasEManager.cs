@@ -41,8 +41,6 @@ public class PanasEManager : MonoBehaviour
 
     private void Spawn()
     {
-        random = Random.Range(spawnDelays[0], spawnDelays[1]);
-
         if(FindObjectOfType<move_water>() == null)
         {
             return;
@@ -51,12 +49,19 @@ public class PanasEManager : MonoBehaviour
         float currentYPosition = /*FindObjectOfType<move_water>().transform.position.y + */Random.Range(yPositionBorders[0], yPositionBorders[1]);
         float currentXPosition = FindObjectOfType<move_water>().transform.position.x + xPosition;
 
-        if (FindAnyObjectByType<move_water>().GetComponent<CapsuleCollider2D>().IsTouchingLayers(LayerMask.GetMask("Cave"))) //Checks to see if the player is within the cave's range
+        if(!inBallsPool)
         {
-            currentYPosition = Random.Range(caveYPositionBorders[0], caveYPositionBorders[1]);
+            random = Random.Range(spawnDelays[0], spawnDelays[1]);
+
+            if (FindAnyObjectByType<move_water>().GetComponent<CapsuleCollider2D>().IsTouchingLayers(LayerMask.GetMask("Cave"))) //Checks to see if the player is within the cave's range
+            {
+                currentYPosition = Random.Range(caveYPositionBorders[0], caveYPositionBorders[1]);
+            }
         }
-        else if (inBallsPool)
+        else
         {
+            random = Random.Range(spawnDelaysInBallsPool[0], spawnDelaysInBallsPool[1]);
+
             currentYPosition = FindObjectOfType<move_water>().transform.position.y + yDistanceInBallsPool;
             currentXPosition = Random.Range(xPositionBordersInBallPool[0], xPositionBordersInBallPool[1]);
         }
