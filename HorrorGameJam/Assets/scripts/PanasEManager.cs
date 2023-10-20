@@ -8,6 +8,7 @@ public class PanasEManager : MonoBehaviour
     [SerializeField] GameObject panasE;
     [SerializeField] float xPosition;
     [SerializeField] float[] yPositionBorders;
+    [SerializeField] float[] caveYPositionBorders;
 
     [SerializeField] float[] spawnDelays;
     float timer;
@@ -35,7 +36,14 @@ public class PanasEManager : MonoBehaviour
         {
             return;
         }
+
         float currentYPosition = /*FindObjectOfType<move_water>().transform.position.y + */Random.Range(yPositionBorders[0], yPositionBorders[1]);
+
+        if(FindAnyObjectByType<move_water>().GetComponent<CapsuleCollider2D>().IsTouchingLayers(LayerMask.GetMask("Cave"))) //Checks to see if the player is within the cave's range
+        {
+            currentYPosition = Random.Range(caveYPositionBorders[0], caveYPositionBorders[1]);
+        }
+
         Vector3 prefabPosition = new Vector3(FindObjectOfType<move_water>().transform.position.x + xPosition, currentYPosition, 0f);
         GameObject prefab = Instantiate(panasE, prefabPosition, Quaternion.identity);
 
