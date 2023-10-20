@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -143,6 +141,15 @@ public class move_water : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Cave"))
+        {
+            FindObjectOfType<PanasEManager>().stopSpawning = true;
+        }
+
     }
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)

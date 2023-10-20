@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PanasEManager : MonoBehaviour
 {
@@ -14,6 +11,8 @@ public class PanasEManager : MonoBehaviour
     float timer;
     float random;
 
+    public bool stopSpawning;
+
     private void Start()
     {
         random = Random.Range(spawnDelays[0], spawnDelays[1]);
@@ -21,6 +20,11 @@ public class PanasEManager : MonoBehaviour
 
     private void Update()
     {
+        if (stopSpawning)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
         if(timer > random)
         {
