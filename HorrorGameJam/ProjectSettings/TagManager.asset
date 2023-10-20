@@ -53,6 +53,9 @@ TagManager:
   - name: player
     uniqueID: 524703245
     locked: 0
+  - name: bath
+    uniqueID: 778051421
+    locked: 0
   - name: water
     uniqueID: 2620451603
     locked: 0
