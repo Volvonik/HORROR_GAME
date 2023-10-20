@@ -13,8 +13,9 @@ public class BabyScript : MonoBehaviour
     {
         if (disableMovement)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = Vector3.one * 3;
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             return;
         }
 
