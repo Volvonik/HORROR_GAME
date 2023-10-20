@@ -7,26 +7,14 @@ public class checkpoint : MonoBehaviour
     public static Vector2 position;
     public static bool didsave;
     
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Checkpoint");
             didsave = true;
-            position = new Vector3(transform.position.x, transform.position.y);
+            position = transform.position;
+            GetComponent<Animator>().SetTrigger("checkpoint");
         }
     }
-
-   
 }

@@ -11,7 +11,7 @@ public class Panasye : MonoBehaviour
         random = Random.Range(0, 2);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(FindObjectOfType<PanasEManager>().inBallsPool)
         {
