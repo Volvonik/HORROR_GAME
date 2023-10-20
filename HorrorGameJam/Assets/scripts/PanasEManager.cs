@@ -31,6 +31,10 @@ public class PanasEManager : MonoBehaviour
     {
         random = Random.Range(spawnDelays[0], spawnDelays[1]);
 
+        if(FindObjectOfType<move_water>() == null)
+        {
+            return;
+        }
         float currentYPosition = FindObjectOfType<move_water>().transform.position.y + Random.Range(yPositionBorders[0], yPositionBorders[1]);
         Vector3 prefabPosition = new Vector3(FindObjectOfType<move_water>().transform.position.x + xPosition, currentYPosition, 0f);
         GameObject prefab = Instantiate(panasE, prefabPosition, Quaternion.identity);

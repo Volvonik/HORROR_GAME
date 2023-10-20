@@ -6,9 +6,10 @@ public class move_water : MonoBehaviour
 {
 
     Rigidbody2D rb;
+    [SerializeField] GameObject creepyBobCutscene;
 
-    [SerializeField]
-    float speed;
+    [SerializeField] float speed;
+    bool disableControls;
 
     public static Vector2 force;
 
@@ -17,8 +18,9 @@ public class move_water : MonoBehaviour
     float MoveHorizontal;
     float MoveVertical;
 
+    float defaultGravityScale;
 
-   [Header("Flashlight")]
+    [Header("Flashlight")]
     bool hasFlashlight;
     [SerializeField] LayerMask flashlightLayer;
     [SerializeField] float raycastLength;
@@ -32,23 +34,27 @@ public class move_water : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         force = new Vector2(1, 1);
+        //hasFlashlight = true;
+        defaultGravityScale = rb.gravityScale;
     }
 
     void Update()
     {
-
-        PickFlashLight();
-
-        
-    }
-    void FixedUpdate()
-    {
         MoveHorizontal = Input.GetAxis("Horizontal");
         MoveVertical = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector2(speed * MoveHorizontal * force.x, MoveVertical * speed * force.y);
-
+        PickFlashLight();
         FlipSprite();
+    }
+    void FixedUpdate()
+    {
+        if (disableControls)
+        {
+            rb.velocity = Vector2.zero;
+            rb.gravityScale = 0f;
+            return;
+        }
+        rb.velocity = new Vector2(speed * MoveHorizontal * force.x, MoveVertical * speed * force.y);
     }
 
     void PickFlashLight()
@@ -69,6 +75,8 @@ public class move_water : MonoBehaviour
         }
         else
         {
+            if (falshlightText == null) return;
+
             falshlightText.SetActive(false);
         }
 
@@ -92,5 +100,36 @@ public class move_water : MonoBehaviour
             transform.rotation = (MoveHorizontal > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
             //transform.localScale = new Vector2(-horizontalInput * currentSize, currentSize);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("CreepyBob"))
+        {
+            other.enabled = false;
+
+            disableControls = true;
+            GameObject prefab = Instantiate(creepyBobCutscene, transform.position, Quaternion.identity);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            flashlightLight2D.SetActive(false);
+
+            if(hasFlashlight)
+            {
+                prefab.GetComponentInChildren<SpriteRenderer>().sprite = hasFlashlightSprite;
+                prefab.GetComponent<Animator>().SetTrigger("creepyBob");
+            }
+        }
+    }
+
+    public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<CapsuleCollider2D>().enabled = true;
+        flashlightLight2D.SetActive(true);
+        disableControls = false;
+
+        transform.position = cutscenePlayer.transform.position;
+        transform.rotation = cutscenePlayer.transform.rotation;
     }
 }
