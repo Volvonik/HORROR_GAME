@@ -21,6 +21,7 @@ public class move_water : MonoBehaviour
     float defaultGravityScale;
 
     [SerializeField] GameObject tinok;
+    [SerializeField] AudioClip BabyRunAway;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -48,6 +49,9 @@ public class move_water : MonoBehaviour
         if(checkpoint.didsave)
         {
             transform.position = checkpoint.position;
+
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(FindObjectOfType<checkpoint>().musicAfterCheckpoint);
         }
     }
 
@@ -176,6 +180,12 @@ public class move_water : MonoBehaviour
             disableControls = true;
             transition.SetActive(true);
             //Invoke("RestartScene", 2);
+        }
+
+        else if(other.CompareTag("BabyRanaway"))
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(BabyRunAway);
         }
     }
 

@@ -51,6 +51,9 @@ public class BabyScript : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("playWithBalls");
             disableMovement = true;
+
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
         }
     }
 }
