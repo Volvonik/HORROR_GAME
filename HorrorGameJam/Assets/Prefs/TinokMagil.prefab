@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 813871937042505231}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8691421548189408319
 MonoBehaviour:
@@ -50,6 +50,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  timesToLaugh:
+  - 2
+  - 3.5
+  laughSFX:
+  - {fileID: 8300000, guid: 194160bbdebb24d4faf7c7c933f5640a, type: 3}
+  - {fileID: 8300000, guid: d5c45fb22a25f9243995e4b30adc00d8, type: 3}
+  - {fileID: 8300000, guid: 7d681798bc94a5241a8ac2998d11c958, type: 3}
 --- !u!50 &4244663462208502365
 Rigidbody2D:
   serializedVersion: 4
