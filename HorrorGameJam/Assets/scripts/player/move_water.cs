@@ -32,8 +32,6 @@ public class move_water : MonoBehaviour
     [SerializeField] Sprite hasFlashlightSprite;
     [SerializeField] GameObject flashlightLight2D;
 
-    
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,6 +39,10 @@ public class move_water : MonoBehaviour
         defaultGravityScale = rb.gravityScale;
         //hasFlashlight = true;
 
+        if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
+        {
+            Destroy(GameObject.Find("Flashlight"));
+        }
 
         //checkpoint
         if(checkpoint.didsave)
@@ -169,10 +171,11 @@ public class move_water : MonoBehaviour
             FindObjectOfType<PanasEManager>().inBallsPool = true;
         }
 
-        if(other.CompareTag("Respawn"))
+        else if(other.CompareTag("Respawn"))
         {
+            disableControls = true;
             transition.SetActive(true);
-            Invoke("destroy", 2);
+            //Invoke("RestartScene", 2);
         }
     }
 
@@ -190,8 +193,6 @@ public class move_water : MonoBehaviour
         }
     }
 
-    
-
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
     {
         GetComponent<SpriteRenderer>().enabled = true;
@@ -207,8 +208,9 @@ public class move_water : MonoBehaviour
         Instantiate(tinok);
     }
 
-    private void destroy()
+    public void RestartScene()
     {
+        disableControls = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
