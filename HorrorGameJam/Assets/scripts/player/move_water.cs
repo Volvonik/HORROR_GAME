@@ -1,4 +1,5 @@
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -201,10 +202,7 @@ public class move_water : MonoBehaviour
 
 
 
-
-
-
-            FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Left_Leg").GetComponent<CinemachineImpulseSource>());
+            FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
 
             GameObject.Find("arm_shpitz").SetActive(true);
             GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x - 20, transform.position.y + 2);
