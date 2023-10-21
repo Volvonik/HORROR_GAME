@@ -1,4 +1,5 @@
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,7 @@ public class move_water : MonoBehaviour
 
     [SerializeField] GameObject tinok;
     [SerializeField] AudioClip BabyRunAway;
+    [SerializeField] AudioClip legDropSFX;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -41,7 +43,7 @@ public class move_water : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
-        hasFlashlight = true;
+        //hasFlashlight = true;
 
         if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
@@ -202,11 +204,8 @@ public class move_water : MonoBehaviour
 
 
 
-
-
-
-            FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Left_Leg").GetComponent<CinemachineImpulseSource>());
-
+            FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
+            GetComponent<AudioSource>().PlayOneShot(legDropSFX);
             
 
 
