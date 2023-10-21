@@ -189,6 +189,12 @@ public class move_water : MonoBehaviour
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
             GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(BabyRunAway);
         }
+
+        else if(other.CompareTag("LegoArena"))
+        {
+            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
+            GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("fall");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
