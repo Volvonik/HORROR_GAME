@@ -43,7 +43,7 @@ public class move_water : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
-        //hasFlashlight = true;
+        hasFlashlight = true;
 
         if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
@@ -202,8 +202,6 @@ public class move_water : MonoBehaviour
             GameObject.Find("HandofTinokMagil").GetComponent<AudioSource>().Play();
             Invoke("starthand", 2.3f);
 
-
-
             FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
             GetComponent<AudioSource>().PlayOneShot(legDropSFX);
             
@@ -266,8 +264,7 @@ public class move_water : MonoBehaviour
     }
     private void starthand()
     {
-        
-        GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x + 134, transform.position.y + 31f);
         GameObject.Find("arm_shpitz#2").GetComponent<Animator>().SetTrigger("start");
+        GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x, transform.position.y);
     }
 }
