@@ -32,6 +32,7 @@ public class move_water : MonoBehaviour
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite hasFlashlightSprite;
     [SerializeField] GameObject flashlightLight2D;
+    [SerializeField] AudioClip flashLightSFX;
 
     void Start()
     {
@@ -92,6 +93,8 @@ public class move_water : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 hasFlashlight = true;
+
+                GetComponent<AudioSource>().PlayOneShot(flashLightSFX);
 
                 Destroy(flashlightText);
                 Destroy(flashlightCheck);
@@ -207,7 +210,7 @@ public class move_water : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = true;
-        flashlightLight2D.SetActive(true);
+
         disableControls = false;
 
         transform.position = cutscenePlayer.transform.position;
