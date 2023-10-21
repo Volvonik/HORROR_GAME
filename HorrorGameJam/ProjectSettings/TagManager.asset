@@ -11,6 +11,7 @@ TagManager:
   - BallPoolSpawn
   - BallPool
   - BabyRanaway
+  - LEGO
   layers:
   - Default
   - TransparentFX
