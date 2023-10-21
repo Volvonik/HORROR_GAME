@@ -39,7 +39,7 @@ public class move_water : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
-        //hasFlashlight = true;
+        hasFlashlight = true;
 
         if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
@@ -182,7 +182,6 @@ public class move_water : MonoBehaviour
         {
             disableControls = true;
             transition.SetActive(true);
-            //Invoke("RestartScene", 2);
         }
 
         else if(other.CompareTag("BabyRanaway"))
@@ -203,6 +202,15 @@ public class move_water : MonoBehaviour
         {
             FindObjectOfType<PanasEManager>().stopSpawning = true;
             FindObjectOfType<PanasEManager>().inBallsPool = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("LEGO"))
+        {
+            disableControls = true;
+            transition.SetActive(true);
         }
     }
 

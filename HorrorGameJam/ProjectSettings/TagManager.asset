@@ -12,6 +12,7 @@ TagManager:
   - BallPool
   - BabyRanaway
   - LEGO
+  - Bouncy
   layers:
   - Default
   - TransparentFX
