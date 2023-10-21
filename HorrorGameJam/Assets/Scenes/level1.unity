@@ -658,6 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76908287}
+  - component: {fileID: 76908288}
   m_Layer: 0
   m_Name: arm_shpitz
   m_TagString: Untagged
@@ -673,7 +674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76908286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -134.38, y: -28.72, z: -0.7992546}
+  m_LocalPosition: {x: -142.44, y: -28.72, z: -0.7992546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -681,6 +682,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &76908288
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76908286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3f4b19e012b7db43b12beabffbcd460, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &77962300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120377233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0799866, y: -10.76, z: 0.8307202}
+  m_LocalPosition: {x: -1.0799866, y: -11.92, z: 0.8307202}
   m_LocalScale: {x: 23.012226, y: 23.012226, z: 23.012226}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15737,7 +15759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607305861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.83, y: 1.0100002, z: 0.7992546}
+  m_LocalPosition: {x: -1.9, y: 0.89, z: 0.7992546}
   m_LocalScale: {x: 4.5494914, y: 4.5494914, z: 4.5494914}
   m_ConstrainProportionsScale: 0
   m_Children: []
