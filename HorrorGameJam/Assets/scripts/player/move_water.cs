@@ -195,10 +195,13 @@ public class move_water : MonoBehaviour
         {
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
             GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("fall");
-            GameObject.Find("arm_shpitz").SetActive(true);
-            GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x - 20, transform.position.y + 2);
+           
+            GameObject.Find("HandofTinokMagil").GetComponent<AudioSource>().Play();
+            Invoke("starthand", 2.5f);
 
-            //hand
+
+
+            
 
         }
     }
@@ -245,5 +248,11 @@ public class move_water : MonoBehaviour
     {
         disableControls = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private void starthand()
+    {
+        
+        GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x + 134, transform.position.y + 30f);
+        GameObject.Find("arm_shpitz#2").GetComponent<Animator>().SetTrigger("start");
     }
 }
