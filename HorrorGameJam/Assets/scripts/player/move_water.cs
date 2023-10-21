@@ -34,6 +34,7 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject flashlightLight2D;
     [SerializeField] AudioClip flashLightSFX;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -194,6 +195,11 @@ public class move_water : MonoBehaviour
         {
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
             GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("fall");
+            GameObject.Find("arm_shpitz").SetActive(true);
+            GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x - 20, transform.position.y + 2);
+
+            //hand
+
         }
     }
 
