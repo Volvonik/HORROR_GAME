@@ -9,6 +9,16 @@ public class BabyScript : MonoBehaviour
     float angle;
     bool disableMovement;
 
+    [SerializeField] float[] timesToLaugh;
+    float timer;
+    float random;
+    [SerializeField] AudioClip[] laughSFX;
+
+    private void Start()
+    {
+        random = Random.Range(timesToLaugh[0], timesToLaugh[1]);
+    }
+
     private void Update()
     {
         if (disableMovement)
@@ -27,6 +37,13 @@ public class BabyScript : MonoBehaviour
             transform.localScale = new Vector2(3, -Mathf.Sign(direction.x) * 3);
         }
 
+        timer += Time.deltaTime;
+        if(timer > random)
+        {
+            GetComponent<AudioSource>().PlayOneShot(laughSFX[Random.Range(0, laughSFX.Length)]);
+            random = Random.Range(timesToLaugh[0], timesToLaugh[1]);
+            timer = 0;
+        }
     }
 
     void FixedUpdate()
