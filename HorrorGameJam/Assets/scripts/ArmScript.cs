@@ -37,12 +37,12 @@ public class ArmScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         throwHazardTimer += Time.deltaTime;
-        if(throwHazardTimer > throwHazardDelay)
+        if (throwHazardTimer > throwHazardDelay)
         {
             ThrowHazard();
         }
-
         if(isAttacking)
         {
             return;
@@ -55,6 +55,7 @@ public class ArmScript : MonoBehaviour
         {
             Attack();
         }
+
     }
 
     private void ThrowHazard()

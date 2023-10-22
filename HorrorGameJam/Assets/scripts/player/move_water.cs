@@ -29,6 +29,7 @@ public class move_water : MonoBehaviour
     bool isPlayingDefaultMusic;
     [SerializeField] AudioClip openLegsSFX;
     bool openLegsOnce;
+    [SerializeField] AudioClip hitByLegoSFX;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -40,7 +41,6 @@ public class move_water : MonoBehaviour
     [SerializeField] Sprite hasFlashlightSprite;
     [SerializeField] GameObject flashlightLight2D;
     [SerializeField] AudioClip flashLightSFX;
-
 
     void Start()
     {
@@ -156,6 +156,11 @@ public class move_water : MonoBehaviour
 
     void FlipSprite()
     {
+        if(disableControls)
+        {
+            return;
+        }
+
         bool isRunning = MoveHorizontal != 0;
         if (isRunning)
         {
@@ -263,8 +268,10 @@ public class move_water : MonoBehaviour
     {
         if(other.gameObject.CompareTag("LEGO"))
         {
-            disableControls = true;
-            transition.SetActive(true);
+            Die();
+
+            GetComponent<AudioSource>().PlayOneShot(hitByLegoSFX);
+            FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
         }
     }
 
@@ -290,6 +297,7 @@ public class move_water : MonoBehaviour
 
     public void RestartScene()
     {
+        Time.timeScale = 1f;
         disableControls = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -302,7 +310,14 @@ public class move_water : MonoBehaviour
 
     public void Die()
     {
+        Time.timeScale = 0f;
         disableControls = true;
         transition.SetActive(true);
+
+        AudioSource[] everyAudioSource = FindObjectsOfType<AudioSource>();
+        for (int i = 0; i < everyAudioSource.Length; i++)
+        {
+            everyAudioSource[i].Stop();
+        }
     }
 }
