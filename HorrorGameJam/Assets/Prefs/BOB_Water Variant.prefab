@@ -208,11 +208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.2
+      value: -35.7
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -297,7 +297,8 @@ MonoBehaviour:
   creepyBobCutscene: {fileID: 5879279876364127161, guid: a33491a530c1ea44c8168eee9bab0c8f, type: 3}
   speed: 4
   tinok: {fileID: 3964522570983770079, guid: 0b9d2092652859349883e98cc1a372ec, type: 3}
-  BabyRunAway: {fileID: 8300000, guid: b3062cc26cce2314fbee4efec9eb5f66, type: 3}
+  BabyRunAway: {fileID: 8300000, guid: feca1a762178ed94683f25302956a0d4, type: 3}
+  defaultTheme: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
   legDropSFX: {fileID: 8300000, guid: f2b64e8c18fe6c0418faa7185f0e7023, type: 3}
   flashlightLayer:
     serializedVersion: 2

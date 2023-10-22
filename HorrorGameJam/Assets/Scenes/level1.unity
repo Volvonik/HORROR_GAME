@@ -5488,7 +5488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.7, y: -0.4, z: -10}
+  m_LocalPosition: {x: -43.3, y: -0.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10940,7 +10940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050627445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.7, y: -0.4, z: -10}
+  m_LocalPosition: {x: -43.3, y: -0.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16735,8 +16735,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0035500228, y: 0.008300006, z: 0}
-    m_Extent: {x: 0.98655, y: 0.7677, z: 0}
+    m_Center: {x: 0.00049999356, y: 0.011399984, z: 0}
+    m_Extent: {x: 0.9862, y: 0.7666, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -20281,14 +20281,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 243769298}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
-      propertyPath: BabyRunAway
-      value: 
-      objectReference: {fileID: 8300000, guid: feca1a762178ed94683f25302956a0d4, type: 3}
-    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
-      propertyPath: defaultTheme
-      value: 
-      objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
-    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: flashlightText
       value: 
       objectReference: {fileID: 2115805054}
@@ -20298,11 +20290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.7
+      value: -43.3
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.z

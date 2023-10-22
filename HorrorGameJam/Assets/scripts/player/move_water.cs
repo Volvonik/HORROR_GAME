@@ -26,6 +26,7 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip BabyRunAway;
     [SerializeField] AudioClip defaultTheme;
     [SerializeField] AudioClip legDropSFX;
+    bool isPlayingDefaultMusic;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -51,7 +52,7 @@ public class move_water : MonoBehaviour
             Destroy(GameObject.Find("Flashlight"));
         }
 
-        checkpoint.didsave = false;
+        //checkpoint.didsave = false;
         if(checkpoint.didsave)
         {
             transform.position = checkpoint.position;
@@ -62,6 +63,7 @@ public class move_water : MonoBehaviour
         else
         {
             GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
+            isPlayingDefaultMusic = true;
         }
     }
 
@@ -195,8 +197,11 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("BabyRanaway"))
         {
+            if(!isPlayingDefaultMusic) { return; }
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
+
+            isPlayingDefaultMusic = false;
         }
 
         else if(other.CompareTag("LegoArena"))
@@ -227,8 +232,11 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("BabyRanaway"))
         {
+            if(isPlayingDefaultMusic || disableControls) { return; }
+
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
             GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
+            isPlayingDefaultMusic = true;
         }
     }
 
