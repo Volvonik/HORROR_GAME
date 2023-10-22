@@ -199,8 +199,7 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("Respawn"))
         {
-            disableControls = true;
-            transition.SetActive(true);
+            Die();
         }
 
         else if(other.CompareTag("BabyRanaway"))
@@ -288,5 +287,11 @@ public class move_water : MonoBehaviour
         GameObject.Find("arm_shpitz#2").GetComponent<Animator>().SetTrigger("start");
         GameObject.Find("arm_shpitz").GetComponent<AudioSource>().loop = false;
         GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x, transform.position.y);
+    }
+
+    public void Die()
+    {
+        disableControls = true;
+        transition.SetActive(true);
     }
 }
