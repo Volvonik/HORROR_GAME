@@ -1,17 +1,13 @@
 using Cinemachine;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ArmScript : MonoBehaviour
 {
     AudioSource audioSource;
 
     [SerializeField] float attackDelay = 3f;
-    float timer;
+    float attackTimer;
     bool isAttacking;
     [SerializeField] float attackSpeed = 3f;
     [SerializeField] float upPushForce = 30;
@@ -25,6 +21,13 @@ public class ArmScript : MonoBehaviour
     [SerializeField] AudioClip hitSFX;
     [SerializeField] AudioClip dieSFX;
 
+    [SerializeField] AudioClip[] throwHazardSFX;
+    [SerializeField] float throwHazardDelay = 2f;
+    float throwHazardTimer;
+    [SerializeField] float hazardMoveSpeed = 3f;
+    [SerializeField] GameObject hazardPrefab;
+    [SerializeField] Sprite[] hazardSprites;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,6 +37,12 @@ public class ArmScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        throwHazardTimer += Time.deltaTime;
+        if(throwHazardTimer > throwHazardDelay)
+        {
+            ThrowHazard();
+        }
+
         if(isAttacking)
         {
             return;
@@ -41,18 +50,30 @@ public class ArmScript : MonoBehaviour
 
         transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
 
-        timer += Time.deltaTime;
-        if (timer > attackDelay)
+        attackTimer += Time.deltaTime;
+        if (attackTimer > attackDelay)
         {
-            timer = 0;
             Attack();
         }
+    }
+
+    private void ThrowHazard()
+    {
+        throwHazardTimer = 0f;
+
+        int randomSFX = Random.Range(0, throwHazardSFX.Length);
+        audioSource.PlayOneShot(throwHazardSFX[randomSFX], 6f);
+
+        Vector3 hazardPosition = new Vector3(FindObjectOfType<move_water>().transform.position.x - 10f, FindObjectOfType<move_water>().transform.position.y, 0f);
+        Instantiate(hazardPrefab, hazardPosition, Quaternion.identity);
     }
 
     private void Attack()
     {
         isAttacking = true;
+        attackTimer = 0f;
 
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         GetComponent<Rigidbody2D>().AddForce(-transform.up * attackSpeed, ForceMode2D.Impulse);
     }
 
@@ -96,8 +117,10 @@ public class ArmScript : MonoBehaviour
         yield return new WaitForSeconds(goingUpTime);
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
         isAttacking = false;
-        //transform.Translate(-3.1f, 0, 0);
+
         yield return null;
     }
 
