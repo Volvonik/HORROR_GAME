@@ -24,6 +24,7 @@ public class move_water : MonoBehaviour
 
     [SerializeField] GameObject tinok;
     [SerializeField] AudioClip BabyRunAway;
+    [SerializeField] AudioClip defaultTheme;
     [SerializeField] AudioClip legDropSFX;
 
     [Header("Flashlight")]
@@ -50,13 +51,17 @@ public class move_water : MonoBehaviour
             Destroy(GameObject.Find("Flashlight"));
         }
 
-        //checkpoint
+        checkpoint.didsave = false;
         if(checkpoint.didsave)
         {
             transform.position = checkpoint.position;
 
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
             GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(FindObjectOfType<checkpoint>().musicAfterCheckpoint);
+        }
+        else
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
         }
     }
 
@@ -191,7 +196,7 @@ public class move_water : MonoBehaviour
         else if(other.CompareTag("BabyRanaway"))
         {
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(BabyRunAway);
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
         }
 
         else if(other.CompareTag("LegoArena"))
@@ -207,7 +212,6 @@ public class move_water : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(legDropSFX);
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Cave"))
@@ -219,6 +223,12 @@ public class move_water : MonoBehaviour
         {
             FindObjectOfType<PanasEManager>().stopSpawning = true;
             FindObjectOfType<PanasEManager>().inBallsPool = false;
+        }
+
+        else if(other.CompareTag("BabyRanaway"))
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
         }
     }
 

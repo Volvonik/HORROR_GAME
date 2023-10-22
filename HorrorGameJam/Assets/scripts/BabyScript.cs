@@ -13,10 +13,12 @@ public class BabyScript : MonoBehaviour
     float timer;
     float random;
     [SerializeField] AudioClip[] laughSFX;
+    [SerializeField] AudioClip startSFX;
 
     private void Start()
     {
         random = Random.Range(timesToLaugh[0], timesToLaugh[1]);
+        GetComponent<AudioSource>().PlayOneShot(startSFX);
     }
 
     private void Update()
@@ -69,8 +71,7 @@ public class BabyScript : MonoBehaviour
             GetComponent<Animator>().SetTrigger("playWithBalls");
             disableMovement = true;
 
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
         }
     }
 }
