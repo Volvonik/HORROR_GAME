@@ -234,11 +234,7 @@ public class move_water : MonoBehaviour
         {
             if(isPlayingDefaultMusic || disableControls) { return; }
 
-            if(GameObject.Find("AudioManager").GetComponent<AudioSource>().isPlaying)
-            {
-                GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
-            }
-            
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
             GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
             isPlayingDefaultMusic = true;
         }

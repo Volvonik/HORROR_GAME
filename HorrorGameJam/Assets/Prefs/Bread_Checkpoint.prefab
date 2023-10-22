@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99d3168600682543b3de566ce062649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicAfterCheckpoint: {fileID: 8300000, guid: feca1a762178ed94683f25302956a0d4, type: 3}
+  musicAfterCheckpoint: {fileID: 8300000, guid: 1d65070c0e4b35a43a805e0b256017a8, type: 3}
 --- !u!61 &7443351630080510255
 BoxCollider2D:
   m_ObjectHideFlags: 0
