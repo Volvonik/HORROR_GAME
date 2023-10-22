@@ -27,6 +27,8 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip defaultTheme;
     [SerializeField] AudioClip legDropSFX;
     bool isPlayingDefaultMusic;
+    [SerializeField] AudioClip openLegsSFX;
+    bool openLegsOnce;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -82,6 +84,15 @@ public class move_water : MonoBehaviour
 
         PickFlashLight();
         FlipSprite();
+
+        if(FindObjectOfType<ArmScript>() == null && !openLegsOnce)
+        {
+            openLegsOnce = true;
+
+            GetComponent<AudioSource>().PlayOneShot(openLegsSFX);
+            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
+            GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up");
+        }
         
     }
     void FixedUpdate()
