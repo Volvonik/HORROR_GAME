@@ -212,7 +212,7 @@ public class move_water : MonoBehaviour
 
             GameObject.Find("arm_shpitz").GetComponent<AudioSource>().Play();
 
-            Invoke("starthand", 2.3f);
+            Invoke("starthand", 2.5f);
 
             FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
             GetComponent<AudioSource>().PlayOneShot(legDropSFX);
