@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2329473379851857092}
-  m_LocalRotation: {x: 0, y: 0, z: -0.13583903, w: 0.99073094}
+  m_LocalRotation: {x: 0, y: 0, z: -0.1358366, w: 0.9907313}
   m_LocalPosition: {x: -44.6, y: -0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 7835783905013913216}
   m_Father: {fileID: 0}
   m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.042}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.614}
 --- !u!114 &5179207137031202951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99d3168600682543b3de566ce062649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicAfterCheckpoint: {fileID: 8300000, guid: 1d65070c0e4b35a43a805e0b256017a8, type: 3}
 --- !u!61 &7443351630080510255
 BoxCollider2D:
   m_ObjectHideFlags: 0
