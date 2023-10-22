@@ -15,7 +15,7 @@ public class checkpoint : MonoBehaviour
             didsave = true;
             position = transform.position;
             GetComponent<Animator>().SetTrigger("checkpoint");
-            
+            GetComponent<AudioSource>().Play();
         }
     }
 }

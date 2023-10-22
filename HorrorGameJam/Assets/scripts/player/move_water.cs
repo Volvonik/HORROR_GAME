@@ -57,8 +57,16 @@ public class move_water : MonoBehaviour
         {
             transform.position = checkpoint.position;
 
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+            if(GameObject.Find("AudioManager").GetComponent<AudioSource>().isPlaying)
+            {
+                GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+            }
+            
             GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(FindObjectOfType<checkpoint>().musicAfterCheckpoint);
+            if(FindObjectOfType<checkpoint>().musicAfterCheckpoint == defaultTheme)
+            {
+                isPlayingDefaultMusic = true;
+            }
         }
         else
         {
@@ -198,6 +206,7 @@ public class move_water : MonoBehaviour
         else if(other.CompareTag("BabyRanaway"))
         {
             if(!isPlayingDefaultMusic) { return; }
+
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
             GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
 

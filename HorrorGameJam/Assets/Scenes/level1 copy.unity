@@ -16316,7 +16316,7 @@ PrefabInstance:
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
-      objectReference: {fileID: 8300000, guid: 1d65070c0e4b35a43a805e0b256017a8, type: 3}
+      objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
     - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -17041,8 +17041,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.002550006, y: 0.010250002, z: 0}
-    m_Extent: {x: 0.98685, y: 0.77045, z: 0}
+    m_Center: {x: -0.00424999, y: 0.016800016, z: 0}
+    m_Extent: {x: 0.98305, y: 0.76559997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -20655,6 +20655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bread_Checkpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: musicAfterCheckpoint
+      value: 
+      objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
     - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: m_RootOrder
       value: 20
