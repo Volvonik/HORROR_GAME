@@ -1,4 +1,6 @@
 using Cinemachine;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -47,6 +49,13 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject flashlightLight2D;
     [SerializeField] AudioClip flashLightSFX;
 
+    [Header("Dino Raycast")]
+    [SerializeField] bool dinoIsAllowedToFollowPlayer;
+    [SerializeField] LayerMask dinoLayer;
+    public bool isPlayerLookingAtDino;
+    [SerializeField] float visionLength;
+    [SerializeField] Transform[] visionRotations;
+
 
     void Start()
     {
@@ -94,12 +103,13 @@ public class move_water : MonoBehaviour
 
     void Update()
     {
-        moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        moveInput = new Vector2(Input.GetAxis("Horizontal") * speed + force.x, Input.GetAxis("Vertical") * speed + force.y);
 
         PickFlashLight();
+        DinoCheck();
         FlipSprite();
 
-        if(FindObjectOfType<ArmScript>() == null && !openLegsOnce)
+        if (FindObjectOfType<ArmScript>() == null && !openLegsOnce)
         {
             openLegsOnce = true;
 
@@ -117,8 +127,8 @@ public class move_water : MonoBehaviour
             rb.gravityScale = 0f;
             return;
         }
-        
-        rb.velocity = moveInput * speed * force;
+
+        rb.velocity = moveInput;
     }
 
     void PickFlashLight()
@@ -162,6 +172,33 @@ public class move_water : MonoBehaviour
         }
 
         sp.sprite = defaultSprite;
+    }
+
+    void DinoCheck()
+    {
+        if(!dinoIsAllowedToFollowPlayer)
+        {
+            return;
+        }
+
+        List<RaycastHit2D> visionRays = new List<RaycastHit2D>();
+        visionRays.Clear();
+
+        isPlayerLookingAtDino = false;
+
+        for (int i = 0; i < visionRotations.Length; i++)
+        {
+            RaycastHit2D visionRay = Physics2D.Raycast(transform.position, visionRotations[i].up, visionLength, dinoLayer);
+            visionRays.Add(visionRay);
+
+            Debug.DrawRay(transform.position, visionRotations[i].up * visionLength, Color.red);
+
+            if (visionRay)
+            {
+                isPlayerLookingAtDino = true;
+                Debug.Log("I see dino!");
+            }
+        }
     }
 
     void FlipSprite()
