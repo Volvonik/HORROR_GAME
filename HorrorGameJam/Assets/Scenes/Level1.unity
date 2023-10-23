@@ -60366,25 +60366,41 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -146.45117, y: -23.245058, z: 0}
-      leftTangent: {x: 0.12973022, y: -0.0001296997, z: 0}
-      rightTangent: {x: -0.12884521, y: 0.00012588501, z: 0}
+    - position: {x: -181.87032, y: -23.034689, z: 0}
+      leftTangent: {x: 0.12974548, y: -0.00012779236, z: 0}
+      rightTangent: {x: -0.12882996, y: 0.00012588501, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -146.90079, y: -4.8189406, z: 0}
-      leftTangent: {x: 0.13928223, y: -3.6709332, z: 0}
-      rightTangent: {x: -0.075912476, y: 2.0034022, z: 0}
+    - position: {x: -182.31992, y: -4.608612, z: 0}
+      leftTangent: {x: 0.13928223, y: -3.670928, z: 0}
+      rightTangent: {x: -0.05583191, y: 1.4737248, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -30.636915, y: 5.325704, z: 0}
-      leftTangent: {x: 0.00015068054, y: -0.18469477, z: 0}
-      rightTangent: {x: -0.0029354095, y: 3.3716207, z: 0}
+    - position: {x: -63.121532, y: -9.084975, z: 0}
+      leftTangent: {x: -43.372295, y: -2.3903894, z: 0}
+      rightTangent: {x: 2.0913925, y: 0.11526775, z: 0}
+      mode: 1
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: -50.909863, y: 4.1665816, z: 0}
+      leftTangent: {x: -1.8963699, y: -0.10440683, z: 0}
+      rightTangent: {x: 12.318321, y: 0.67820215, z: 0}
+      mode: 1
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: -30.636913, y: 5.3257036, z: 0}
+      leftTangent: {x: 0.000034332275, y: -0.042284966, z: 0}
+      rightTangent: {x: -0.0029354095, y: 3.3716211, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
@@ -60526,8 +60542,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -60.760506, y: -7.840008, z: 0}
-    m_Extent: {x: 86.14028, y: 19.114815, z: 0}
+    m_Center: {x: -78.47007, y: -7.840008, z: 0}
+    m_Extent: {x: 103.849846, y: 19.114815, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &1624260189
 Transform:
@@ -60817,8 +60833,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.008650005, y: 0.012349993, z: 0}
-    m_Extent: {x: 0.97995, y: 0.77275, z: 0}
+    m_Center: {x: -0.007950008, y: 0.012849987, z: 0}
+    m_Extent: {x: 0.98645, y: 0.76835, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
