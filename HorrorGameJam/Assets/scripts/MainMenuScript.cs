@@ -6,6 +6,8 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject transition;
+    [SerializeField]
+    GameObject duck;
 
     public void Play()
     {
@@ -16,6 +18,7 @@ public class MainMenuScript : MonoBehaviour
     public void Options()
     {
         mainMenu.SetActive(false);
+        duck.SetActive(false);
         optionsMenu.SetActive(true);
     }
 
@@ -23,6 +26,7 @@ public class MainMenuScript : MonoBehaviour
     {
         optionsMenu.SetActive(false);
         mainMenu.SetActive(true);
+        duck.SetActive(true);
     }
 
     public void Quit()
