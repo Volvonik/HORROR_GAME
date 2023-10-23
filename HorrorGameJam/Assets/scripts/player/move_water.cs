@@ -31,7 +31,8 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip legDropSFX;
     [SerializeField] AudioClip openLegsSFX;
     [SerializeField] AudioClip hitByLegoSFX;
-    public AudioClip lastCheckpointMusic;
+    [SerializeField] AudioClip deathSFX;
+    public static AudioClip lastCheckpointMusic;
     bool isPlayingDefaultMusic;
     bool openLegsOnce;
 
@@ -107,6 +108,8 @@ public class move_water : MonoBehaviour
     void Update()
     {
         moveInput = new Vector2(Input.GetAxis("Horizontal") * speed + force.x, Input.GetAxis("Vertical") * speed + force.y);
+
+        FindObjectOfType<PauseMenuScript>().isAllowedToPause = !disableControls; //So if ur dead or ur in a cutscene u cant pause
 
         PickFlashLight();
         DinoCheck();
@@ -273,6 +276,7 @@ public class move_water : MonoBehaviour
             if(!isPlayingDefaultMusic) { return; }
 
             audioManager.Stop();
+            audioManager.clip = BabyRunAway;
             audioManager.Play();
 
             isPlayingDefaultMusic = false;
@@ -347,7 +351,6 @@ public class move_water : MonoBehaviour
 
     public void RestartScene()
     {
-        Time.timeScale = 1f;
         disableControls = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -362,16 +365,21 @@ public class move_water : MonoBehaviour
 
     public void Die()
     {
-        Time.timeScale = 0f;
         disableControls = true;
         transition.SetActive(true);
 
-        AudioSource[] everyAudioSource = FindObjectsOfType<AudioSource>();
+        audioSource.PlayOneShot(deathSFX);
+
+        sp.enabled = false;
+
+        //Turns all of the audio sources off
+        /*AudioSource[] everyAudioSource = FindObjectsOfType<AudioSource>();
         for (int i = 0; i < everyAudioSource.Length; i++)
         {
             everyAudioSource[i].Stop();
-        }
+        }*/
     }
+
     private void babyd()
     {
         disableControls = true;
