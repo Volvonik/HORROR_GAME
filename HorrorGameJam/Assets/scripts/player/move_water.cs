@@ -56,6 +56,9 @@ public class move_water : MonoBehaviour
     [SerializeField] float visionLength;
     [SerializeField] Transform[] visionRotations;
 
+    [SerializeField]
+    GameObject baby_scary;
+
 
     void Start()
     {
@@ -262,7 +265,7 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("Respawn"))
         {
-            Die();
+            babyd();
         }
 
         else if(other.CompareTag("BabyRanaway"))
@@ -368,5 +371,11 @@ public class move_water : MonoBehaviour
         {
             everyAudioSource[i].Stop();
         }
+    }
+    private void babyd()
+    {
+        disableControls = true;
+        baby_scary.SetActive(true);
+        Invoke("Die", 2f);
     }
 }
