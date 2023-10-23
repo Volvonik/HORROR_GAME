@@ -24,7 +24,7 @@ public class DinoScript : MonoBehaviour
     bool playerFacingRight;
     bool isPlayerFacingDino;
 
-    float maxXDistanceToFollow = 6f;
+    [SerializeField] float maxXDistanceToFollow = 6f;
 
     void Awake()
     {
@@ -67,7 +67,7 @@ public class DinoScript : MonoBehaviour
     {
         if (Mathf.Abs(rb.velocity.x) > 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * 0.8f, transform.localScale.y);
+            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * 2, transform.localScale.y);
         }
     }
 

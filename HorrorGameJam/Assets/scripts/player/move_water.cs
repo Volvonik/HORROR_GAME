@@ -24,6 +24,10 @@ public class move_water : MonoBehaviour
     [Header("Cutscenes")]
     [SerializeField] GameObject creepyBobCutscene;
     float defaultGravityScale;
+    [SerializeField] float timeUntilScreenShakeInBabyCutscene = 3.8f;
+    [SerializeField] AudioClip caveShakeSFX;
+    [SerializeField] GameObject caveParticles;
+    GameObject caveParticleSystem;
 
     [Header("Audio")]
     [SerializeField] AudioClip BabyRunAway;
@@ -122,6 +126,14 @@ public class move_water : MonoBehaviour
             audioManager.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
+        }
+
+        if(caveParticleSystem != null)
+        {
+            if(!caveParticleSystem.GetComponent<ParticleSystem>().isPlaying)
+            {
+                Destroy(caveParticleSystem);
+            }
         }
         
     }
@@ -258,6 +270,8 @@ public class move_water : MonoBehaviour
                     pregabLights[i].enabled = true;
                 }
             }
+
+            Invoke("CaveShake", timeUntilScreenShakeInBabyCutscene);
         }
 
         else if(other.CompareTag("BallPoolSpawn"))
@@ -268,6 +282,7 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("Respawn"))
         {
+            audioSource.PlayOneShot(deathSFX);
             babyd();
         }
 
@@ -336,8 +351,9 @@ public class move_water : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("LEGO"))
+        if(other.gameObject.CompareTag("LEGO") || other.gameObject.CompareTag("Dino"))
         {
+            audioSource.PlayOneShot(deathSFX);
             Die();
 
             audioSource.PlayOneShot(hitByLegoSFX);
@@ -384,7 +400,7 @@ public class move_water : MonoBehaviour
         disableControls = true;
         transition.SetActive(true);
 
-        audioSource.PlayOneShot(deathSFX);
+        
 
         sp.enabled = false;
 
@@ -401,5 +417,11 @@ public class move_water : MonoBehaviour
         disableControls = true;
         baby_scary.SetActive(true);
         Invoke("Die", 2f);
+    }
+
+    void CaveShake()
+    {
+        FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Cave").GetComponent<CinemachineImpulseSource>());
+        caveParticleSystem = Instantiate(caveParticles);
     }
 }
