@@ -24,6 +24,8 @@ public class DinoScript : MonoBehaviour
     bool playerFacingRight;
     bool isPlayerFacingDino;
 
+    float maxXDistanceToFollow = 6f;
+
     void Awake()
     {
         playerScript = FindObjectOfType<move_water>();
@@ -40,22 +42,23 @@ public class DinoScript : MonoBehaviour
             return;
         }
 
+        playerFacingRight = Mathf.Abs(playerScript.transform.rotation.y) != 0;
+        float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
+        isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
+
         if(isEating)
         {
             followPlayer = false;
         }
         else
         {
-            followPlayer = !isPlayerFacingDino;
+            followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
 
             //animator.SetBool("isRunning", followPlayer);
 
             direction = playerScript.gameObject.transform.position - transform.position;
         }
 
-        playerFacingRight = Mathf.Abs(playerScript.transform.rotation.y) != 0;
-        float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
-        isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
 
         FlipSprite();
     }
