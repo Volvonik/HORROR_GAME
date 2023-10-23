@@ -31,7 +31,7 @@ public class BabyScript : MonoBehaviour
             return;
         }
 
-        direction = (FindObjectOfType<move_water>().gameObject.transform.position - transform.position);
+        direction = FindObjectOfType<move_water>().gameObject.transform.position - transform.position;
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 180;
 
         if(Mathf.Abs(direction.x) > .6f)

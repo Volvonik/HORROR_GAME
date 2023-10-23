@@ -19,8 +19,10 @@ public class DinoScript : MonoBehaviour
     [SerializeField] AudioClip idleSFX;
     [SerializeField] AudioClip runningSFX;
 
-    Vector2 position;
     Vector2 direction;
+
+    bool playerFacingRight;
+    bool isDinoFacingLeft;
 
     void Awake()
     {
@@ -49,6 +51,8 @@ public class DinoScript : MonoBehaviour
             direction = playerScript.gameObject.transform.position - transform.position;
         }
 
+        playerFacingRight = playerScript.transform.rotation.y == 180;
+
         FollowPlayer();
     }
 
@@ -67,8 +71,11 @@ public class DinoScript : MonoBehaviour
     {
         if(!followPlayer)
         {
-            //audioSource.PlayOneShot(idleSFX);
-            position = transform.position;
+            //if(!audioSource.isPlaying)
+            //{
+            //    audioSource.PlayOneShot(idleSFX);
+            //}
+
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
