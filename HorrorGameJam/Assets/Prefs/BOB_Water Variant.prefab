@@ -399,11 +399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26
+      value: 19.4
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -498,6 +498,9 @@ MonoBehaviour:
   speed: 4
   transition: {fileID: 0}
   creepyBobCutscene: {fileID: 5879279876364127161, guid: a33491a530c1ea44c8168eee9bab0c8f, type: 3}
+  timeUntilScreenShakeInBabyCutscene: 6
+  caveShakeSFX: {fileID: 8300000, guid: d137c314df81d94498f6e225e1f06cc0, type: 3}
+  caveParticles: {fileID: 0}
   BabyRunAway: {fileID: 8300000, guid: feca1a762178ed94683f25302956a0d4, type: 3}
   defaultTheme: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
   legDropSFX: {fileID: 8300000, guid: f2b64e8c18fe6c0418faa7185f0e7023, type: 3}
@@ -537,7 +540,7 @@ AudioSource:
   m_GameObject: {fileID: 6934891096704666237}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
