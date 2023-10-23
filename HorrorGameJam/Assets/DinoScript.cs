@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DinoScript : MonoBehaviour
@@ -5,11 +6,10 @@ public class DinoScript : MonoBehaviour
     move_water playerScript;
     Animator animator;
     AudioSource audioSource;
+    Rigidbody2D rb;
 
     bool canFollowPlayer;
     bool followPlayer;
-
-    GameObject target;
 
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float eatingTime = 3f;
@@ -22,13 +22,14 @@ public class DinoScript : MonoBehaviour
     Vector2 direction;
 
     bool playerFacingRight;
-    bool isDinoFacingLeft;
+    bool isPlayerFacingDino;
 
     void Awake()
     {
         playerScript = FindObjectOfType<move_water>();
         //animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -45,14 +46,30 @@ public class DinoScript : MonoBehaviour
         }
         else
         {
-            followPlayer = !playerScript.isPlayerLookingAtDino;
+            followPlayer = !isPlayerFacingDino;
+
             //animator.SetBool("isRunning", followPlayer);
 
             direction = playerScript.gameObject.transform.position - transform.position;
         }
 
-        playerFacingRight = playerScript.transform.rotation.y == 180;
+        playerFacingRight = Mathf.Abs(playerScript.transform.rotation.y) != 0;
+        float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
+        isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
 
+        FlipSprite();
+    }
+
+    private void FlipSprite()
+    {
+        if (Mathf.Abs(rb.velocity.x) > 0)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * 0.8f, transform.localScale.y);
+        }
+    }
+
+    void FixedUpdate()
+    {
         FollowPlayer();
     }
 
@@ -62,7 +79,7 @@ public class DinoScript : MonoBehaviour
         {
             isEating = true;
             //animator.SetBool("isEating", true);
-            //audioSource.PlayOneShot(eatingSFX);
+            //MakeASound(eatingSFX);
             Invoke("StopEating", eatingTime);
         }
     }
@@ -71,18 +88,15 @@ public class DinoScript : MonoBehaviour
     {
         if(!followPlayer)
         {
-            //if(!audioSource.isPlaying)
-            //{
-            //    audioSource.PlayOneShot(idleSFX);
-            //}
+            //MakeASound(idleSFX);
 
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
         if (followPlayer)
         {
-            //audioSource.PlayOneShot(runningSFX);
-            target = playerScript.gameObject;
+            //MakeASound(runningSFX);
+
             Vector2 finalMoveSpeed = direction.normalized * moveSpeed;
             GetComponent<Rigidbody2D>().velocity = finalMoveSpeed;
         }
@@ -92,5 +106,13 @@ public class DinoScript : MonoBehaviour
     {
         isEating = false;
         //animator.SetBool("isEating", false);
+    }
+
+    void MakeASound(AudioClip sfx)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(sfx);
+        }
     }
 }
