@@ -1,35 +1,40 @@
 using Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class move_water : MonoBehaviour
 {
-    [SerializeField] GameObject transition;
+    [Header("Components")]
+    AudioSource audioSource;
+    AudioSource audioManager;
     Rigidbody2D rb;
-    [SerializeField] GameObject creepyBobCutscene;
+    SpriteRenderer sp;
+    PanasEManager fishSpawner;
 
-    [SerializeField] float speed;
+    [Header("Movement")]
     bool disableControls;
-
+    [SerializeField] float speed;
     public static Vector2 force;
+    Vector2 moveInput;
+    [SerializeField] GameObject transition;
 
-    public static Vector2 movement;
-
-    float MoveHorizontal;
-    float MoveVertical;
-
+    [Header("Cutscenes")]
+    [SerializeField] GameObject creepyBobCutscene;
     float defaultGravityScale;
 
-    [SerializeField] GameObject tinok;
+    [Header("Audio")]
     [SerializeField] AudioClip BabyRunAway;
     [SerializeField] AudioClip defaultTheme;
     [SerializeField] AudioClip legDropSFX;
-    bool isPlayingDefaultMusic;
     [SerializeField] AudioClip openLegsSFX;
-    bool openLegsOnce;
     [SerializeField] AudioClip hitByLegoSFX;
+    public AudioClip lastCheckpointMusic;
+    bool isPlayingDefaultMusic;
+    bool openLegsOnce;
+
+    [Header("Baby Chase")]
+    [SerializeField] GameObject tinok;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -42,11 +47,18 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject flashlightLight2D;
     [SerializeField] AudioClip flashLightSFX;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+        sp = GetComponent<SpriteRenderer>();
+        fishSpawner = FindObjectOfType<PanasEManager>();
+
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
+
         hasFlashlight = true;
 
         if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
@@ -59,28 +71,30 @@ public class move_water : MonoBehaviour
         {
             transform.position = checkpoint.position;
 
-            if(GameObject.Find("AudioManager").GetComponent<AudioSource>().isPlaying)
+            if(audioManager.isPlaying)
             {
-                GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
+                audioManager.Stop();
             }
-            
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(FindObjectOfType<checkpoint>().musicAfterCheckpoint);
-            if(FindObjectOfType<checkpoint>().musicAfterCheckpoint == defaultTheme)
+
+            audioManager.clip = lastCheckpointMusic;
+            audioManager.Play();
+
+            if(lastCheckpointMusic == defaultTheme)
             {
                 isPlayingDefaultMusic = true;
             }
         }
         else
         {
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
+            audioManager.clip = defaultTheme;
+            audioManager.Play();
             isPlayingDefaultMusic = true;
         }
     }
 
     void Update()
     {
-        MoveHorizontal = Input.GetAxis("Horizontal");
-        MoveVertical = Input.GetAxis("Vertical");
+        moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         PickFlashLight();
         FlipSprite();
@@ -89,7 +103,7 @@ public class move_water : MonoBehaviour
         {
             openLegsOnce = true;
 
-            GetComponent<AudioSource>().PlayOneShot(openLegsSFX);
+            audioManager.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
             GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up");
         }
@@ -103,10 +117,8 @@ public class move_water : MonoBehaviour
             rb.gravityScale = 0f;
             return;
         }
-       
-      
         
-        rb.velocity = new Vector2(MoveHorizontal * speed + force.x, MoveVertical * speed + force.y);
+        rb.velocity = moveInput * speed * force;
     }
 
     void PickFlashLight()
@@ -124,7 +136,7 @@ public class move_water : MonoBehaviour
             {
                 hasFlashlight = true;
 
-                GetComponent<AudioSource>().PlayOneShot(flashLightSFX);
+                audioSource.PlayOneShot(flashLightSFX);
 
                 Destroy(flashlightText);
                 Destroy(flashlightCheck);
@@ -143,15 +155,13 @@ public class move_water : MonoBehaviour
             flashlightLight2D.SetActive(hasFlashlight);
         }
 
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-
         if (hasFlashlight)
         {
-            spriteRenderer.sprite = hasFlashlightSprite;
+            sp.sprite = hasFlashlightSprite;
             return;
         }
 
-        spriteRenderer.sprite = defaultSprite;
+        sp.sprite = defaultSprite;
     }
 
     void FlipSprite()
@@ -161,10 +171,10 @@ public class move_water : MonoBehaviour
             return;
         }
 
-        bool isRunning = MoveHorizontal != 0;
+        bool isRunning = moveInput.x != 0;
         if (isRunning)
         {
-            transform.rotation = (MoveHorizontal > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+            transform.rotation = (moveInput.x > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -182,7 +192,7 @@ public class move_water : MonoBehaviour
             GameObject prefab = Instantiate(creepyBobCutscene, transform.position, Quaternion.identity);
             prefab.GetComponent<Animator>().SetTrigger("creepyBob");
 
-            GetComponent<SpriteRenderer>().enabled = false;
+            sp.enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             flashlightLight2D.SetActive(false);
 
@@ -209,8 +219,8 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("BallPoolSpawn"))
         {
-            FindObjectOfType<PanasEManager>().stopSpawning = false;
-            FindObjectOfType<PanasEManager>().inBallsPool = true;
+            fishSpawner.stopSpawning = false;
+            fishSpawner.inBallsPool = true;
         }
 
         else if(other.CompareTag("Respawn"))
@@ -222,8 +232,8 @@ public class move_water : MonoBehaviour
         {
             if(!isPlayingDefaultMusic) { return; }
 
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
+            audioManager.Stop();
+            audioManager.Play();
 
             isPlayingDefaultMusic = false;
         }
@@ -238,28 +248,28 @@ public class move_water : MonoBehaviour
             Invoke("starthand", 3.2f);
 
             FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
-            GetComponent<AudioSource>().PlayOneShot(legDropSFX);
+            audioManager.PlayOneShot(legDropSFX);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Cave"))
         {
-            FindObjectOfType<PanasEManager>().stopSpawning = true;
+            fishSpawner.stopSpawning = true;
         }
 
         else if (other.CompareTag("BallPoolSpawn"))
         {
-            FindObjectOfType<PanasEManager>().stopSpawning = true;
-            FindObjectOfType<PanasEManager>().inBallsPool = false;
+            fishSpawner.stopSpawning = true;
+            fishSpawner.inBallsPool = false;
         }
 
         else if(other.CompareTag("BabyRanaway"))
         {
             if(isPlayingDefaultMusic || disableControls) { return; }
 
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().Stop();
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().PlayOneShot(defaultTheme);
+            audioManager.Stop();
+            audioManager.PlayOneShot(defaultTheme);
             isPlayingDefaultMusic = true;
         }
     }
@@ -270,7 +280,7 @@ public class move_water : MonoBehaviour
         {
             Die();
 
-            GetComponent<AudioSource>().PlayOneShot(hitByLegoSFX);
+            audioSource.PlayOneShot(hitByLegoSFX);
             FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
         }
     }
@@ -281,8 +291,8 @@ public class move_water : MonoBehaviour
         {
             flashlightLight2D.SetActive(true);
         }
-        GetComponent<SpriteRenderer>().enabled = true;
 
+        sp.enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = true;
 
         disableControls = false;
@@ -303,9 +313,11 @@ public class move_water : MonoBehaviour
     }
     private void starthand()
     {
-        GameObject.Find("arm_shpitz#2").GetComponent<Animator>().SetTrigger("start");
-        GameObject.Find("arm_shpitz").GetComponent<AudioSource>().loop = false;
-        GameObject.Find("arm_shpitz").transform.position = new Vector2(transform.position.x, transform.position.y);
+        GameObject hand = FindObjectOfType<ArmScript>().gameObject;
+
+        hand.GetComponent<AudioSource>().loop = false;
+        hand.transform.position = new Vector2(transform.position.x, transform.position.y);
+        hand.GetComponentInChildren<Animator>().SetTrigger("start");
     }
 
     public void Die()

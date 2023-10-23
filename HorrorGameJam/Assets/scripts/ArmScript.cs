@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class ArmScript : MonoBehaviour
 {
+    [Header("Components")]
     AudioSource audioSource;
 
+    [Header("Hand Attack")]
     [SerializeField] float attackDelay = 3f;
     float attackTimer;
     bool isAttacking;
     [SerializeField] float attackSpeed = 3f;
     [SerializeField] float upPushForce = 30;
-
-    [SerializeField] int lifeTotal = 3;
     [SerializeField] float timeToGoUpAfterPunch = 1.5f;
     [SerializeField] float goingUpTime = 3f;
 
+    [Header("Life")]
+    [SerializeField] int lifeTotal = 3;
+
+    [Header("Audio")]
     [SerializeField] AudioClip attackSFX;
     [SerializeField] AudioClip shakeSFX;
     [SerializeField] AudioClip hitSFX;
     [SerializeField] AudioClip dieSFX;
-
     [SerializeField] AudioClip[] throwHazardSFX;
+
+    [Header("Hazard Attack")]
     [SerializeField] float throwHazardDelay = 2f;
     float throwHazardTimer;
-    [SerializeField] float hazardMoveSpeed = 3f;
     [SerializeField] GameObject hazardPrefab;
-    [SerializeField] Sprite[] hazardSprites;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        //audioSource.clip = null;
         audioSource.loop = false;
     }
 
