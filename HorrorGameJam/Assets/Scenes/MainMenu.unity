@@ -3901,7 +3901,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOB_Water Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 280855434456098114, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
