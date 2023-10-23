@@ -399,6 +399,9 @@ public class move_water : MonoBehaviour
     {
         disableControls = true;
         transition.SetActive(true);
+
+        
+
         sp.enabled = false;
 
         //Turns all of the audio sources off
@@ -419,7 +422,6 @@ public class move_water : MonoBehaviour
     void CaveShake()
     {
         FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Cave").GetComponent<CinemachineImpulseSource>());
-        //caveParticleSystem = Instantiate(caveParticles);
-        audioSource.PlayOneShot(caveShakeSFX);
+        caveParticleSystem = Instantiate(caveParticles);
     }
 }
