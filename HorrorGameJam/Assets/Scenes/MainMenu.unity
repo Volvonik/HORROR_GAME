@@ -1680,6 +1680,7 @@ MonoBehaviour:
   mainMenu: {fileID: 354097697}
   optionsMenu: {fileID: 807483413}
   transition: {fileID: 1796059352}
+  duck: {fileID: 1108390091}
 --- !u!114 &528964902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,6 +2967,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966235371}
   m_CullTransparentMesh: 1
+--- !u!1 &1108390091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6934891096704666237, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+  m_PrefabInstance: {fileID: 1333403180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1133893088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,7 +3907,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOB_Water Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 280855434456098114, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
