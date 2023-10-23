@@ -50,7 +50,7 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip flashLightSFX;
 
     [Header("Dino Raycast")]
-    [SerializeField] bool dinoIsAllowedToFollowPlayer;
+    public bool dinoIsAllowedToFollowPlayer;
     [SerializeField] LayerMask dinoLayer;
     public bool isPlayerLookingAtDino;
     [SerializeField] float visionLength;
