@@ -1,63 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class options_menu : MonoBehaviour
 {
-    int fps;
-    [SerializeField]
+    [SerializeField] AudioMixer masterAudioMixer;
 
-    string input;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void changegraphics(int value)
     {
         QualitySettings.SetQualityLevel(value);
-        print(value);
+
+        print(QualitySettings.GetQualityLevel());
     }
+
     public void changeresolution(int value)
     {
-        if(value == 0)
+        if (value == 0)
         {
-            Screen.SetResolution(1920,1080, true);
+            Screen.SetResolution(3840, 2160, true);
         }
-        if (value == 1)
+        else if (value == 1)
         {
-            Screen.SetResolution(3840,2160, true);
+            Screen.SetResolution(2560, 1440, true);
         }
-        if (value == 2)
+        else if(value == 2)
         {
-            Screen.SetResolution(2560 , 1440, true);
+            Screen.SetResolution(1920, 1080, true);
         }
-        if (value == 3)
+        else if (value == 3)
         {
-            Screen.SetResolution(1366 , 768, true);
+            Screen.SetResolution(1366, 768, true);
         }
+
+        print(Screen.currentResolution);
     }
-    public void changefps(string value)
+
+    public void changefps(TextMeshProUGUI value)
     {
-        if (int.Parse(value) > 5)
+        if (int.Parse(value.ToString()) > 5)
         {
-            Application.targetFrameRate = int.Parse(value);
-            print(value);
+            Application.targetFrameRate = int.Parse(value.ToString());
         }
         else
         {
             Application.targetFrameRate = 10;
         }
 
-        
-        
+        print(Application.targetFrameRate);
+    }
+
+    public void ChangeMasterVolume(float volume)
+    {
+        masterAudioMixer.SetFloat("masterVolume", volume);
     }
 }

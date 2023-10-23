@@ -819,7 +819,7 @@ AudioSource:
   m_GameObject: {fileID: 76908286}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8332644d8837824438afdddd3cfddd5d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -26843,6 +26843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bread_Checkpoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3288909423426801229, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
@@ -42922,7 +42926,7 @@ AudioSource:
   m_GameObject: {fileID: 1195966757}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   m_audioClip: {fileID: 8300000, guid: feca1a762178ed94683f25302956a0d4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -51316,7 +51320,7 @@ AudioSource:
   m_GameObject: {fileID: 1494037808}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -52102,6 +52106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bread_Checkpoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3288909423426801229, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
@@ -52876,8 +52884,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0020500124, y: 0.013300002, z: 0}
-    m_Extent: {x: 0.98004997, y: 0.7613, z: 0}
+    m_Center: {x: 0.0016999841, y: 0.011200011, z: 0}
+    m_Extent: {x: 0.9788, y: 0.7712, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -66474,10 +66482,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
-      propertyPath: deathSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
-    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: baby_scary
       value: 
       objectReference: {fileID: 228393758}
@@ -66486,13 +66490,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 243769298}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
-      propertyPath: visionLength
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: flashlightText
       value: 
       objectReference: {fileID: 2115805054}
+    - target: {fileID: 5008558438603710053, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -66558,6 +66562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bread_Checkpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3288909423426801229, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
