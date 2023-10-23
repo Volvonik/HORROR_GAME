@@ -31,7 +31,7 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip legDropSFX;
     [SerializeField] AudioClip openLegsSFX;
     [SerializeField] AudioClip hitByLegoSFX;
-    public AudioClip lastCheckpointMusic;
+    public static AudioClip lastCheckpointMusic;
     bool isPlayingDefaultMusic;
     bool openLegsOnce;
 
@@ -273,6 +273,7 @@ public class move_water : MonoBehaviour
             if(!isPlayingDefaultMusic) { return; }
 
             audioManager.Stop();
+            audioManager.clip = BabyRunAway;
             audioManager.Play();
 
             isPlayingDefaultMusic = false;
@@ -347,7 +348,6 @@ public class move_water : MonoBehaviour
 
     public void RestartScene()
     {
-        Time.timeScale = 1f;
         disableControls = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -362,7 +362,6 @@ public class move_water : MonoBehaviour
 
     public void Die()
     {
-        Time.timeScale = 0f;
         disableControls = true;
         transition.SetActive(true);
 

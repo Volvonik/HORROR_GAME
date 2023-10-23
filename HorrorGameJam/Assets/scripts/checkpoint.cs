@@ -16,7 +16,7 @@ public class checkpoint : MonoBehaviour
             position = transform.position;
             GetComponent<Animator>().SetTrigger("checkpoint");
             GetComponent<AudioSource>().Play();
-            collision.GetComponent<move_water>().lastCheckpointMusic = musicAfterCheckpoint;
+            move_water.lastCheckpointMusic = musicAfterCheckpoint;
         }
     }
 }
