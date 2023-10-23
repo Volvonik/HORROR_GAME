@@ -64,6 +64,13 @@ public class move_water : MonoBehaviour
     [SerializeField]
     GameObject baby_scary;
 
+    [SerializeField]
+    GameObject pickup;
+
+    private GameObject pickupGO = null;
+
+    private bool release;
+
 
     void Start()
     {
@@ -134,6 +141,18 @@ public class move_water : MonoBehaviour
             {
                 Destroy(caveParticleSystem);
             }
+        }
+
+        pickupGO.transform.position = pickup.transform.position;
+        if(pickupGO != null && Input.GetKeyDown("space") && release)
+        {
+            pickupGO = null;
+            release = false;
+        }
+        
+        if(pickupGO == null)
+        {
+            print("null");
         }
         
     }
@@ -273,6 +292,7 @@ public class move_water : MonoBehaviour
 
             Invoke("CaveShake", timeUntilScreenShakeInBabyCutscene);
         }
+       
 
         else if(other.CompareTag("BallPoolSpawn"))
         {
@@ -339,6 +359,7 @@ public class move_water : MonoBehaviour
             fishSpawner.stopSpawning = true;
         }
     }
+   
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -346,6 +367,16 @@ public class move_water : MonoBehaviour
         {
             fishSpawner.inLegoArena = true;
             fishSpawner.stopSpawning = false;
+        }
+        if(other.CompareTag("pickup") && !release)
+        {
+
+            if(Input.GetKeyDown("space"))
+            {
+                print("picked smtn");
+                pickupGO = other.gameObject;
+                Invoke("R", 0.1f);
+            }
         }
     }
 
@@ -416,7 +447,7 @@ public class move_water : MonoBehaviour
     {
         disableControls = true;
         baby_scary.SetActive(true);
-        Invoke("Die", 2f);
+        Invoke("Die", 0.1f);
     }
 
     void CaveShake()
@@ -424,4 +455,9 @@ public class move_water : MonoBehaviour
         FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Cave").GetComponent<CinemachineImpulseSource>());
         caveParticleSystem = Instantiate(caveParticles);
     }
+    private void R()
+    {
+        release = true;
+    }
+
 }
