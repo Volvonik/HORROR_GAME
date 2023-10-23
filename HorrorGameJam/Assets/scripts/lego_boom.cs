@@ -19,7 +19,6 @@ public class lego_boom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("hand"))
         {
-            print("ouch im a lego ");
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;

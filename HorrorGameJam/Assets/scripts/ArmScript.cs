@@ -143,6 +143,11 @@ public class ArmScript : MonoBehaviour
             FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
 
             Destroy(gameObject);
+
+            if(FindObjectOfType<BabyScript>() != null )
+            {
+                Destroy(FindObjectOfType<BabyScript>().gameObject);
+            }
         }
     }
 

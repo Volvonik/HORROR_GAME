@@ -16,15 +16,6 @@ public class PauseMenuScript : MonoBehaviour
             {
                 Pause();
             }
-            else
-            {
-                if(!FindObjectOfType<move_water>().GetComponent<SpriteRenderer>().enabled) //That means the player is dead and it will be aquared to show "u cant pause" in that situation
-                {
-                    return;
-                }
-
-                ShowPauseError(); //So it will basically trigger only when in cutscene
-            }
         }
     }
 
@@ -36,7 +27,21 @@ public class PauseMenuScript : MonoBehaviour
             pauseMenu.SetActive(true);
             isPaused = true;
 
+            if(SceneManager.GetActiveScene().buildIndex == 1) { return; }
             GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 0.14f;
+
+            if(FindObjectsOfType<checkpoint>() == null) { return; }
+            AudioSource[] checkpointAudioSources = FindObjectsOfType<AudioSource>();
+            foreach(AudioSource audioSource in checkpointAudioSources)
+            {
+                audioSource.pitch = 0f;
+            }
+
+            if(FindObjectOfType<BabyScript>() == null) { return; }
+            FindObjectOfType<BabyScript>().GetComponent<AudioSource>().pitch = 0f;
+
+            if(FindObjectOfType<ArmScript>() == null) { return; }
+            FindObjectOfType<ArmScript>().GetComponent<AudioSource>().pitch = 0f;
         }
         else
         {
@@ -50,7 +55,21 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenu.SetActive(false);
         isPaused = false;
 
+        if (SceneManager.GetActiveScene().buildIndex == 1) { return; }
         GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 1f;
+
+        if (FindObjectsOfType<checkpoint>() == null) { return; }
+        AudioSource[] checkpointAudioSources = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audioSource in checkpointAudioSources)
+        {
+            audioSource.pitch = 1f;
+        }
+
+        if (FindObjectOfType<BabyScript>() == null) { return; }
+        FindObjectOfType<BabyScript>().GetComponent<AudioSource>().pitch = 1f;
+        
+        if (FindObjectOfType<ArmScript>() == null) { return; }
+        FindObjectOfType<ArmScript>().GetComponent<AudioSource>().pitch = 1f;
     }
 
     public void GoToMainMenu()
@@ -68,11 +87,6 @@ public class PauseMenuScript : MonoBehaviour
     public void BackFromOptions()
     {
         optionsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
     }
-
-    private void ShowPauseError()
-    {
-        Debug.Log("Cant Pause");
-    }
-
 }

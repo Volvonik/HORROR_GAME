@@ -72,7 +72,7 @@ public class move_water : MonoBehaviour
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
 
-        hasFlashlight = true;
+        //hasFlashlight = true;
 
         if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
@@ -112,7 +112,7 @@ public class move_water : MonoBehaviour
         FindObjectOfType<PauseMenuScript>().isAllowedToPause = !disableControls; //So if ur dead or ur in a cutscene u cant pause
 
         PickFlashLight();
-        DinoCheck();
+        //DinoCheck(); // There's the new system in the dino script
         FlipSprite();
 
         if (FindObjectOfType<ArmScript>() == null && !openLegsOnce)
@@ -121,7 +121,7 @@ public class move_water : MonoBehaviour
 
             audioManager.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
-            GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up");
+            //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
         }
         
     }
@@ -284,6 +284,8 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("LegoArena"))
         {
+            fishSpawner.stopSpawning = true;
+
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
             GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("fall");
 
@@ -304,7 +306,6 @@ public class move_water : MonoBehaviour
 
         else if (other.CompareTag("BallPoolSpawn"))
         {
-            fishSpawner.stopSpawning = true;
             fishSpawner.inBallsPool = false;
         }
 
@@ -315,6 +316,21 @@ public class move_water : MonoBehaviour
             audioManager.Stop();
             audioManager.PlayOneShot(defaultTheme);
             isPlayingDefaultMusic = true;
+        }
+
+        else if(other.gameObject.CompareTag("LegoArena"))
+        {
+            fishSpawner.inLegoArena = false;
+            fishSpawner.stopSpawning = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.CompareTag("LegoArena") && FindObjectOfType<ArmScript>() == null)
+        {
+            fishSpawner.inLegoArena = true;
+            fishSpawner.stopSpawning = false;
         }
     }
 

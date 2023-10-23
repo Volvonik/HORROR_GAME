@@ -1,13 +1,35 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class options_menu : MonoBehaviour
 {
     [SerializeField] AudioMixer masterAudioMixer;
 
+    private static int graphicsValue = 2;
+    private static int resolutionValue = 2;
+    private static int fpsValue = 144;
+    private static float masterVolumeValue = 0; //max volume
+
+    [SerializeField] TMP_Dropdown graphicsDropdown;
+    [SerializeField] TMP_Dropdown resolutionDropdown;
+    [SerializeField] TMP_InputField fpsInputField;
+    [SerializeField] Slider masterVolumeSlider;
+
+    void OnEnable()
+    {
+        graphicsDropdown.value = graphicsValue;
+        resolutionDropdown.value = resolutionValue;
+        fpsInputField.text = fpsValue.ToString();
+        masterVolumeSlider.value = masterVolumeValue;
+    }
+
     public void changegraphics(int value)
     {
+        graphicsValue = value;
+
         QualitySettings.SetQualityLevel(value);
 
         print(QualitySettings.GetQualityLevel());
@@ -15,6 +37,8 @@ public class options_menu : MonoBehaviour
 
     public void changeresolution(int value)
     {
+        resolutionValue = value;
+
         if (value == 0)
         {
             Screen.SetResolution(3840, 2160, true);
@@ -35,14 +59,24 @@ public class options_menu : MonoBehaviour
         print(Screen.currentResolution);
     }
 
-    public void changefps(TextMeshProUGUI value)
+    public void changefps(string value)
     {
-        if (int.Parse(value.ToString()) > 5)
+        if(!value.All(char.IsDigit)) //So if there's a character in the number it reverts to the most recent digit number that was entered
+        {
+            fpsInputField.text = fpsValue.ToString();
+            return;
+        }
+
+        fpsValue = int.Parse(value.ToString());
+
+        if (int.Parse(value.ToString()) >= 10)
         {
             Application.targetFrameRate = int.Parse(value.ToString());
         }
         else
         {
+            fpsValue = 10;
+            fpsInputField.text = fpsValue.ToString();
             Application.targetFrameRate = 10;
         }
 
@@ -51,6 +85,8 @@ public class options_menu : MonoBehaviour
 
     public void ChangeMasterVolume(float volume)
     {
+        masterVolumeValue = volume;
+
         masterAudioMixer.SetFloat("masterVolume", volume);
     }
 }

@@ -21,6 +21,10 @@ public class PanasEManager : MonoBehaviour
     [SerializeField] float[] spawnDelaysInBallsPool;
     [SerializeField] float[] xPositionBordersInBallPool;
 
+    [Header("Lego Arena")]
+    public bool inLegoArena;
+    [SerializeField] float[] yPositionBordersInLegoArena;
+
     private void Start()
     {
         Spawn();
@@ -52,7 +56,7 @@ public class PanasEManager : MonoBehaviour
             return;
         }
 
-        float currentYPosition = /*FindObjectOfType<move_water>().transform.position.y + */Random.Range(yPositionBorders[0], yPositionBorders[1]);
+        float currentYPosition = FindObjectOfType<move_water>().transform.position.y + Random.Range(yPositionBorders[0], yPositionBorders[1]);
         float currentXPosition = FindObjectOfType<move_water>().transform.position.x + xPosition;
 
         if(inBallsPool)
@@ -62,6 +66,14 @@ public class PanasEManager : MonoBehaviour
             currentYPosition = FindObjectOfType<move_water>().transform.position.y + yDistanceInBallsPool;
             currentXPosition = Random.Range(xPositionBordersInBallPool[0], xPositionBordersInBallPool[1]);
         }
+
+        else if(inLegoArena)
+        {
+            random = Random.Range(spawnDelays[0], spawnDelays[1]);
+
+            currentYPosition = Random.Range(yPositionBordersInLegoArena[0], yPositionBordersInLegoArena[1]);
+        }
+
         else
         {
             random = Random.Range(spawnDelays[0], spawnDelays[1]);
