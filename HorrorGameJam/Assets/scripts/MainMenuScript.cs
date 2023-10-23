@@ -5,10 +5,12 @@ public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject optionsMenu;
+    [SerializeField] GameObject transition;
 
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        transition.SetActive(true);
+        Invoke("play2", 2.1f);
     }
 
     public void Options()
@@ -26,5 +28,9 @@ public class MainMenuScript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    private void play2()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
