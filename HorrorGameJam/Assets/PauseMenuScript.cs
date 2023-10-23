@@ -12,13 +12,18 @@ public class PauseMenuScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isAllowedToPause)
+            if(isAllowedToPause || SceneManager.GetActiveScene().buildIndex == 1) //So u'll always be allowed to pause in the happy scene
             {
                 Pause();
             }
             else
             {
-                ShowPauseError();
+                if(!FindObjectOfType<move_water>().GetComponent<SpriteRenderer>().enabled) //That means the player is dead and it will be aquared to show "u cant pause" in that situation
+                {
+                    return;
+                }
+
+                ShowPauseError(); //So it will basically trigger only when in cutscene
             }
         }
     }

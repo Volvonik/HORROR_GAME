@@ -399,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.7
+      value: -26
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -503,7 +503,7 @@ MonoBehaviour:
   legDropSFX: {fileID: 8300000, guid: f2b64e8c18fe6c0418faa7185f0e7023, type: 3}
   openLegsSFX: {fileID: 8300000, guid: 8332644d8837824438afdddd3cfddd5d, type: 3}
   hitByLegoSFX: {fileID: 8300000, guid: d678a9bfbaffb8d4a865d6eeed6f60cc, type: 3}
-  lastCheckpointMusic: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
   tinok: {fileID: 3964522570983770079, guid: 0b9d2092652859349883e98cc1a372ec, type: 3}
   flashlightLayer:
     serializedVersion: 2
@@ -520,13 +520,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   isPlayerLookingAtDino: 0
-  visionLength: 2
+  visionLength: 3
   visionRotations:
   - {fileID: 620067357401370556}
   - {fileID: 3014653870189836403}
   - {fileID: 3873397827624206154}
   - {fileID: 3148318104865962998}
   - {fileID: 5932791884493548478}
+  baby_scary: {fileID: 0}
 --- !u!82 &5008558438603710053
 AudioSource:
   m_ObjectHideFlags: 0
