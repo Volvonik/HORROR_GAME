@@ -150,10 +150,7 @@ public class move_water : MonoBehaviour
             release = false;
         }
         
-        if(pickupGO == null)
-        {
-            print("null");
-        }
+       
         
     }
     void FixedUpdate()
