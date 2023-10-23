@@ -15,6 +15,7 @@ TagManager:
   - Bouncy
   - LegoArena
   - hand
+  - Dino
   layers:
   - Default
   - TransparentFX

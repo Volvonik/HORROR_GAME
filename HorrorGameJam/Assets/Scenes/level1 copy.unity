@@ -24773,7 +24773,7 @@ GameObject:
   - component: {fileID: 398146354}
   m_Layer: 2
   m_Name: EatTrigger
-  m_TagString: Respawn
+  m_TagString: Dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24827,7 +24827,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5007219
+  m_Radius: 0.53
 --- !u!1 &435210137
 GameObject:
   m_ObjectHideFlags: 0
@@ -51944,8 +51944,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0096000135, y: 0.0104500055, z: 0}
-    m_Extent: {x: 0.9862, y: 0.76645, z: 0}
+    m_Center: {x: -0.003700018, y: 0.008750021, z: 0}
+    m_Extent: {x: 0.9864, y: 0.76545, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
