@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PanasEManager : MonoBehaviour
 {
+    public bool spawnWithoutPlayer = false;
+
     [SerializeField] GameObject panasE;
     [SerializeField] float xPosition;
     [SerializeField] float[] yPositionBorders;
@@ -25,7 +27,7 @@ public class PanasEManager : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
         if (stopSpawning)
         {
             timer = 0;
@@ -34,16 +36,19 @@ public class PanasEManager : MonoBehaviour
         }
 
         timer += Time.deltaTime;
+
         if(timer > random)
         {
             Spawn();
         }
     }
 
+
     private void Spawn()
     {
-        if(FindObjectOfType<move_water>() == null)
+        if(FindObjectOfType<move_water>() == null && spawnWithoutPlayer)
         {
+            SpawnWithoutPlayer();
             return;
         }
 
@@ -70,6 +75,18 @@ public class PanasEManager : MonoBehaviour
         Vector3 prefabPosition = new Vector3(currentXPosition, currentYPosition, 0f);
         Instantiate(panasE, prefabPosition, Quaternion.identity);
 
+        timer = 0;
+    }
+
+    private void SpawnWithoutPlayer()
+    {
+        float currentXPosition = xPosition;
+        float currentYPosition = Random.Range(yPositionBorders[0], yPositionBorders[1]);
+
+        Vector3 prefabPosition = new Vector3(currentXPosition, currentYPosition, 0f);
+        Instantiate(panasE, prefabPosition, Quaternion.identity);
+
+        random = Random.Range(spawnDelays[0], spawnDelays[1]);
         timer = 0;
     }
 }

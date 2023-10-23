@@ -18,6 +18,18 @@ public class Panasye : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(FindObjectOfType<PanasEManager>().spawnWithoutPlayer)
+        {
+            transform.Translate(-transform.right * moveSpeed);
+
+            if(transform.position.x < -10)
+            {
+                Destroy(gameObject);
+            }
+
+            return;
+        }
+
         if(goDown)
         {
             transform.Translate(transform.up * moveSpeed * 1.5f);
