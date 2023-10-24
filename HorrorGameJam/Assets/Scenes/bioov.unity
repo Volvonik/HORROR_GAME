@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 62422120}
   - component: {fileID: 62422119}
-  - component: {fileID: 62422118}
   - component: {fileID: 62422121}
   - component: {fileID: 62422122}
   m_Layer: 0
@@ -143,14 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &62422118
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62422117}
-  m_Enabled: 1
 --- !u!20 &62422119
 Camera:
   m_ObjectHideFlags: 0
@@ -186,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -234,7 +225,7 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 0
-  m_BlendUpdateMethod: 0
+  m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -395,7 +386,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1042894258}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
