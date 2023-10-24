@@ -14,7 +14,14 @@ public class PauseMenuScript : MonoBehaviour
         {
             if(isAllowedToPause || SceneManager.GetActiveScene().buildIndex == 1) //So u'll always be allowed to pause in the happy scene
             {
-                Pause();
+                if(optionsMenu.activeInHierarchy)
+                {
+                    BackFromOptions();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
