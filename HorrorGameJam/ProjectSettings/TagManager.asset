@@ -17,6 +17,7 @@ TagManager:
   - hand
   - Dino
   - pickup
+  - Food
   layers:
   - Default
   - TransparentFX
