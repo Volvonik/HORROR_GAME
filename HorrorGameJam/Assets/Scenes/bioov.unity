@@ -298,6 +298,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOB_Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 7120764367363218816, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120764367363218816, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_RootOrder
       value: 2
