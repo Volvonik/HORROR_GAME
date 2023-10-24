@@ -9,6 +9,14 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField]
     GameObject duck;
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
+        {
+            Back();
+        }
+    }
+
     public void Play()
     {
         transition.SetActive(true);
