@@ -15,7 +15,6 @@ public class DinoScript : MonoBehaviour
 
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float eatingTime = 3f;
-    float eatingTimeCounter;
 
     bool stopMoving;
     [SerializeField] AudioClip eatingSFX;
@@ -29,7 +28,7 @@ public class DinoScript : MonoBehaviour
 
     bool playerFacingRight;
     bool isPlayerFacingDino;
-    bool dontCareAboutPlayer;
+    //bool dontCareAboutPlayer;
 
     [SerializeField] float maxXDistanceToFollow = 6f;
 
@@ -50,11 +49,19 @@ public class DinoScript : MonoBehaviour
             return;
         }
 
-        if(dontCareAboutPlayer)
-        { 
-            rb.velocity = Vector2.zero;
+        /*if(dontCareAboutPlayer)
+        {
+            Debug.Log(actualEatTrigger.gameObject.activeInHierarchy);
+            if(actualEatTrigger.gameObject.activeInHierarchy)
+            {
+                followPlayer = false;
+            }
+            else
+            {
+                followPlayer = true;
+            }
             return;
-        }
+        }*/
 
         playerFacingRight = Mathf.Abs(playerScript.transform.rotation.y) != 0;
         float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
@@ -108,7 +115,7 @@ public class DinoScript : MonoBehaviour
             animator.SetBool("isEating", true);
             //MakeASound(eatingSFX);
 
-            dontCareAboutPlayer = true;
+            //dontCareAboutPlayer = true;
 
             Invoke("EnableEatCollider", 0.5f);
         }
@@ -157,13 +164,14 @@ public class DinoScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        dontCareAboutPlayer = false;
+        //dontCareAboutPlayer = false;
+
         stopMoving = false;
         animator.SetBool("isEating", false);
 
         if(other.CompareTag("Food") || other.CompareTag("pickup"))
         {
-            Destroy(other.transform.parent.gameObject);
+            Destroy(other.GetComponentInParent<SpriteRenderer>().gameObject);
             FindObjectOfType<move_water>().GetComponent<AudioSource>().PlayOneShot(duckDieSFX);
         }
 
