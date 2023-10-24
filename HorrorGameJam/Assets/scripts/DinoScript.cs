@@ -15,13 +15,9 @@ public class DinoScript : MonoBehaviour
     [SerializeField] float eatingTime = 3f;
 
     bool isEating;
-    bool stopMoving;
     [SerializeField] AudioClip eatingSFX;
     [SerializeField] AudioClip idleSFX;
     [SerializeField] AudioClip runningSFX;
-
-    [SerializeField] Collider2D startEatTrigger;
-    [SerializeField] Collider2D actualEatTrigger;
 
     Vector2 direction;
 
@@ -50,7 +46,7 @@ public class DinoScript : MonoBehaviour
         float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
         isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
 
-        if(stopMoving)
+        if(isEating)
         {
             followPlayer = false;
         }
@@ -69,7 +65,7 @@ public class DinoScript : MonoBehaviour
     {
         if (Mathf.Abs(rb.velocity.x) > 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * -4f, transform.localScale.y);
+            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * -1.5f, transform.localScale.y);
         }
     }
 
@@ -80,26 +76,13 @@ public class DinoScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player") || other.CompareTag("Food"))
+        if(other.CompareTag("Player") || other.CompareTag("pickup"))
         {
             isEating = true;
             animator.SetBool("isEating", true);
             //MakeASound(eatingSFX);
-
-            if(other.CompareTag("Food"))
-            {
-                stopMoving = true;
-                Invoke("StopEating", eatingTime);
-            }
-            
-            Invoke("EnableEatCollider", 0.5f);
+            Invoke("StopEating", eatingTime);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        StopEating();
-        actualEatTrigger.gameObject.SetActive(false);
     }
 
     void FollowPlayer()
@@ -132,13 +115,7 @@ public class DinoScript : MonoBehaviour
     void StopEating()
     {
         isEating = false;
-        stopMoving = false;
         animator.SetBool("isEating", false);
-    }
-
-    void EnableEatCollider()
-    {
-        actualEatTrigger.gameObject.SetActive(true);
     }
 
     void MakeASound(AudioClip sfx)
