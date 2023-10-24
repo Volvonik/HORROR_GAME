@@ -1,6 +1,5 @@
 using Cinemachine;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -288,7 +287,7 @@ public class move_water : MonoBehaviour
             fishSpawner.inBallsPool = true;
         }
 
-        else if(other.CompareTag("Respawn"))
+        else if(other.CompareTag("Respawn") || other.CompareTag("Dino"))
         {
             audioSource.PlayOneShot(deathSFX);
             babyd();
