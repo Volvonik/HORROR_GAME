@@ -19838,7 +19838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &313523731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26598,12 +26598,12 @@ GameObject:
   - component: {fileID: 398146353}
   - component: {fileID: 398146354}
   m_Layer: 2
-  m_Name: EatTrigger
+  m_Name: ActualEatTrigger
   m_TagString: Dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &398146353
 Transform:
   m_ObjectHideFlags: 0
@@ -28711,7 +28711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.06, y: 4.9, z: -10}
+  m_LocalPosition: {x: 14.25, y: 4.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47662,7 +47662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050627445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.06, y: 4.9, z: -10}
+  m_LocalPosition: {x: 14.25, y: 4.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59407,8 +59407,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 901606408}
-  - {fileID: 398146353}
   - {fileID: 1673680434}
+  - {fileID: 398146353}
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61758,8 +61758,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.007850021, y: 0.01365, z: 0}
-    m_Extent: {x: 0.98144996, y: 0.77055, z: 0}
+    m_Center: {x: -0.0075000226, y: 0.014200002, z: 0}
+    m_Extent: {x: 0.9833, y: 0.76629996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61853,7 +61853,7 @@ GameObject:
   - component: {fileID: 1673680434}
   - component: {fileID: 1673680433}
   m_Layer: 2
-  m_Name: oz start eat
+  m_Name: StartEatTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78949,7 +78949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.06
+      value: 14.25
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y

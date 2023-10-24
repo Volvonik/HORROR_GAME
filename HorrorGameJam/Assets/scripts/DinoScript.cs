@@ -23,6 +23,7 @@ public class DinoScript : MonoBehaviour
 
     [SerializeField] Collider2D startEatTrigger;
     [SerializeField] Collider2D actualEatTrigger;
+    [SerializeField] GameObject foodDetector;
 
     Vector2 direction;
 
@@ -50,21 +51,24 @@ public class DinoScript : MonoBehaviour
         float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
         isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
 
-<<<<<<< HEAD
+        float yDistanceBetweenDinoAndPlayer = playerScript.transform.position.y - transform.position.y;
+
         if(stopMoving)
-=======
-        if (stopMoving)
->>>>>>> c819aee438cb02849444b59a7fa57cdd057f54b6
         {
             followPlayer = false;
         }
-        else
-        {
-            followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
 
-            direction = playerScript.gameObject.transform.position - transform.position;
+        else if(xDistanceBetweenDinoAndPlayer < 4f && Mathf.Abs(yDistanceBetweenDinoAndPlayer) > 3f)
+        {
+            followPlayer = true;
         }
 
+        else
+        {
+            direction = playerScript.gameObject.transform.position - transform.position;
+
+            followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
+        }
 
         FlipSprite();
     }
