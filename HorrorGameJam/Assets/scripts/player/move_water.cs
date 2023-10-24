@@ -379,6 +379,13 @@ public class move_water : MonoBehaviour
             audioSource.PlayOneShot(hitByLegoSFX);
             FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
         }
+        if(other.gameObject.CompareTag("Finish"))
+        {
+            transition.SetActive(true);
+            Invoke("loadscene", 2.1f);
+            
+            
+        }
     }
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
@@ -405,6 +412,7 @@ public class move_water : MonoBehaviour
     {
         disableControls = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
     private void starthand()
     {
@@ -442,5 +450,9 @@ public class move_water : MonoBehaviour
     void CaveShake()
     {
         FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Cave").GetComponent<CinemachineImpulseSource>());
+    }
+    void loadscene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
