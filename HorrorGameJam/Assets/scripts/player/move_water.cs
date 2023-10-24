@@ -26,8 +26,6 @@ public class move_water : MonoBehaviour
     float defaultGravityScale;
     [SerializeField] float timeUntilScreenShakeInBabyCutscene = 3.8f;
     [SerializeField] AudioClip caveShakeSFX;
-    [SerializeField] GameObject caveParticles;
-    GameObject caveParticleSystem;
 
     [Header("Audio")]
     [SerializeField] AudioClip BabyRunAway;
@@ -64,6 +62,10 @@ public class move_water : MonoBehaviour
     [SerializeField]
     GameObject baby_scary;
 
+    [Header("Pickup")]
+    GameObject pickupObject;
+    [SerializeField] GameObject pickupPosition;
+    bool delay;
 
     void Start()
     {
@@ -128,14 +130,20 @@ public class move_water : MonoBehaviour
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
         }
 
-        if(caveParticleSystem != null)
+        if(pickupObject == null)
         {
-            if(!caveParticleSystem.GetComponent<ParticleSystem>().isPlaying)
-            {
-                Destroy(caveParticleSystem);
-            }
+            return;
         }
-        
+
+        pickupObject.transform.position = pickupPosition.transform.position;
+
+
+        if(Input.GetKeyDown("space") && delay)
+        {
+            pickupObject.GetComponent<Collider2D>().enabled = true;
+            pickupObject = null;
+            delay = false;
+        }
     }
     void FixedUpdate()
     {
@@ -347,6 +355,19 @@ public class move_water : MonoBehaviour
             fishSpawner.inLegoArena = true;
             fishSpawner.stopSpawning = false;
         }
+
+        if (other.CompareTag("pickup") && Input.GetKeyDown("space"))
+        {
+            pickupObject = other.gameObject;
+            Invoke("Delay", 0.1f);
+            other.gameObject.GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
+
+    void Delay()
+    {
+        delay = true;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -422,6 +443,5 @@ public class move_water : MonoBehaviour
     void CaveShake()
     {
         FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Cave").GetComponent<CinemachineImpulseSource>());
-        caveParticleSystem = Instantiate(caveParticles);
     }
 }

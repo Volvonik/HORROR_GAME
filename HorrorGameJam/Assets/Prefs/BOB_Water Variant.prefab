@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1262336321564012686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3612263000314790297}
+  m_Layer: 0
+  m_Name: PickupObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3612263000314790297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262336321564012686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.186, y: 0.123, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5837784787732587068}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2028532246960566853
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: cc36131c9baa7004d9d83b534ff3866e, type: 3}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -444,6 +475,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3765270325323940006}
+    - targetCorrespondingSourceObject: {fileID: 8744853148280033463, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3612263000314790297}
     - targetCorrespondingSourceObject: {fileID: 3033361311525499081, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3019297629480672950}
@@ -499,8 +533,7 @@ MonoBehaviour:
   transition: {fileID: 0}
   creepyBobCutscene: {fileID: 5879279876364127161, guid: a33491a530c1ea44c8168eee9bab0c8f, type: 3}
   timeUntilScreenShakeInBabyCutscene: 6
-  caveShakeSFX: {fileID: 8300000, guid: d137c314df81d94498f6e225e1f06cc0, type: 3}
-  caveParticles: {fileID: 0}
+  caveShakeSFX: {fileID: 8300000, guid: 549e1c1f62578144795050d798fd8dd2, type: 3}
   BabyRunAway: {fileID: 8300000, guid: feca1a762178ed94683f25302956a0d4, type: 3}
   defaultTheme: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
   legDropSFX: {fileID: 8300000, guid: f2b64e8c18fe6c0418faa7185f0e7023, type: 3}
@@ -531,6 +564,7 @@ MonoBehaviour:
   - {fileID: 3148318104865962998}
   - {fileID: 5932791884493548478}
   baby_scary: {fileID: 0}
+  pickupPosition: {fileID: 1262336321564012686}
 --- !u!82 &5008558438603710053
 AudioSource:
   m_ObjectHideFlags: 0

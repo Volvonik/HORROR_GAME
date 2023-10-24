@@ -16,7 +16,7 @@ TagManager:
   - LegoArena
   - hand
   - Dino
-  - Food
+  - pickup
   layers:
   - Default
   - TransparentFX

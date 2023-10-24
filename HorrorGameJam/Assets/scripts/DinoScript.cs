@@ -29,7 +29,7 @@ public class DinoScript : MonoBehaviour
     void Awake()
     {
         playerScript = FindObjectOfType<move_water>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -54,8 +54,6 @@ public class DinoScript : MonoBehaviour
         {
             followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
 
-            //animator.SetBool("isRunning", followPlayer);
-
             direction = playerScript.gameObject.transform.position - transform.position;
         }
 
@@ -78,10 +76,10 @@ public class DinoScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player") || other.CompareTag("Food"))
+        if(other.CompareTag("Player") || other.CompareTag("pickup"))
         {
             isEating = true;
-            //animator.SetBool("isEating", true);
+            animator.SetBool("isEating", true);
             //MakeASound(eatingSFX);
             Invoke("StopEating", eatingTime);
         }
@@ -94,6 +92,13 @@ public class DinoScript : MonoBehaviour
             //MakeASound(idleSFX);
 
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+
+            if (!isEating)
+            {
+                animator.speed = 0f;
+            }
+
         }
 
         if (followPlayer)
@@ -102,13 +107,15 @@ public class DinoScript : MonoBehaviour
 
             Vector2 finalMoveSpeed = direction.normalized * moveSpeed;
             GetComponent<Rigidbody2D>().velocity = finalMoveSpeed;
+
+            animator.speed = 1f;
         }
     }
 
     void StopEating()
     {
         isEating = false;
-        //animator.SetBool("isEating", false);
+        animator.SetBool("isEating", false);
     }
 
     void MakeASound(AudioClip sfx)
