@@ -57315,7 +57315,7 @@ MonoBehaviour:
       m_CornerMode: 1
     - position: {x: -13.681028, y: 3.9878595, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
-      rightTangent: {x: -0.010296822, y: -3.5965524, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
       mode: 2
       height: 1
       spriteIndex: 0
@@ -57353,16 +57353,24 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 165.47772, y: -0.18499039, z: 0}
-      leftTangent: {x: 0.0104522705, y: 3.6449785, z: 0}
-      rightTangent: {x: -0.0009613037, y: -0.34420806, z: 0}
+    - position: {x: 166.16765, y: -5.649876, z: 0}
+      leftTangent: {x: 0.0104522705, y: 3.6449735, z: 0}
+      rightTangent: {x: -0.0005950928, y: -0.21887922, z: 0}
+      mode: 1
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 146.81593, y: -6.5173726, z: 0}
+      leftTangent: {x: 9.814178, y: 0.38271856, z: 0}
+      rightTangent: {x: -5.6193695, y: -0.2187891, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
     - position: {x: 131.09665, y: -8.0062275, z: 0}
-      leftTangent: {x: 13.734924, y: 6.4024515, z: 0}
+      leftTangent: {x: 5.000992, y: 2.3311877, z: 0}
       rightTangent: {x: -1.1860199, y: -0.55294037, z: 0}
       mode: 1
       height: 1
@@ -57402,7 +57410,7 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
     - position: {x: -13.802395, y: -38.43466, z: 0}
-      leftTangent: {x: 0.013129234, y: 4.587532, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: -16.921555, y: 0.48537827, z: 0}
       mode: 2
       height: 1
@@ -57489,8 +57497,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -5.942871, y: -13.80105, z: 0}
-    m_Extent: {x: 171.45189, y: 24.633612, z: 0}
+    m_Center: {x: -5.613556, y: -13.80105, z: 0}
+    m_Extent: {x: 171.7812, y: 24.633612, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &1712822852
 Transform:
