@@ -379,6 +379,11 @@ public class move_water : MonoBehaviour
             audioSource.PlayOneShot(hitByLegoSFX);
             FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
         }
+        if(other.gameObject.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+            print("next scene");
+        }
     }
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
