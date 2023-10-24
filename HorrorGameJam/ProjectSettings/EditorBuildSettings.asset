@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/HappyPlace.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/level1 copy.unity
-    guid: 2de30f4e7dc6a9743951f0a4c8a59e63
+    path: Assets/Scenes/level one.unity
+    guid: fae5cafa399991a4bbb917db488cb973
   m_configObjects: {}
