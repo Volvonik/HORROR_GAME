@@ -15,6 +15,7 @@ public class DinoScript : MonoBehaviour
     [SerializeField] float eatingTime = 3f;
 
     bool isEating;
+    bool stopMoving;
     [SerializeField] AudioClip eatingSFX;
     [SerializeField] AudioClip idleSFX;
     [SerializeField] AudioClip runningSFX;
@@ -46,7 +47,7 @@ public class DinoScript : MonoBehaviour
         float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
         isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
 
-        if(isEating)
+        if(stopMoving)
         {
             followPlayer = false;
         }
