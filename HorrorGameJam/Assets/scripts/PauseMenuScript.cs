@@ -5,6 +5,7 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject optionsMenu;
+    [SerializeField] GameObject transition;
     public bool isAllowedToPause = true;
     bool isPaused;
 
@@ -81,7 +82,14 @@ public class PauseMenuScript : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
+        transition.SetActive(true);
+
+        
+    }
+    private void menu2()
+    {
+       
         SceneManager.LoadScene(0);
     }
 
