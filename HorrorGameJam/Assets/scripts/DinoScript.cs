@@ -29,6 +29,7 @@ public class DinoScript : MonoBehaviour
 
     bool playerFacingRight;
     bool isPlayerFacingDino;
+    bool dontCareAboutPlayer;
 
     [SerializeField] float maxXDistanceToFollow = 6f;
 
@@ -49,6 +50,12 @@ public class DinoScript : MonoBehaviour
             return;
         }
 
+        if(dontCareAboutPlayer)
+        { 
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         playerFacingRight = Mathf.Abs(playerScript.transform.rotation.y) != 0;
         float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
         isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
@@ -60,7 +67,7 @@ public class DinoScript : MonoBehaviour
             followPlayer = false;
         }
 
-        else if(xDistanceBetweenDinoAndPlayer < 4f && Mathf.Abs(yDistanceBetweenDinoAndPlayer) > 3f)
+        else if(Mathf.Abs(xDistanceBetweenDinoAndPlayer) < 4f && Mathf.Abs(yDistanceBetweenDinoAndPlayer) > 3f)
         {
             followPlayer = true;
         }
@@ -72,14 +79,20 @@ public class DinoScript : MonoBehaviour
             followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
         }
 
-        FlipSprite();
+        FlipSprite(xDistanceBetweenDinoAndPlayer);
     }
 
-    private void FlipSprite()
+    private void FlipSprite(float xDistance)
     {
-        if (Mathf.Abs(rb.velocity.x) > 0)
+        if(stopMoving) { return; }
+
+        if(xDistance > 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * -4f, transform.localScale.y);
+            transform.localScale = new Vector2(-4, 4);
+        }
+        else
+        {
+            transform.localScale = new Vector2(4, 4);
         }
     }
 
@@ -94,6 +107,8 @@ public class DinoScript : MonoBehaviour
         {
             animator.SetBool("isEating", true);
             //MakeASound(eatingSFX);
+
+            dontCareAboutPlayer = true;
 
             Invoke("EnableEatCollider", 0.5f);
         }
@@ -121,14 +136,13 @@ public class DinoScript : MonoBehaviour
 
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            if (!stopMoving)
+            if (!stopMoving && !animator.GetBool("isEating"))
             {
                 animator.speed = 0f;
             }
 
         }
-
-        if (followPlayer)
+        else
         {
             //MakeASound(runningSFX);
 
@@ -143,6 +157,7 @@ public class DinoScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+        dontCareAboutPlayer = false;
         stopMoving = false;
         animator.SetBool("isEating", false);
 
