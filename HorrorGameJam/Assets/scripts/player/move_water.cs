@@ -288,7 +288,7 @@ public class move_water : MonoBehaviour
             fishSpawner.inBallsPool = true;
         }
 
-        else if(other.CompareTag("Respawn"))
+        else if(other.CompareTag("Respawn") || other.CompareTag("Dino"))
         {
             audioSource.PlayOneShot(deathSFX);
             babyd();

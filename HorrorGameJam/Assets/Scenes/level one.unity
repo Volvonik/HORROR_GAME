@@ -19950,7 +19950,7 @@ Transform:
   m_Children:
   - {fileID: 487485898}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321936908
 GameObject:
@@ -26598,7 +26598,7 @@ GameObject:
   - component: {fileID: 398146353}
   - component: {fileID: 398146354}
   m_Layer: 2
-  m_Name: EatTrigger
+  m_Name: ActualEatTrigger
   m_TagString: Dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26612,7 +26612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398146352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.534, y: -0.106, z: 0}
+  m_LocalPosition: {x: -0.268, y: -0.133, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26720,8 +26720,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24449998, y: -0.4106, z: 0}
-    m_Extent: {x: 0.2744, y: 0.213, z: 0}
+    m_Center: {x: -0.24059999, y: -0.41224998, z: 0}
+    m_Extent: {x: 0.273, y: 0.21335, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -27244,7 +27244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: -200, y: 0, z: -25.776001}
 --- !u!1 &427093128
 GameObject:
@@ -27487,7 +27487,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33.048}
 --- !u!1 &435210137
 GameObject:
@@ -27806,8 +27806,8 @@ GameObject:
   m_Component:
   - component: {fileID: 487485898}
   - component: {fileID: 487485899}
-  m_Layer: 0
-  m_Name: e
+  m_Layer: 12
+  m_Name: food
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27828,8 +27828,8 @@ Transform:
   m_Father: {fileID: 313523733}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &487485899
-BoxCollider2D:
+--- !u!58 &487485899
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -27860,19 +27860,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059058905, y: -0.02531138}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.5905919, y: 1.2024894}
-  m_EdgeRadius: 0
+  m_Radius: 0.37269866
 --- !u!1 &488172884
 GameObject:
   m_ObjectHideFlags: 0
@@ -28284,7 +28274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504539726
 GameObject:
@@ -48168,7 +48158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.267}
 --- !u!1 &1054379555
 GameObject:
@@ -55426,7 +55416,7 @@ Transform:
   - {fileID: 2094509280}
   - {fileID: 685270078}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312897749
 GameObject:
@@ -56730,7 +56720,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338253986
 GameObject:
@@ -59492,7 +59482,7 @@ Transform:
   - {fileID: 398146353}
   - {fileID: 1673680434}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1494037812
 CapsuleCollider2D:
@@ -60321,7 +60311,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545140569
 GameObject:
@@ -61780,7 +61770,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1654077659
 GameObject:
@@ -61848,8 +61838,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0045000017, y: 0.009000003, z: 0}
-    m_Extent: {x: 0.98899996, y: 0.7677, z: 0}
+    m_Center: {x: -0.002700001, y: 0.015249997, z: 0}
+    m_Extent: {x: 0.9914, y: 0.76535, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61943,7 +61933,7 @@ GameObject:
   - component: {fileID: 1673680434}
   - component: {fileID: 1673680433}
   m_Layer: 2
-  m_Name: oz start eat
+  m_Name: StartEatTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77647,7 +77637,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.041}
 --- !u!1 &2051011857
 GameObject:
@@ -78345,7 +78335,7 @@ Transform:
   m_Children:
   - {fileID: 399959607}
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097725304
 GameObject:
