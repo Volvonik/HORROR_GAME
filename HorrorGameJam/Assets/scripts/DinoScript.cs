@@ -32,6 +32,8 @@ public class DinoScript : MonoBehaviour
 
     [SerializeField] float maxXDistanceToFollow = 6f;
 
+    [SerializeField] AudioClip duckDieSFX;
+
     void Awake()
     {
         playerScript = FindObjectOfType<move_water>();
@@ -147,6 +149,7 @@ public class DinoScript : MonoBehaviour
         if(other.CompareTag("Food") || other.CompareTag("pickup"))
         {
             Destroy(other.transform.parent.gameObject);
+            FindObjectOfType<move_water>().GetComponent<AudioSource>().PlayOneShot(duckDieSFX);
         }
 
         yield return null;
