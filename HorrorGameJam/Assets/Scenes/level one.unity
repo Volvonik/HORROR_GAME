@@ -26720,8 +26720,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24449998, y: -0.4106, z: 0}
-    m_Extent: {x: 0.2744, y: 0.213, z: 0}
+    m_Center: {x: -0.23910001, y: -0.42125, z: 0}
+    m_Extent: {x: 0.2743, y: 0.21015, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -60162,6 +60162,7 @@ MonoBehaviour:
   runningSFX: {fileID: 0}
   startEatTrigger: {fileID: 1673680433}
   actualEatTrigger: {fileID: 398146354}
+  foodDetector: {fileID: 0}
   maxXDistanceToFollow: 24
 --- !u!212 &1494037810
 SpriteRenderer:
@@ -60884,8 +60885,8 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -200.9745, y: -98.868805, z: 0}
-      leftTangent: {x: 0.017929077, y: -0.000015258789, z: 0}
+    - position: {x: -200.15291, y: -98.97404, z: 0}
+      leftTangent: {x: 0.01789856, y: -0.000015258789, z: 0}
       rightTangent: {x: -0.06637573, y: 0.000015258789, z: 0}
       mode: 1
       height: 1
@@ -60911,14 +60912,6 @@ MonoBehaviour:
     - position: {x: -101.268555, y: -0.4701904, z: 0}
       leftTangent: {x: -2.0122986, y: -0.04241115, z: 0}
       rightTangent: {x: 14.062439, y: 0.29654375, z: 0}
-      mode: 1
-      height: 1
-      spriteIndex: 0
-      corner: 1
-      m_CornerMode: 1
-    - position: {x: -63.41778, y: 0.6112818, z: 0}
-      leftTangent: {x: -37.943516, y: -2.091191, z: 0}
-      rightTangent: {x: 2.0913925, y: 0.115267575, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
@@ -60956,17 +60949,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -77.24693, y: -36.58824, z: 0}
-      leftTangent: {x: 22.088219, y: -0.63443375, z: 0}
-      rightTangent: {x: -0.36052704, y: 0.010360718, z: 0}
-      mode: 1
-      height: 1
-      spriteIndex: 0
-      corner: 1
-      m_CornerMode: 1
-    - position: {x: -98.98704, y: -36.318775, z: 0}
-      leftTangent: {x: 20.588112, y: -0.34391403, z: 0}
-      rightTangent: {x: -3.5344162, y: 0.058998108, z: 0}
+    - position: {x: -92.70375, y: -37.18556, z: 0}
+      leftTangent: {x: 20.587791, y: -0.34389496, z: 0}
+      rightTangent: {x: -3.5345535, y: 0.059013367, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
@@ -61030,7 +61015,7 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1674515693
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Color: {r: 0.6933962, g: 0.8570634, b: 1, a: 0.2901961}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: f998619e80cc140439006e89986ef351, type: 3}
@@ -61044,8 +61029,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -127.77086, y: -48.39156, z: 0}
-    m_Extent: {x: 114.08983, y: 52.37942, z: 0}
+    m_Center: {x: -127.77086, y: -48.410084, z: 0}
+    m_Extent: {x: 114.08983, y: 52.397945, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &1540695853
 Transform:
@@ -62830,8 +62815,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0045000017, y: 0.009000003, z: 0}
-    m_Extent: {x: 0.98899996, y: 0.7677, z: 0}
+    m_Center: {x: -0.0020999908, y: 0.012050003, z: 0}
+    m_Extent: {x: 0.9903, y: 0.76815, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
