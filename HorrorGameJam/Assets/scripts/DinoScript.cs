@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class DinoScript : MonoBehaviour
@@ -14,8 +15,8 @@ public class DinoScript : MonoBehaviour
 
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float eatingTime = 3f;
+    float eatingTimeCounter;
 
-    bool isEating;
     bool stopMoving;
     [SerializeField] AudioClip eatingSFX;
     [SerializeField] AudioClip idleSFX;
@@ -23,7 +24,6 @@ public class DinoScript : MonoBehaviour
 
     [SerializeField] Collider2D startEatTrigger;
     [SerializeField] Collider2D actualEatTrigger;
-    [SerializeField] GameObject foodDetector;
 
     Vector2 direction;
 
@@ -90,25 +90,26 @@ public class DinoScript : MonoBehaviour
     {
         if (other.CompareTag("Player") ||  other.CompareTag("pickup"))
         {
-            isEating = true;
             animator.SetBool("isEating", true);
             //MakeASound(eatingSFX);
 
-            
-
             Invoke("EnableEatCollider", 0.5f);
         }
-        if (other.CompareTag("Food"))
+
+        if (actualEatTrigger.IsTouchingLayers(LayerMask.GetMask("food")))
         {
             stopMoving = true;
-            Invoke("StopEating", eatingTime);
+            StartCoroutine(StopEating(other.gameObject, eatingTime));
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        StopEating();
-        actualEatTrigger.gameObject.SetActive(false);
+        if(other.CompareTag("Player"))
+        {
+            StartCoroutine(StopEating(other.gameObject, 0f));
+            actualEatTrigger.gameObject.SetActive(false);
+        }
     }
     void FollowPlayer()
     {
@@ -118,8 +119,7 @@ public class DinoScript : MonoBehaviour
 
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-
-            if (!isEating)
+            if (!stopMoving)
             {
                 animator.speed = 0f;
             }
@@ -137,11 +137,19 @@ public class DinoScript : MonoBehaviour
         }
     }
 
-    void StopEating()
+    IEnumerator StopEating(GameObject other, float time)
     {
-        isEating = false;
+        yield return new WaitForSeconds(time);
+
         stopMoving = false;
         animator.SetBool("isEating", false);
+
+        if(other.CompareTag("Food") || other.CompareTag("pickup"))
+        {
+            Destroy(other.transform.parent.gameObject);
+        }
+
+        yield return null;
     }
 
     void EnableEatCollider()
