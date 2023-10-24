@@ -67,7 +67,7 @@ public class DinoScript : MonoBehaviour
     {
         if (Mathf.Abs(rb.velocity.x) > 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * 2, transform.localScale.y);
+            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x) * -1.5f, transform.localScale.y);
         }
     }
 

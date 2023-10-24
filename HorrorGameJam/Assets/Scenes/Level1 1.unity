@@ -54640,7 +54640,7 @@ SpriteRenderer:
   m_SortingLayerID: -835527665
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1213637168, guid: 267d007fe72eb6541954bfef786fa46b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -54660,7 +54660,7 @@ Transform:
   m_GameObject: {fileID: 1494037808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.28, y: 2.7, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 0.8768116}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 398146353}
@@ -56444,8 +56444,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0017499924, y: 0.014400005, z: 0}
-    m_Extent: {x: 0.98595, y: 0.7658, z: 0}
+    m_Center: {x: 0.0013499856, y: 0.008350015, z: 0}
+    m_Extent: {x: 0.98775, y: 0.76765, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
