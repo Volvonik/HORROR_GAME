@@ -19,15 +19,16 @@ public class END : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(story)
+        if(story && storyt)
         {
             story1.SetActive(true);
             storyt = false;
             
-            print("story enabled");
-            if (Input.GetButtonDown("space"))
+            //why no button works?
+            if (Input.GetKeyDown(KeyCode.Space) && !storyt)
             {
                 print("story2");
+                story1.SetActive(false);
                 story2.SetActive(true);
                 Invoke("Story", 0.2f);
                 if(storyt && Input.GetButtonDown("space"))
