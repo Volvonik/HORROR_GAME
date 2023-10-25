@@ -84,13 +84,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 1;
         transition.SetActive(true);
-
-        
+        Invoke("menu2", 2.1f);
     }
     private void menu2()
-    {
-       
+    { 
         SceneManager.LoadScene(0);
+        checkpoint.didsave = false;
     }
 
     public void GoToOptions()
