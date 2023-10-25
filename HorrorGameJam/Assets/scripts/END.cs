@@ -23,13 +23,17 @@ public class END : MonoBehaviour
         {
             story1.SetActive(true);
             storyt = false;
-            if(Input.GetButtonDown("space"))
+            
+            print("story enabled");
+            if (Input.GetButtonDown("space"))
             {
+                print("story2");
                 story2.SetActive(true);
                 Invoke("Story", 0.2f);
                 if(storyt && Input.GetButtonDown("space"))
                 {
                     SceneManager.LoadScene(0);
+                    print("finish!");
                 }
             }
         }
@@ -46,5 +50,6 @@ public class END : MonoBehaviour
     {
         story = true;
         storyt = true;
+        print("story");
     }
 }
