@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class move_water : MonoBehaviour
 {
+    [SerializeField] GameObject transition2;
+
     [Header("Components")]
     AudioSource audioSource;
     AudioSource audioManager;
@@ -376,7 +378,7 @@ public class move_water : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Finish"))
         {
-            transition.SetActive(true);
+            transition2.SetActive(true);
             Invoke("loadscene", 2.1f);
         }
     }
