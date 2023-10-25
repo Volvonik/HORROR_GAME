@@ -28725,7 +28725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398146352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.268, y: -0.133, z: 0}
+  m_LocalPosition: {x: -0.44, y: -0.133, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28761,11 +28761,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25999928, y: 0.000000030994325}
-  m_Size: {x: 0.4800042, y: 0.26334018}
+  m_Offset: {x: -0.34238395, y: -0.040175173}
+  m_Size: {x: 0.6447828, y: 0.40982503}
   m_Direction: 1
 --- !u!1 &399959606
 GameObject:
@@ -28834,8 +28834,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.23940001, y: -0.4205, z: 0}
-    m_Extent: {x: 0.27580002, y: 0.21040002, z: 0}
+    m_Center: {x: -0.2382, y: -0.4192, z: 0}
+    m_Extent: {x: 0.27249998, y: 0.21490002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -31329,7 +31329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -288.9, y: -28, z: -10}
+  m_LocalPosition: {x: -278.3, y: -28.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51143,7 +51143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050627445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -288.9, y: -28, z: -10}
+  m_LocalPosition: {x: -278.3, y: -28.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -64556,7 +64556,7 @@ MonoBehaviour:
   eatingSFX: {fileID: 0}
   idleSFX: {fileID: 0}
   runningSFX: {fileID: 0}
-  startEatTrigger: {fileID: 0}
+  startEatTrigger: {fileID: 398146354}
   actualEatTrigger: {fileID: 0}
   maxXDistanceToFollow: 100
   duckDieSFX: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
@@ -64621,7 +64621,7 @@ Transform:
   m_GameObject: {fileID: 1494037808}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -296.7, y: -21.4, z: 0}
-  m_LocalScale: {x: 4, y: -4, z: 1.5}
+  m_LocalScale: {x: 3, y: -4, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 901606408}
@@ -64661,9 +64661,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Offset: {x: -0.047612555, y: -0.23213461}
+  m_Size: {x: 1.0952265, y: 0.5357309}
+  m_Direction: 1
 --- !u!82 &1494037813
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67586,8 +67586,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005300015, y: 0.013099998, z: 0}
-    m_Extent: {x: 0.98730004, y: 0.77180004, z: 0}
+    m_Center: {x: -0.00395, y: 0.0097, z: 0}
+    m_Extent: {x: 0.97695, y: 0.7615, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -87275,6 +87275,10 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: dinoMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e9dad37c73261d4482360055abba437, type: 3}
+    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: baby_scary
       value: 
       objectReference: {fileID: 228393758}
@@ -87320,11 +87324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -288.9
+      value: -278.3
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28
+      value: -28.4
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.z

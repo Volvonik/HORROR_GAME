@@ -119,10 +119,16 @@ public class DinoScript : MonoBehaviour
 
             //dontCareAboutPlayer = true;
 
-            Invoke("EnableEatCollider", 0.5f);
+            //Invoke("EnableEatCollider", 0.5f);
         }
 
-        if (actualEatTrigger.IsTouchingLayers(LayerMask.GetMask("food")))
+        if (other.CompareTag("Food"))
+        {
+            stopMoving = true;
+            StartCoroutine(StopEating(other.gameObject, eatingTime));
+        }
+
+        if (startEatTrigger.IsTouchingLayers(LayerMask.GetMask("food")))
         {
             stopMoving = true;
             StartCoroutine(StopEating(other.gameObject, eatingTime));
@@ -134,7 +140,7 @@ public class DinoScript : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             StartCoroutine(StopEating(other.gameObject, 0f));
-            actualEatTrigger.gameObject.SetActive(false);
+            //actualEatTrigger.gameObject.SetActive(false);
         }
     }
     void FollowPlayer()

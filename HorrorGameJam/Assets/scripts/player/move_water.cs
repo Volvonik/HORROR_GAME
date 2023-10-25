@@ -36,6 +36,7 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip hitByLegoSFX;
     [SerializeField] AudioClip deathSFX;
     public static AudioClip lastCheckpointMusic;
+    [SerializeField] AudioClip dinoMusic;
     bool isPlayingDefaultMusic;
     bool openLegsOnce;
 
@@ -296,6 +297,15 @@ public class move_water : MonoBehaviour
         else if(other.CompareTag("DinoArena"))
         {
             dinoIsAllowedToFollowPlayer = true;
+
+            if (audioManager.clip == dinoMusic)
+            {
+                return;
+            }
+            audioManager.Stop();
+            audioManager.clip = dinoMusic;
+            audioManager.Play();
+            isPlayingDefaultMusic = false;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -323,6 +333,13 @@ public class move_water : MonoBehaviour
         {
             fishSpawner.inLegoArena = false;
             fishSpawner.stopSpawning = true;
+        }
+
+        else if(other.CompareTag("DinoArena"))
+        {
+            audioManager.Stop();
+            audioManager.clip = defaultTheme;
+            isPlayingDefaultMusic = true;
         }
     }
 
@@ -361,8 +378,6 @@ public class move_water : MonoBehaviour
         {
             transition.SetActive(true);
             Invoke("loadscene", 2.1f);
-            
-            
         }
     }
 
@@ -409,6 +424,8 @@ public class move_water : MonoBehaviour
         flashlightLight2D.SetActive(false);
 
         sp.enabled = false;
+
+        dinoIsAllowedToFollowPlayer = false;
 
         //Turns all of the audio sources off
         /*AudioSource[] everyAudioSource = FindObjectsOfType<AudioSource>();
