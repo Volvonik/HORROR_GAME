@@ -28780,7 +28780,7 @@ GameObject:
   - component: {fileID: 399959609}
   m_Layer: 0
   m_Name: exit
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28834,8 +28834,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.23940001, y: -0.4205, z: 0}
-    m_Extent: {x: 0.27580002, y: 0.21040002, z: 0}
+    m_Center: {x: -0.24669999, y: -0.41775, z: 0}
+    m_Extent: {x: 0.2737, y: 0.21945, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -67586,8 +67586,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005300015, y: 0.013099998, z: 0}
-    m_Extent: {x: 0.98730004, y: 0.77180004, z: 0}
+    m_Center: {x: -0.004999995, y: 0.014300019, z: 0}
+    m_Extent: {x: 0.9839, y: 0.76240003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
