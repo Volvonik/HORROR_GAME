@@ -1641,6 +1641,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &79367002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6934891096704666237, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+  m_PrefabInstance: {fileID: 2996657725544675113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &79497843
 GameObject:
   m_ObjectHideFlags: 0
@@ -28829,8 +28834,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24369998, y: -0.4207, z: 0}
-    m_Extent: {x: 0.27409998, y: 0.2111, z: 0}
+    m_Center: {x: -0.24315001, y: -0.41555, z: 0}
+    m_Extent: {x: 0.26955003, y: 0.21965002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -67484,8 +67489,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0036000013, y: 0.012250006, z: 0}
-    m_Extent: {x: 0.9918, y: 0.76515, z: 0}
+    m_Center: {x: 0.0013500154, y: 0.01394999, z: 0}
+    m_Extent: {x: 0.98295, y: 0.76255, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -72439,12 +72444,33 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
   m_PrefabInstance: {fileID: 2996657725544675113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 79367002}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0e16a755e256b24c8f0023fbe53aba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1873409235
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79367002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ad08730092274a45945a0dc6421c275, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1881205506
 GameObject:
   m_ObjectHideFlags: 0
@@ -87250,7 +87276,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6934891096704666237, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873409235}
   m_SourcePrefab: {fileID: 100100000, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
 --- !u!1001 &5118317591117138196
 PrefabInstance:

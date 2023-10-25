@@ -13,6 +13,7 @@ public class move_water : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sp;
     PanasEManager fishSpawner;
+    Animator animator;
 
     [Header("Movement")]
     bool disableControls;
@@ -74,6 +75,7 @@ public class move_water : MonoBehaviour
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
         sp = GetComponent<SpriteRenderer>();
         fishSpawner = FindObjectOfType<PanasEManager>();
+        animator = GetComponent<Animator>();
 
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
