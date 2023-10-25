@@ -61,7 +61,7 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject pickupPosition;
     bool delay;
 
-    public bool dinoIsAllowedToFollowPlayer = true; //After that we will create a trigger for dino arena
+    public bool dinoIsAllowedToFollowPlayer; //After that we will create a trigger for dino arena
                                                     //and then it will set to true but now its always true
 
     void Start()
@@ -291,6 +291,11 @@ public class move_water : MonoBehaviour
 
             FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
             audioManager.PlayOneShot(legDropSFX);
+        }
+
+        else if(other.CompareTag("DinoArena"))
+        {
+            dinoIsAllowedToFollowPlayer = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)

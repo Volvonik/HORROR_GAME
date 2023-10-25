@@ -11,7 +11,8 @@ public class DinoScript : MonoBehaviour
 
     bool canFollowPlayer;
     bool followPlayer;
-    
+
+    [SerializeField] float rotationSpeed = 40f;
 
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float eatingTime = 3f;
@@ -25,6 +26,7 @@ public class DinoScript : MonoBehaviour
     [SerializeField] Collider2D actualEatTrigger;
 
     Vector2 direction;
+    float angle;
 
     bool playerFacingRight;
     bool isPlayerFacingDino;
@@ -49,6 +51,9 @@ public class DinoScript : MonoBehaviour
             return;
         }
 
+        direction = playerScript.gameObject.transform.position - transform.position;
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 180;
+
         /*if(dontCareAboutPlayer)
         {
             Debug.Log(actualEatTrigger.gameObject.activeInHierarchy);
@@ -72,18 +77,23 @@ public class DinoScript : MonoBehaviour
         if(stopMoving)
         {
             followPlayer = false;
+            return;
         }
-
         else if(Mathf.Abs(xDistanceBetweenDinoAndPlayer) < 4f && Mathf.Abs(yDistanceBetweenDinoAndPlayer) > 3f)
         {
             followPlayer = true;
         }
-
         else
         {
-            direction = playerScript.gameObject.transform.position - transform.position;
-
             followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
+        }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.time / 100);
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.pitch = 1f;
+            audioSource.Play();
         }
 
         FlipSprite(xDistanceBetweenDinoAndPlayer);
@@ -93,14 +103,7 @@ public class DinoScript : MonoBehaviour
     {
         if(stopMoving) { return; }
 
-        if(xDistance > 0)
-        {
-            transform.localScale = new Vector2(-4, 4);
-        }
-        else
-        {
-            transform.localScale = new Vector2(4, 4);
-        }
+        transform.localScale = new Vector2(3, -Mathf.Sign(direction.x) * 4);
     }
 
     void FixedUpdate()
@@ -113,7 +116,6 @@ public class DinoScript : MonoBehaviour
         if (other.CompareTag("Player") ||  other.CompareTag("pickup"))
         {
             animator.SetBool("isEating", true);
-            //MakeASound(eatingSFX);
 
             //dontCareAboutPlayer = true;
 
@@ -139,8 +141,7 @@ public class DinoScript : MonoBehaviour
     {
         if (!followPlayer)
         {
-            //MakeASound(idleSFX);
-
+            
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
             if (!stopMoving && !animator.GetBool("isEating"))
@@ -151,8 +152,6 @@ public class DinoScript : MonoBehaviour
         }
         else
         {
-            //MakeASound(runningSFX);
-
             Vector2 finalMoveSpeed = direction.normalized * moveSpeed;
             GetComponent<Rigidbody2D>().velocity = finalMoveSpeed;
 
@@ -181,13 +180,5 @@ public class DinoScript : MonoBehaviour
     void EnableEatCollider()
     {
         actualEatTrigger.gameObject.SetActive(true);
-    }
-
-    void MakeASound(AudioClip sfx)
-    {
-        if (!audioSource.isPlaying)
-        {
-            audioSource.PlayOneShot(sfx);
-        }
     }
 }
