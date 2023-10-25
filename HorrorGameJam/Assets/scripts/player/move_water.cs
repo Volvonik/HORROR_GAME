@@ -61,6 +61,8 @@ public class move_water : MonoBehaviour
     GameObject pickupObject;
     [SerializeField] GameObject pickupPosition;
     bool delay;
+    [SerializeField]
+    GameObject transition2;
 
     public bool dinoIsAllowedToFollowPlayer; //After that we will create a trigger for dino arena
                                                     //and then it will set to true but now its always true
@@ -376,7 +378,8 @@ public class move_water : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Finish"))
         {
-            transition.SetActive(true);
+            print("next scene");
+            transition2.SetActive(true);
             Invoke("loadscene", 2.1f);
         }
     }
