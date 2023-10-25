@@ -53,13 +53,6 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject flashlightLight2D;
     [SerializeField] AudioClip flashLightSFX;
 
-    [Header("Dino Raycast")]
-    public bool dinoIsAllowedToFollowPlayer;
-    [SerializeField] LayerMask dinoLayer;
-    public bool isPlayerLookingAtDino;
-    [SerializeField] float visionLength;
-    [SerializeField] Transform[] visionRotations;
-
     [SerializeField]
     GameObject baby_scary;
 
@@ -67,6 +60,9 @@ public class move_water : MonoBehaviour
     GameObject pickupObject;
     [SerializeField] GameObject pickupPosition;
     bool delay;
+
+    public bool dinoIsAllowedToFollowPlayer = true; //After that we will create a trigger for dino arena
+                                                    //and then it will set to true but now its always true
 
     void Start()
     {
@@ -116,11 +112,19 @@ public class move_water : MonoBehaviour
     void Update()
     {
         moveInput = new Vector2(Input.GetAxis("Horizontal") * speed + force.x, Input.GetAxis("Vertical") * speed + force.y);
+        
+        if(moveInput == new Vector2(0, 0))
+        {
+            animator.speed = 0f;
+        }
+        else
+        {
+            animator.speed = 1f;
+        }
 
         FindObjectOfType<PauseMenuScript>().isAllowedToPause = !disableControls; //So if ur dead or ur in a cutscene u cant pause
 
         PickFlashLight();
-        //DinoCheck(); // There's the new system in the dino script
         FlipSprite();
 
         if (FindObjectOfType<ArmScript>() == null && !openLegsOnce)
@@ -139,7 +143,6 @@ public class move_water : MonoBehaviour
 
         pickupObject.transform.position = pickupPosition.transform.position;
 
-
         if(Input.GetKeyDown("space") && delay)
         {
             pickupObject.GetComponent<Collider2D>().enabled = true;
@@ -147,6 +150,7 @@ public class move_water : MonoBehaviour
             delay = false;
         }
     }
+
     void FixedUpdate()
     {
         if (disableControls)
@@ -161,6 +165,8 @@ public class move_water : MonoBehaviour
 
     void PickFlashLight()
     {
+        animator.SetBool("hasFlashLight", hasFlashlight);
+
         if (flashlightCheck == null) return;
 
         RaycastHit2D flashlightRaycast = Physics2D.Raycast(flashlightCheck.transform.position, -transform.right, raycastLength, flashlightLayer);
@@ -191,41 +197,6 @@ public class move_water : MonoBehaviour
         if(!disableControls)
         {
             flashlightLight2D.SetActive(hasFlashlight);
-        }
-
-        if (hasFlashlight)
-        {
-            sp.sprite = hasFlashlightSprite;
-            return;
-        }
-
-        sp.sprite = defaultSprite;
-    }
-
-    void DinoCheck()
-    {
-        if(!dinoIsAllowedToFollowPlayer)
-        {
-            return;
-        }
-
-        List<RaycastHit2D> visionRays = new List<RaycastHit2D>();
-        visionRays.Clear();
-
-        isPlayerLookingAtDino = false;
-
-        for (int i = 0; i < visionRotations.Length; i++)
-        {
-            RaycastHit2D visionRay = Physics2D.Raycast(transform.position, visionRotations[i].up, visionLength, dinoLayer);
-            visionRays.Add(visionRay);
-
-            Debug.DrawRay(transform.position, visionRotations[i].up * visionLength, Color.red);
-
-            if (visionRay)
-            {
-                isPlayerLookingAtDino = true;
-                Debug.Log("I see dino!");
-            }
         }
     }
 
@@ -430,7 +401,7 @@ public class move_water : MonoBehaviour
         disableControls = true;
         transition.SetActive(true);
 
-        
+        flashlightLight2D.SetActive(false);
 
         sp.enabled = false;
 
