@@ -18,6 +18,7 @@ TagManager:
   - Dino
   - pickup
   - Food
+  - DinoArena
   layers:
   - Default
   - TransparentFX

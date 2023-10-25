@@ -28732,8 +28732,8 @@ Transform:
   m_Father: {fileID: 1494037811}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &398146354
-CircleCollider2D:
+--- !u!70 &398146354
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -28761,12 +28761,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.37849855, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.22515583
+  m_Offset: {x: -0.25999928, y: 0.000000030994325}
+  m_Size: {x: 0.4800042, y: 0.26334018}
+  m_Direction: 1
 --- !u!1 &399959606
 GameObject:
   m_ObjectHideFlags: 0
@@ -28834,8 +28834,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24315001, y: -0.41555, z: 0}
-    m_Extent: {x: 0.26955003, y: 0.21965002, z: 0}
+    m_Center: {x: -0.23940001, y: -0.4205, z: 0}
+    m_Extent: {x: 0.27580002, y: 0.21040002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -31329,7 +31329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -274.5, y: -28, z: -10}
+  m_LocalPosition: {x: -288.9, y: -28, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51143,7 +51143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050627445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -274.5, y: -28, z: -10}
+  m_LocalPosition: {x: -288.9, y: -28, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -64550,14 +64550,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bfc9ba6b062f84ebf8462f7d7219b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 40
   moveSpeed: 6
-  eatingTime: 3
+  eatingTime: 2
   eatingSFX: {fileID: 0}
   idleSFX: {fileID: 0}
   runningSFX: {fileID: 0}
   startEatTrigger: {fileID: 0}
-  actualEatTrigger: {fileID: 398146354}
-  maxXDistanceToFollow: 24
+  actualEatTrigger: {fileID: 0}
+  maxXDistanceToFollow: 100
   duckDieSFX: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
 --- !u!212 &1494037810
 SpriteRenderer:
@@ -64618,16 +64619,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494037808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -296.7, y: -21.4, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1.5}
+  m_LocalScale: {x: 4, y: -4, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 901606408}
   - {fileID: 398146353}
   m_Father: {fileID: 0}
   m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!70 &1494037812
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -64673,11 +64674,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a8fa129805e93c94ab1f7e8b1e701649, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Pitch: 0.14
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -65450,7 +65451,103 @@ MonoBehaviour:
   m_UTess2D: 1
   m_Creator: {fileID: 0}
   m_Modifiers: []
-  m_ColliderSegment: []
+  m_ColliderSegment:
+  - {x: -200.9745, y: -98.868805}
+  - {x: -202.28354, y: -99.09516}
+  - {x: -203.78801, y: -99.335556}
+  - {x: -205.75957, y: -99.6229}
+  - {x: -208.12357, y: -99.92884}
+  - {x: -210.80551, y: -100.22502}
+  - {x: -213.73062, y: -100.48298}
+  - {x: -216.82437, y: -100.67445}
+  - {x: -220.01212, y: -100.77098}
+  - {x: -223.21918, y: -100.744225}
+  - {x: -226.371, y: -100.565796}
+  - {x: -229.39288, y: -100.207306}
+  - {x: -232.21025, y: -99.640396}
+  - {x: -234.74844, y: -98.83669}
+  - {x: -236.93289, y: -97.7678}
+  - {x: -238.58597, y: -96.49317}
+  - {x: -239.85223, y: -94.97194}
+  - {x: -240.7723, y: -93.25006}
+  - {x: -241.38667, y: -91.373505}
+  - {x: -241.7359, y: -89.38817}
+  - {x: -241.86069, y: -87.34005}
+  - {x: -241.80144, y: -85.275024}
+  - {x: -241.59888, y: -83.23909}
+  - {x: -241.29347, y: -81.27817}
+  - {x: -240.92581, y: -79.43822}
+  - {x: -240.53647, y: -77.76517}
+  - {x: -240.16602, y: -76.30495}
+  - {x: -239.85504, y: -75.103516}
+  - {x: -239.64409, y: -74.20683}
+  - {x: -239.57376, y: -73.660805}
+  - {x: -237.83792, y: -72.69669}
+  - {x: -232.94829, y: -70.05083}
+  - {x: -225.38591, y: -65.98222}
+  - {x: -215.63187, y: -60.749912}
+  - {x: -204.16716, y: -54.612892}
+  - {x: -191.47293, y: -47.83024}
+  - {x: -178.03014, y: -40.66092}
+  - {x: -164.31995, y: -33.364}
+  - {x: -150.82333, y: -26.198479}
+  - {x: -138.0214, y: -19.423391}
+  - {x: -126.39514, y: -13.297752}
+  - {x: -116.425705, y: -8.080591}
+  - {x: -108.59407, y: -4.0309277}
+  - {x: -103.38133, y: -1.4077863}
+  - {x: -101.268555, y: -0.4701904}
+  - {x: -98.8085, y: -0.43077087}
+  - {x: -96.958145, y: -0.42520347}
+  - {x: -95.57468, y: -0.44459885}
+  - {x: -94.51534, y: -0.4800677}
+  - {x: -92.79785, y: -0.5636683}
+  - {x: -91.854126, y: -0.5940213}
+  - {x: -90.66341, y: -0.60489047}
+  - {x: -89.08287, y: -0.5873863}
+  - {x: -86.96974, y: -0.5326194}
+  - {x: -84.18124, y: -0.43170062}
+  - {x: -80.57458, y: -0.27574039}
+  - {x: -76.00697, y: -0.055849463}
+  - {x: -70.33563, y: 0.23686144}
+  - {x: -63.41778, y: 0.6112818}
+  - {x: -62.419735, y: 0.6743841}
+  - {x: -60.372597, y: 0.80999}
+  - {x: -57.442066, y: 1.0067086}
+  - {x: -49.593555, y: 1.5379208}
+  - {x: -40.19971, y: 2.176894}
+  - {x: -26.110987, y: 3.1380658}
+  - {x: -13.681028, y: 3.9878595}
+  - {x: -13.802395, y: -38.43466}
+  - {x: -20.94835, y: -38.22844}
+  - {x: -32.863174, y: -37.881218}
+  - {x: -54.741707, y: -37.24105}
+  - {x: -63.791294, y: -36.977295}
+  - {x: -72.80093, y: -36.71626}
+  - {x: -77.24693, y: -36.58824}
+  - {x: -78.46835, y: -36.590195}
+  - {x: -80.00134, y: -36.582664}
+  - {x: -82.54429, y: -36.55921}
+  - {x: -84.28056, y: -36.539185}
+  - {x: -86.372604, y: -36.51238}
+  - {x: -88.85484, y: -36.477867}
+  - {x: -91.76171, y: -36.434715}
+  - {x: -95.12763, y: -36.381996}
+  - {x: -98.98704, y: -36.318775}
+  - {x: -100.901985, y: -37.105427}
+  - {x: -105.00395, y: -39.34052}
+  - {x: -110.949234, y: -42.801323}
+  - {x: -118.39418, y: -47.265137}
+  - {x: -126.99509, y: -52.509228}
+  - {x: -136.40834, y: -58.310905}
+  - {x: -146.29018, y: -64.44743}
+  - {x: -156.297, y: -70.696106}
+  - {x: -166.08508, y: -76.83421}
+  - {x: -175.31076, y: -82.63902}
+  - {x: -183.63037, y: -87.88785}
+  - {x: -190.70023, y: -92.35794}
+  - {x: -196.17664, y: -95.826614}
+  - {x: -200.9745, y: -98.868805}
 --- !u!1971053207 &1540695852
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -67489,8 +67586,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0013500154, y: 0.01394999, z: 0}
-    m_Extent: {x: 0.98295, y: 0.76255, z: 0}
+    m_Center: {x: -0.005300015, y: 0.013099998, z: 0}
+    m_Extent: {x: 0.98730004, y: 0.77180004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -84831,7 +84928,7 @@ GameObject:
   - component: {fileID: 2064002505}
   m_Layer: 0
   m_Name: LegoArena but for sharks
-  m_TagString: LegoArena
+  m_TagString: DinoArena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84865,7 +84962,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -84886,7 +84983,7 @@ PolygonCollider2D:
       - {x: 0.20018288, y: -0.2664163}
       - {x: 1.5024337, y: 0.2539822}
       - {x: 1.8629485, y: 1.319072}
-      - {x: 1.8507544, y: 2.7681422}
+      - {x: 1.8670388, y: 2.783672}
   m_UseDelaunayMesh: 0
 --- !u!4 &2064002506
 Transform:
@@ -87189,6 +87286,10 @@ PrefabInstance:
       propertyPath: flashlightText
       value: 
       objectReference: {fileID: 2115805054}
+    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: dinoIsAllowedToFollowPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2028532246960566853, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_Layer
       value: 14
@@ -87219,7 +87320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -274.5
+      value: -288.9
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y
