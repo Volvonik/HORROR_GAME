@@ -332,6 +332,10 @@ public class move_water : MonoBehaviour
         {
             dinoIsAllowedToFollowPlayer = true;
 
+            if(audioManager.isPlaying && audioManager.clip == dinoMusic)
+            {
+                return;
+            }
             audioManager.Stop();
             audioManager.clip = dinoMusic;
             audioManager.Play();
@@ -373,6 +377,10 @@ public class move_water : MonoBehaviour
             fishSpawner.inLegoArena = false;
             fishSpawner.stopSpawning = true;
 
+            if(FindObjectOfType<BabyScript>() == null)
+            {
+                return;
+            }
             Destroy(FindObjectOfType<BabyScript>().gameObject);
         }
     }

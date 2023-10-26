@@ -28384,8 +28384,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24019998, y: -0.4252, z: 0}
-    m_Extent: {x: 0.2733, y: 0.2105, z: 0}
+    m_Center: {x: -0.24020001, y: -0.41255, z: 0}
+    m_Extent: {x: 0.2754, y: 0.21215001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -30879,7 +30879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 4.7, z: -10}
+  m_LocalPosition: {x: 19.8, y: 4.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31981,7 +31981,7 @@ PrefabInstance:
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
-      objectReference: {fileID: 8300000, guid: 0e9dad37c73261d4482360055abba437, type: 3}
+      objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
     - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -50895,7 +50895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050627445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 4.7, z: -10}
+  m_LocalPosition: {x: 19.8, y: 4.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52711,8 +52711,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1571498, y: -2.2346, z: 0}
-    m_Extent: {x: 18.576849, y: 5.1698, z: 0}
+    m_Center: {x: -3.1582003, y: -2.2399, z: 0}
+    m_Extent: {x: 18.5691, y: 5.1713, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -64240,8 +64240,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -64801,8 +64801,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1719503, y: -4.40485, z: 0}
-    m_Extent: {x: 17.63095, y: 4.8496504, z: 0}
+    m_Center: {x: -3.1725998, y: -4.40695, z: 0}
+    m_Extent: {x: 17.6278, y: 4.8645496, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -67127,8 +67127,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005549997, y: 0.009550005, z: 0}
-    m_Extent: {x: 0.98535, y: 0.75815, z: 0}
+    m_Center: {x: -0.006399989, y: 0.013700008, z: 0}
+    m_Extent: {x: 0.986, y: 0.7654, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -83929,6 +83929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075443715}
+  - component: {fileID: 2075443716}
   m_Layer: 0
   m_Name: MusicStuff
   m_TagString: Untagged
@@ -83954,6 +83955,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2075443716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075443714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65f20854d8a7514281a4bf084f8608e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2076125883
 GameObject:
   m_ObjectHideFlags: 0
@@ -86093,7 +86106,7 @@ PrefabInstance:
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: dinoDeathSFX
       value: 
-      objectReference: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
+      objectReference: {fileID: 8300000, guid: 1f8b12db3d4c5334c8127fd8708596b0, type: 3}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: flashlightText
       value: 
@@ -86136,11 +86149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 19.8
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.z
