@@ -13,6 +13,7 @@ public class MainMenuScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
         {
+            GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
             Back();
         }
     }

@@ -31,8 +31,6 @@ public class options_menu : MonoBehaviour
         graphicsValue = value;
 
         QualitySettings.SetQualityLevel(value);
-
-        print(QualitySettings.GetQualityLevel());
     }
 
     public void changeresolution(int value)
@@ -55,8 +53,6 @@ public class options_menu : MonoBehaviour
         {
             Screen.SetResolution(1366, 768, true);
         }
-
-        print(Screen.currentResolution);
     }
 
     public void changefps(string value)
@@ -80,7 +76,7 @@ public class options_menu : MonoBehaviour
             Application.targetFrameRate = 10;
         }
 
-        print(Application.targetFrameRate);
+        GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
     }
 
     public void ChangeMasterVolume(float volume)

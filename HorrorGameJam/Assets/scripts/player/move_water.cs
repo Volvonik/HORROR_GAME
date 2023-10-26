@@ -10,7 +10,7 @@ public class move_water : MonoBehaviour
 
     [Header("Components")]
     AudioSource audioSource;
-    //AudioSource audioManager;
+    AudioSource audioManager;
     Rigidbody2D rb;
     SpriteRenderer sp;
     PanasEManager fishSpawner;
@@ -35,7 +35,7 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip legDropSFX;
     [SerializeField] AudioClip openLegsSFX;
     [SerializeField] AudioClip hitByLegoSFX;
-    public static AudioSource lastCheckpointMusic;
+    public static AudioClip lastCheckpointMusic;
     [SerializeField] AudioClip dinoMusic;
     bool isPlayingDefaultMusic;
     bool openLegsOnce;
@@ -76,7 +76,7 @@ public class move_water : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        //audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
         sp = GetComponent<SpriteRenderer>();
         fishSpawner = FindObjectOfType<PanasEManager>();
         animator = GetComponent<Animator>();
@@ -96,8 +96,12 @@ public class move_water : MonoBehaviour
         {
             transform.position = checkpoint.position;
 
-            StopAllMusic();
-            lastCheckpointMusic.Play();
+            audioManager.Stop();
+            audioManager.clip = lastCheckpointMusic;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //lastCheckpointMusic.gameObject.GetComponent<AudioSource>().Play();
 
             if (lastCheckpointMusic == defaultTheme)
             {
@@ -106,8 +110,12 @@ public class move_water : MonoBehaviour
         }
         else
         {
-            StopAllMusic();
-            defaultAudio.Play();
+            //StopAllMusic();
+            //defaultAudio.Play();
+
+            audioManager.Stop();
+            audioManager.clip = defaultTheme;
+            audioManager.Play();
 
             isPlayingDefaultMusic = true;
         }
@@ -295,8 +303,12 @@ public class move_water : MonoBehaviour
         {
             if(!isPlayingDefaultMusic) { return; }
 
-            StopAllMusic();
-            babyAudio.Play();
+            audioManager.Stop();
+            audioManager.clip = BabyRunAway;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //babyAudio.Play();
 
             isPlayingDefaultMusic = false;
         }
@@ -320,8 +332,12 @@ public class move_water : MonoBehaviour
         {
             dinoIsAllowedToFollowPlayer = true;
 
-            StopAllMusic();
-            dinoTheSharkAudio.Play();
+            audioManager.Stop();
+            audioManager.clip = dinoMusic;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //dinoTheSharkAudio.Play();
 
             isPlayingDefaultMusic = false;
         }
@@ -342,8 +358,12 @@ public class move_water : MonoBehaviour
         {
             if(isPlayingDefaultMusic || disableControls) { return; }
 
-            StopAllMusic();
-            defaultAudio.Play();
+            audioManager.Stop();
+            audioManager.clip = defaultTheme;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //defaultAudio.Play();
 
             isPlayingDefaultMusic = true;
         }
@@ -460,6 +480,7 @@ public class move_water : MonoBehaviour
 
     void CaveShake()
     {
+        audioSource.PlayOneShot(caveShakeSFX);
         FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Cave").GetComponent<CinemachineImpulseSource>());
     }
     void loadscene()
