@@ -35,7 +35,6 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip legDropSFX;
     [SerializeField] AudioClip openLegsSFX;
     [SerializeField] AudioClip hitByLegoSFX;
-    [SerializeField] AudioClip deathSFX;
     public static AudioSource lastCheckpointMusic;
     [SerializeField] AudioClip dinoMusic;
     bool isPlayingDefaultMusic;
@@ -69,8 +68,9 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject baby_scary;
     [SerializeField] Sprite babyImage;
     [SerializeField] Sprite dinoImage;
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField] AudioClip babyDeathSFX;
     [SerializeField] AudioClip dinoDeathSFX;
-
 
     void Start()
     {
@@ -91,7 +91,7 @@ public class move_water : MonoBehaviour
             Destroy(GameObject.Find("Flashlight"));
         }
 
-        checkpoint.didsave = false;
+        //checkpoint.didsave = false;
         if(checkpoint.didsave)
         {
             transform.position = checkpoint.position;
@@ -99,7 +99,7 @@ public class move_water : MonoBehaviour
             StopAllMusic();
             lastCheckpointMusic.Play();
 
-            if(lastCheckpointMusic == defaultTheme)
+            if (lastCheckpointMusic == defaultTheme)
             {
                 isPlayingDefaultMusic = true;
             }
@@ -284,13 +284,11 @@ public class move_water : MonoBehaviour
 
         else if(other.CompareTag("Respawn"))
         {
-            audioSource.PlayOneShot(deathSFX);
-            Jumpscare(babyImage);
+            Jumpscare(babyImage, babyDeathSFX);
         }
         else if(other.CompareTag("Dino"))
         {
-            audioSource.PlayOneShot(dinoDeathSFX);
-            Jumpscare(dinoImage);
+            Jumpscare(dinoImage, dinoDeathSFX);
         }
 
         else if(other.CompareTag("BabyRanaway"))
@@ -340,7 +338,7 @@ public class move_water : MonoBehaviour
             fishSpawner.inBallsPool = false;
         }
 
-        else if(other.CompareTag("BabyRanaway") || other.CompareTag("DinoArena"))
+        else if(other.CompareTag("BabyRanaway"))
         {
             if(isPlayingDefaultMusic || disableControls) { return; }
 
@@ -451,9 +449,10 @@ public class move_water : MonoBehaviour
         }*/
     }
 
-    private void Jumpscare(Sprite jumpscareImage)
+    private void Jumpscare(Sprite jumpscareImage, AudioClip sfx)
     {
         disableControls = true;
+        baby_scary.GetComponent<AudioSource>().clip = sfx;
         baby_scary.GetComponent<Image>().sprite = jumpscareImage;
         baby_scary.SetActive(true);
         Invoke("Die", 2f);
