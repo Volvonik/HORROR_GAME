@@ -8,34 +8,25 @@ public class END : MonoBehaviour
     [SerializeField] GameObject transition;
     [SerializeField] GameObject story1;
     [SerializeField] GameObject story2;
-    private bool story;
-    private bool storyt;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    bool inStory;
+    bool inSecondPage;
+
     void Update()
     {
-        if(story && storyt)
+
+        if (Input.GetKeyDown (KeyCode.Space) && inStory)
         {
-            story1.SetActive(true);
-            storyt = false;
-            
-            //why no button works?
-            if (Input.GetKeyDown(KeyCode.Space) && !storyt)
+            if(!inSecondPage) //swap pages
             {
-                print("story2");
                 story1.SetActive(false);
                 story2.SetActive(true);
-                Invoke("Story", 0.2f);
-                if(storyt && Input.GetButtonDown("space"))
-                {
-                    SceneManager.LoadScene(0);
-                    print("finish!");
-                }
+                inSecondPage = true;
+            }
+            
+            else
+            {
+                SceneManager.LoadScene(0);
             }
         }
     }
@@ -49,8 +40,7 @@ public class END : MonoBehaviour
     }
     void Story()
     {
-        story = true;
-        storyt = true;
-        print("story");
+        inStory = true;
+        story1.SetActive(true);
     }
 }

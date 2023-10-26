@@ -7,12 +7,9 @@ public class DinoScript : MonoBehaviour
     move_water playerScript;
     Animator animator;
     AudioSource audioSource;
-    Rigidbody2D rb;
 
     bool canFollowPlayer;
     bool followPlayer;
-
-    [SerializeField] float rotationSpeed = 40f;
 
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float eatingTime = 3f;
@@ -30,7 +27,6 @@ public class DinoScript : MonoBehaviour
 
     bool playerFacingRight;
     bool isPlayerFacingDino;
-    //bool dontCareAboutPlayer;
 
     [SerializeField] float maxXDistanceToFollow = 6f;
 
@@ -41,7 +37,6 @@ public class DinoScript : MonoBehaviour
         playerScript = FindObjectOfType<move_water>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -53,21 +48,6 @@ public class DinoScript : MonoBehaviour
 
         direction = playerScript.gameObject.transform.position - transform.position;
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 180;
-
-        /*if(dontCareAboutPlayer)
-        {
-            Debug.Log(actualEatTrigger.gameObject.activeInHierarchy);
-            if(actualEatTrigger.gameObject.activeInHierarchy)
-            {
-                followPlayer = false;
-            }
-            else
-            {
-                followPlayer = true;
-            }
-            return;
-        }*/
-
         playerFacingRight = Mathf.Abs(playerScript.transform.rotation.y) != 0;
         float xDistanceBetweenDinoAndPlayer = playerScript.transform.position.x - transform.position.x; //if its minus the player is to the right of dino
         isPlayerFacingDino = xDistanceBetweenDinoAndPlayer < 0 && playerFacingRight || xDistanceBetweenDinoAndPlayer > 0 && !playerFacingRight;
@@ -79,14 +59,18 @@ public class DinoScript : MonoBehaviour
             followPlayer = false;
             return;
         }
-        else if(Mathf.Abs(xDistanceBetweenDinoAndPlayer) < 4f && Mathf.Abs(yDistanceBetweenDinoAndPlayer) > 3f)
+        else
+        {
+            followPlayer = true;
+        }
+        /*else if(Mathf.Abs(xDistanceBetweenDinoAndPlayer) < 4f && Mathf.Abs(yDistanceBetweenDinoAndPlayer) > 3f)
         {
             followPlayer = true;
         }
         else
         {
             followPlayer = !isPlayerFacingDino && Mathf.Abs(xDistanceBetweenDinoAndPlayer) < maxXDistanceToFollow;
-        }
+        }*/
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.time / 100);
 
