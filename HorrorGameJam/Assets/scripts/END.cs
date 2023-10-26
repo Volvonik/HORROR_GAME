@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class END : MonoBehaviour
 {
     [SerializeField] GameObject transition;
+    [SerializeField] GameObject transition2;
     [SerializeField] GameObject story1;
     [SerializeField] GameObject story2;
 
@@ -26,7 +27,8 @@ public class END : MonoBehaviour
             
             else
             {
-                SceneManager.LoadScene(0);
+                transition2.SetActive(true);
+                Invoke("end",2.1f);
             }
         }
     }
@@ -42,5 +44,9 @@ public class END : MonoBehaviour
     {
         inStory = true;
         story1.SetActive(true);
+    }
+    private void end()
+    {
+        SceneManager.LoadScene(0);
     }
 }
