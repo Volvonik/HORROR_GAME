@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     [SerializeField] Vector3 spawnPoint;
 
-
     [Header("Jumping")]
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask groundLayer;
@@ -25,8 +24,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Components")]
     Rigidbody2D rb;
-
-
 
     void Start()
     {
@@ -95,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("ContinueGame"))
         {
+            FindObjectOfType<PauseMenuScript>().isAllowedToPause = false;
             transition.SetActive(true);
             Invoke("NextScene", 2);
         }
