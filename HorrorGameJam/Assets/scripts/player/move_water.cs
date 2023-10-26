@@ -1,9 +1,11 @@
 using Cinemachine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class move_water : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class move_water : MonoBehaviour
 
     [Header("Components")]
     AudioSource audioSource;
-    AudioSource audioManager;
+    //AudioSource audioManager;
     Rigidbody2D rb;
     SpriteRenderer sp;
     PanasEManager fishSpawner;
@@ -37,13 +39,19 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip openLegsSFX;
     [SerializeField] AudioClip hitByLegoSFX;
     [SerializeField] AudioClip deathSFX;
-    public static AudioClip lastCheckpointMusic;
+    public static AudioSource lastCheckpointMusic;
     [SerializeField] AudioClip dinoMusic;
     bool isPlayingDefaultMusic;
     bool openLegsOnce;
 
+    [SerializeField] AudioSource defaultAudio;
+    [SerializeField] AudioSource babyAudio;
+    [SerializeField] AudioSource dinoTheSharkAudio;
+    AudioClip currentClip;
+
     [Header("Baby Chase")]
     [SerializeField] GameObject tinok;
+
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -56,8 +64,7 @@ public class move_water : MonoBehaviour
     [SerializeField] GameObject flashlightLight2D;
     [SerializeField] AudioClip flashLightSFX;
 
-    [SerializeField]
-    GameObject baby_scary;
+    
 
     [Header("Pickup")]
     GameObject pickupObject;
@@ -65,13 +72,19 @@ public class move_water : MonoBehaviour
     bool delay;
 
     public bool dinoIsAllowedToFollowPlayer; //After that we will create a trigger for dino arena
-                                                    //and then it will set to true but now its always true
+
+    [Header("Jumpscares")]
+    [SerializeField] GameObject baby_scary;
+    [SerializeField] Image babyImage;
+    [SerializeField] Image dinoImage;
+    [SerializeField] AudioClip dinoDeathSFX;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+        //audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
         sp = GetComponent<SpriteRenderer>();
         fishSpawner = FindObjectOfType<PanasEManager>();
         animator = GetComponent<Animator>();
@@ -91,13 +104,9 @@ public class move_water : MonoBehaviour
         {
             transform.position = checkpoint.position;
 
-            if(audioManager.isPlaying)
-            {
-                audioManager.Stop();
-            }
+            StopAllMusic();
+            lastCheckpointMusic.Play();
 
-            audioManager.clip = lastCheckpointMusic;
-            audioManager.Play();
 
             if(lastCheckpointMusic == defaultTheme)
             {
@@ -106,10 +115,18 @@ public class move_water : MonoBehaviour
         }
         else
         {
-            audioManager.clip = defaultTheme;
-            audioManager.Play();
+            StopAllMusic();
+            defaultAudio.Play();
+
             isPlayingDefaultMusic = true;
         }
+    }
+
+    private void StopAllMusic()
+    {
+        defaultAudio.Stop();
+        babyAudio.Stop();
+        dinoTheSharkAudio.Stop();
     }
 
     void Update()
@@ -134,7 +151,7 @@ public class move_water : MonoBehaviour
         {
             openLegsOnce = true;
 
-            audioManager.PlayOneShot(openLegsSFX);
+            audioSource.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
         }
@@ -267,16 +284,20 @@ public class move_water : MonoBehaviour
         else if(other.CompareTag("Respawn") || other.CompareTag("Dino"))
         {
             audioSource.PlayOneShot(deathSFX);
-            babyd();
+            Jumpscare(babyImage);
+        }
+        else if(other.CompareTag("Dino"))
+        {
+            audioSource.PlayOneShot(dinoDeathSFX);
+            Jumpscare(dinoImage);
         }
 
         else if(other.CompareTag("BabyRanaway"))
         {
             if(!isPlayingDefaultMusic) { return; }
 
-            audioManager.Stop();
-            audioManager.clip = BabyRunAway;
-            audioManager.Play();
+            StopAllMusic();
+            babyAudio.Play();
 
             isPlayingDefaultMusic = false;
         }
@@ -293,20 +314,16 @@ public class move_water : MonoBehaviour
             Invoke("starthand", 3.2f);
 
             FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
-            audioManager.PlayOneShot(legDropSFX);
+            audioSource.PlayOneShot(legDropSFX);
         }
 
         else if(other.CompareTag("DinoArena"))
         {
             dinoIsAllowedToFollowPlayer = true;
 
-            if (audioManager.clip == dinoMusic)
-            {
-                return;
-            }
-            audioManager.Stop();
-            audioManager.clip = dinoMusic;
-            audioManager.Play();
+            StopAllMusic();
+            dinoTheSharkAudio.Play();
+
             isPlayingDefaultMusic = false;
         }
     }
@@ -322,12 +339,13 @@ public class move_water : MonoBehaviour
             fishSpawner.inBallsPool = false;
         }
 
-        else if(other.CompareTag("BabyRanaway"))
+        else if(other.CompareTag("BabyRanaway") || other.CompareTag("DinoArena"))
         {
             if(isPlayingDefaultMusic || disableControls) { return; }
 
-            audioManager.Stop();
-            audioManager.PlayOneShot(defaultTheme);
+            StopAllMusic();
+            defaultAudio.Play();
+
             isPlayingDefaultMusic = true;
         }
 
@@ -335,13 +353,8 @@ public class move_water : MonoBehaviour
         {
             fishSpawner.inLegoArena = false;
             fishSpawner.stopSpawning = true;
-        }
 
-        else if(other.CompareTag("DinoArena"))
-        {
-            audioManager.Stop();
-            audioManager.clip = defaultTheme;
-            isPlayingDefaultMusic = true;
+            Destroy(FindObjectOfType<BabyScript>().gameObject);
         }
     }
 
@@ -437,9 +450,10 @@ public class move_water : MonoBehaviour
         }*/
     }
 
-    private void babyd()
+    private void Jumpscare(Image jumpscareImage)
     {
         disableControls = true;
+        //baby_scary.GetComponent<Image>().sprite = jumpscareImage;
         baby_scary.SetActive(true);
         Invoke("Die", 2f);
     }

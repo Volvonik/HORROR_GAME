@@ -135,7 +135,7 @@ public class ArmScript : MonoBehaviour
 
         if(lifeTotal <= 0 )
         {
-            AudioSource globalAudioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+            AudioSource globalAudioSource = FindObjectOfType<move_water>().GetComponent<AudioSource>();
             globalAudioSource.PlayOneShot(dieSFX);
             globalAudioSource.PlayOneShot(hitSFX);
             globalAudioSource.PlayOneShot(shakeSFX);

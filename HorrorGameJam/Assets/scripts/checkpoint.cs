@@ -6,7 +6,7 @@ public class checkpoint : MonoBehaviour
 {
     public static Vector2 position;
     public static bool didsave;
-    public AudioClip musicAfterCheckpoint;
+    public AudioSource musicAfterCheckpoint;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
