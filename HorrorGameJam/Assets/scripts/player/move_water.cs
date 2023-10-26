@@ -84,7 +84,7 @@ public class move_water : MonoBehaviour
         force = new Vector2(0, 0);
         defaultGravityScale = rb.gravityScale;
 
-        hasFlashlight = true;
+        //hasFlashlight = true;
 
         if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
