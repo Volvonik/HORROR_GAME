@@ -2,6 +2,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class options_menu : MonoBehaviour
@@ -76,7 +77,14 @@ public class options_menu : MonoBehaviour
             Application.targetFrameRate = 10;
         }
 
-        GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            GameObject.Find("QuackSFX").GetComponent<AudioSource>().Play();
+        }
     }
 
     public void ChangeMasterVolume(float volume)

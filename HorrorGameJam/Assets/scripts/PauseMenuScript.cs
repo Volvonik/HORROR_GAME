@@ -35,14 +35,14 @@ public class PauseMenuScript : MonoBehaviour
             pauseMenu.SetActive(true);
             isPaused = true;
 
-            if(SceneManager.GetActiveScene().buildIndex == 1) { return; }
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 0.14f;
+            if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3) { return; }
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 0.5f;
 
             if(FindObjectsOfType<checkpoint>() == null) { return; }
-            AudioSource[] checkpointAudioSources = FindObjectsOfType<AudioSource>();
-            foreach(AudioSource audioSource in checkpointAudioSources)
+            checkpoint[] checkpointAudioSources = FindObjectsOfType<checkpoint>();
+            foreach(checkpoint audioSource in checkpointAudioSources)
             {
-                audioSource.pitch = 0f;
+                audioSource.GetComponent<AudioSource>().pitch = 0f;
             }
 
             if(FindObjectOfType<BabyScript>() == null) { return; }

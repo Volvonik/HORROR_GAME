@@ -13,4 +13,19 @@ public class DontDestroyOnLoad : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

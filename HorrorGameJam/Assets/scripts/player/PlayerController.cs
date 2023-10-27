@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameObject transition;
 
+    [SerializeField] AudioClip deathSFX;
+
     [Header("Movement")]
     [SerializeField] float moveSpeed;
     float horizontalInput;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject groundCheck;
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float coyoteTimeCounter;
+    [SerializeField] AudioClip jumpSFX;
 
     [Header("Gravity")]
     [SerializeField] float velocityWhenIncreasingGravity;
@@ -34,6 +37,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if(horizontalInput == 0 )
+        {
+            GetComponent<Animator>().speed = 0f;
+        }
+        else
+        {
+            GetComponent<Animator>().speed = 1f;
+        }
 
         if(Mathf.Abs(rb.velocity.y) < velocityWhenIncreasingGravity)
         {
@@ -55,6 +67,11 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        if (FindObjectOfType<END>() != null)
+        {
+            if (GetComponent<END>().inStory) { return; }
+        }
+
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.05f, groundLayer);
 
         if(isGrounded)
@@ -70,6 +87,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            coyoteTimeCounter = 0f;
+            FindObjectOfType<AudioSource>().PlayOneShot(jumpSFX);
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -99,6 +118,7 @@ public class PlayerController : MonoBehaviour
         else if(other.CompareTag("RestartScene"))
         {
             transform.position = spawnPoint;
+            FindObjectOfType<AudioSource>().PlayOneShot(deathSFX);
         }
 
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 11c571f29912ade4582f4df8820430cd
+guid: 6a829e482377e7e4885526c57c036af4
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Creepy Blood
+  - f Finish
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

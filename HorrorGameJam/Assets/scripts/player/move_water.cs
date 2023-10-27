@@ -448,7 +448,6 @@ public class move_water : MonoBehaviour
     public void RestartScene()
     {
         disableControls = false;
-        hasFlashlight = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void starthand()

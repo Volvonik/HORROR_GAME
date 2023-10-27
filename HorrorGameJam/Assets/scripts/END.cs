@@ -10,7 +10,7 @@ public class END : MonoBehaviour
     [SerializeField] GameObject story1;
     [SerializeField] GameObject story2;
 
-    bool inStory;
+    public bool inStory;
     bool inSecondPage;
 
     void Update()
