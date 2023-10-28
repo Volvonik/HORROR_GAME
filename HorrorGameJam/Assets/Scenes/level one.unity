@@ -1448,7 +1448,7 @@ MonoBehaviour:
   upPushForce: 15
   timeToGoUpAfterPunch: 1
   goingUpTime: 2
-  lifeTotal: 5
+  lifeTotal: 3
   attackSFX: {fileID: 8300000, guid: 46877e7c885ccb948831d21eea430b98, type: 3}
   shakeSFX: {fileID: 8300000, guid: f2b64e8c18fe6c0418faa7185f0e7023, type: 3}
   hitSFX: {fileID: 8300000, guid: 6afb13825765c164786d0479a9ce7850, type: 3}
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cd42c5eb6767e35498a67087e128fb5d, type: 3}
   - {fileID: 8300000, guid: 82d2ebcc441fdb94d8b4bbd76fa8061e, type: 3}
   - {fileID: 8300000, guid: a21a0920ee443d542afdd7fb324ec7d2, type: 3}
-  throwHazardDelay: 2
+  throwHazardDelay: 5
   hazardPrefab: {fileID: 5078988301863296191, guid: 715286d2ab9add1458ad565c37c11a15, type: 3}
 --- !u!82 &76908289
 AudioSource:
