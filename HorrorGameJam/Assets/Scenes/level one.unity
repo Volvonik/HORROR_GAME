@@ -20350,7 +20350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260045542}
   m_Layer: 0
-  m_Name: BreadCheckpoint_3
+  m_Name: BreadCheckpoint_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28763,8 +28763,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.23730001, y: -0.41854998, z: 0}
-    m_Extent: {x: 0.2743, y: 0.21704999, z: 0}
+    m_Center: {x: -0.2332, y: -0.42325, z: 0}
+    m_Extent: {x: 0.27109998, y: 0.21204999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -30873,7 +30873,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -3.1554306, y: 0.8316167, z: 0}
+    - position: {x: -3.3383934, y: 0.85745984, z: 0}
       leftTangent: {x: 0.07549167, y: -0.021344602, z: 0}
       rightTangent: {x: -0.04542637, y: 0.012809634, z: 0}
       mode: 1
@@ -30881,9 +30881,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -3.1312509, y: 1.041883, z: 0}
+    - position: {x: -3.3564358, y: 1.0444672, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
-      rightTangent: {x: 0.058913708, y: 0.0008637905, z: 0}
+      rightTangent: {x: 0.058913946, y: 0.0008635521, z: 0}
       mode: 2
       height: 1
       spriteIndex: 0
@@ -30994,8 +30994,8 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -3.1554306, y: 0.8316167}
-  - {x: -3.101224, y: 1.0427173}
+  - {x: -3.3383934, y: 0.85745984}
+  - {x: -3.340124, y: 1.0447354}
   - {x: -1.0072222, y: 1.0572606}
   - {x: -0.2877051, y: 1.0339365}
   - {x: 0.4545971, y: 0.8355819}
@@ -31008,8 +31008,8 @@ MonoBehaviour:
   - {x: -0.29044354, y: 0.6778197}
   - {x: -0.48076403, y: 0.70648766}
   - {x: -0.65830064, y: 0.7966279}
-  - {x: -3.084622, y: 0.8247314}
-  - {x: -3.1554306, y: 0.8316167}
+  - {x: -3.0987587, y: 0.842013}
+  - {x: -3.3383934, y: 0.85745984}
 --- !u!1971053207 &504539728
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -31065,8 +31065,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -0.24596572, y: 0.8568593, z: 0}
-    m_Extent: {x: 2.924767, y: 0.20269588, z: 0}
+    m_Center: {x: -0.342901, y: 0.8568593, z: 0}
+    m_Extent: {x: 3.0217023, y: 0.20269588, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &504539729
 Transform:
@@ -31118,8 +31118,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.1554306, y: 0.8316167}
-  - {x: -3.101224, y: 1.0427173}
+  - {x: -3.3383934, y: 0.85745984}
+  - {x: -3.340124, y: 1.0447354}
   - {x: -1.0072222, y: 1.0572606}
   - {x: -0.2877051, y: 1.0339365}
   - {x: 0.4545971, y: 0.8355819}
@@ -31132,8 +31132,8 @@ EdgeCollider2D:
   - {x: -0.29044354, y: 0.6778197}
   - {x: -0.48076403, y: 0.70648766}
   - {x: -0.65830064, y: 0.7966279}
-  - {x: -3.084622, y: 0.8247314}
-  - {x: -3.1554306, y: 0.8316167}
+  - {x: -3.0987587, y: 0.842013}
+  - {x: -3.3383934, y: 0.85745984}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -34523,6 +34523,75 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.37269866
+--- !u!1001 &637792363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1392811025}
+    m_Modifications:
+    - target: {fileID: 2329473379851857092, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_Name
+      value: Bread_Checkpoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288909423426801229, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
+    - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: musicAfterCheckpoint
+      value: 
+      objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.02999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1199989
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99073094
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13583903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -19.042
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1794865783533a42aace80ba9c573d7, type: 3}
 --- !u!1 &648324030
 GameObject:
   m_ObjectHideFlags: 0
@@ -53047,7 +53116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093914695}
   m_Layer: 0
-  m_Name: BreadCheckpoint_2 (1)
+  m_Name: BreadCheckpoint_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53711,7 +53780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180948860}
   m_LocalRotation: {x: -0, y: -0, z: 0.28441757, w: 0.95870054}
-  m_LocalPosition: {x: -461, y: -52.7, z: 0}
+  m_LocalPosition: {x: -468.3, y: -52.7, z: 0}
   m_LocalScale: {x: 12.081236, y: 11.660819, z: 1.0942652}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53760,8 +53829,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1551003, y: -2.2378001, z: 0}
-    m_Extent: {x: 18.570301, y: 5.1773, z: 0}
+    m_Center: {x: -3.159, y: -2.22775, z: 0}
+    m_Extent: {x: 18.5761, y: 5.1719503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -60615,6 +60684,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &1271356904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8748342012768108142, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+  m_PrefabInstance: {fileID: 637792363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1273106919
 GameObject:
   m_ObjectHideFlags: 0
@@ -63311,6 +63385,38 @@ Transform:
   m_Father: {fileID: 520683349}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 41.507}
+--- !u!1 &1392811024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392811025}
+  m_Layer: 0
+  m_Name: BreadCheckpoint_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1392811025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392811024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -185, y: -30, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1271356904}
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393552743
 GameObject:
   m_ObjectHideFlags: 0
@@ -65355,7 +65461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494037808}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -269.9, y: -15.4, z: 0}
+  m_LocalPosition: {x: -281.2, y: -13.9, z: 0}
   m_LocalScale: {x: 3, y: -4, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66047,8 +66153,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1749496, y: -4.40595, z: 0}
-    m_Extent: {x: 17.64085, y: 4.8513503, z: 0}
+    m_Center: {x: -3.1819, y: -4.4024, z: 0}
+    m_Extent: {x: 17.6313, y: 4.8596, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -66644,7 +66750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549409437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -491, y: -75, z: 0}
+  m_LocalPosition: {x: -498.3, y: -75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68772,8 +68878,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0014999807, y: 0.013399988, z: 0}
-    m_Extent: {x: 0.9872, y: 0.7714, z: 0}
+    m_Center: {x: -0.0072999895, y: 0.00820002, z: 0}
+    m_Extent: {x: 0.9778, y: 0.7645, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -73843,7 +73949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881205506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -251, y: -30.8, z: 0}
+  m_LocalPosition: {x: -258.3, y: -30.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -85204,16 +85310,16 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -1.0692548, y: 0.74301666, z: 0}
+    - position: {x: -1.2808794, y: 0.8121726, z: 0}
       leftTangent: {x: 0.12601876, y: -0.036958635, z: 0}
-      rightTangent: {x: -0.03471291, y: 0.010180354, z: 0}
+      rightTangent: {x: -0.03471291, y: 0.010180414, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -1.0623301, y: 0.8577652, z: 0}
-      leftTangent: {x: -0.044106722, y: -0.012142837, z: 0}
+    - position: {x: -1.270368, y: 0.8906965, z: 0}
+      leftTangent: {x: -0.044106722, y: -0.012142658, z: 0}
       rightTangent: {x: 0.05166614, y: 0.014318466, z: 0}
       mode: 1
       height: 1
@@ -85278,10 +85384,10 @@ MonoBehaviour:
   m_Modifiers: []
   m_ColliderSegment:
   - {x: 1.3092719, y: 0.7413384}
-  - {x: -0.65023386, y: 0.726869}
-  - {x: -1.0926888, y: 0.77459234}
-  - {x: -1.033793, y: 0.8601728}
-  - {x: 0.9925064, y: 0.85209805}
+  - {x: -0.6277913, y: 0.7774491}
+  - {x: -1.3033836, y: 0.83435684}
+  - {x: -1.2391804, y: 0.8926845}
+  - {x: 0.66958386, y: 0.85072756}
   - {x: 1.8898356, y: 0.8862976}
   - {x: 2.5642884, y: 0.9377891}
   - {x: 2.8200338, y: 0.63015324}
@@ -85342,8 +85448,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.8627837, y: 0.782295, z: 0}
-    m_Extent: {x: 1.9581139, y: 0.15828946, z: 0}
+    m_Center: {x: 0.7577784, y: 0.782295, z: 0}
+    m_Extent: {x: 2.063119, y: 0.15828946, z: 0}
   m_SpriteSortPoint: 0
 --- !u!68 &2016217390
 EdgeCollider2D:
@@ -85381,10 +85487,10 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 1.3092719, y: 0.7413384}
-  - {x: -0.65023386, y: 0.726869}
-  - {x: -1.0926888, y: 0.77459234}
-  - {x: -1.033793, y: 0.8601728}
-  - {x: 0.9925064, y: 0.85209805}
+  - {x: -0.6277913, y: 0.7774491}
+  - {x: -1.3033836, y: 0.83435684}
+  - {x: -1.2391804, y: 0.8926845}
+  - {x: 0.66958386, y: 0.85072756}
   - {x: 1.8898356, y: 0.8862976}
   - {x: 2.5642884, y: 0.9377891}
   - {x: 2.8200338, y: 0.63015324}
@@ -86135,7 +86241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064002504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -440, y: -54.6, z: 0}
+  m_LocalPosition: {x: -446.4, y: -54.6, z: 0}
   m_LocalScale: {x: 82.59075, y: 12.372212, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
