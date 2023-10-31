@@ -16,7 +16,6 @@ public class DinoScript : MonoBehaviour
 
     bool stopMoving;
     [SerializeField] AudioClip eatingSFX;
-    [SerializeField] AudioClip idleSFX;
     [SerializeField] AudioClip runningSFX;
 
     [SerializeField] Collider2D startEatTrigger;

@@ -158,6 +158,20 @@ public class move_water : MonoBehaviour
         PickFlashLight();
         FlipSprite();
 
+        if(FindObjectOfType<BabyScript>() != null && FindObjectOfType<BabyScript>().GetComponent<Animator>().GetBool("playBalls") == true)
+        {
+            if (isPlayingDefaultMusic || disableControls) { return; }
+
+            audioManager.Stop();
+            audioManager.clip = defaultTheme;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //defaultAudio.Play();
+
+            isPlayingDefaultMusic = true;
+        }
+
         if (FindObjectOfType<ArmScript>() == null && !openLegsOnce)
         {
             openLegsOnce = true;
@@ -165,6 +179,26 @@ public class move_water : MonoBehaviour
             audioSource.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
+
+            fishSpawner.inLegoArena = false;
+            fishSpawner.stopSpawning = true;
+
+
+            if (isPlayingDefaultMusic || disableControls) { return; }
+
+            audioManager.Stop();
+            audioManager.clip = defaultTheme;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //defaultAudio.Play();
+
+            isPlayingDefaultMusic = true;
+
+            if (FindObjectOfType<BabyScript>() != null)
+            {
+                Destroy(FindObjectOfType<BabyScript>().gameObject);
+            }
         }
 
         if(pickupObject == null)
@@ -301,22 +335,10 @@ public class move_water : MonoBehaviour
             Jumpscare(dinoImage, dinoDeathSFX);
         }
 
-        else if(other.CompareTag("BabyRanaway"))
-        {
-            if(!isPlayingDefaultMusic) { return; }
-
-            audioManager.Stop();
-            audioManager.clip = BabyRunAway;
-            audioManager.Play();
-
-            //StopAllMusic();
-            //babyAudio.Play();
-
-            isPlayingDefaultMusic = false;
-        }
-
         else if(other.CompareTag("LegoArena"))
         {
+            other.enabled = false;
+
             fishSpawner.stopSpawning = true;
 
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
@@ -328,6 +350,17 @@ public class move_water : MonoBehaviour
 
             FindObjectOfType<ScreenShakeManager>().CameraShake(GameObject.Find("Right_Leg").GetComponent<CinemachineImpulseSource>());
             audioSource.PlayOneShot(legDropSFX);
+
+            if (!isPlayingDefaultMusic) { return; }
+
+            audioManager.Stop();
+            audioManager.clip = BabyRunAway;
+            audioManager.Play();
+
+            //StopAllMusic();
+            //babyAudio.Play();
+
+            isPlayingDefaultMusic = false;
         }
 
         else if(other.CompareTag("DinoArena"))
@@ -358,32 +391,6 @@ public class move_water : MonoBehaviour
         else if (other.CompareTag("BallPoolSpawn"))
         {
             fishSpawner.inBallsPool = false;
-        }
-
-        else if(other.CompareTag("BabyRanaway"))
-        {
-            if(isPlayingDefaultMusic || disableControls) { return; }
-
-            audioManager.Stop();
-            audioManager.clip = defaultTheme;
-            audioManager.Play();
-
-            //StopAllMusic();
-            //defaultAudio.Play();
-
-            isPlayingDefaultMusic = true;
-        }
-
-        else if(other.gameObject.CompareTag("LegoArena"))
-        {
-            fishSpawner.inLegoArena = false;
-            fishSpawner.stopSpawning = true;
-
-            if(FindObjectOfType<BabyScript>() == null)
-            {
-                return;
-            }
-            Destroy(FindObjectOfType<BabyScript>().gameObject);
         }
     }
 
@@ -443,6 +450,17 @@ public class move_water : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
 
         Instantiate(tinok);
+
+        if (!isPlayingDefaultMusic) { return; }
+
+        audioManager.Stop();
+        audioManager.clip = BabyRunAway;
+        audioManager.Play();
+
+        //StopAllMusic();
+        //babyAudio.Play();
+
+        isPlayingDefaultMusic = false;
     }
 
     public void RestartScene()

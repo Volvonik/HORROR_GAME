@@ -68,7 +68,7 @@ public class BabyScript : MonoBehaviour
     {
         if(other.CompareTag("BallPool"))
         {
-            GetComponent<Animator>().SetTrigger("playWithBalls");
+            GetComponent<Animator>().SetBool("playBalls", true);
             disableMovement = true;
 
             GetComponent<AudioSource>().Play();

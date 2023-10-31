@@ -1329,7 +1329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &72383674
 Transform:
   m_ObjectHideFlags: 0
@@ -28763,8 +28763,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.2332, y: -0.42325, z: 0}
-    m_Extent: {x: 0.27109998, y: 0.21204999, z: 0}
+    m_Center: {x: -0.2417, y: -0.4126, z: 0}
+    m_Extent: {x: 0.2744, y: 0.21470001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -53829,8 +53829,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.159, y: -2.22775, z: 0}
-    m_Extent: {x: 18.5761, y: 5.1719503, z: 0}
+    m_Center: {x: -3.14605, y: -2.2364001, z: 0}
+    m_Extent: {x: 18.57135, y: 5.1699, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -65393,7 +65393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  eatingTime: 2
+  eatingTime: 1.5
   eatingSFX: {fileID: 0}
   idleSFX: {fileID: 0}
   runningSFX: {fileID: 0}
@@ -66153,8 +66153,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1819, y: -4.4024, z: 0}
-    m_Extent: {x: 17.6313, y: 4.8596, z: 0}
+    m_Center: {x: -3.1712499, y: -4.40725, z: 0}
+    m_Extent: {x: 17.63705, y: 4.84815, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -68878,8 +68878,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0072999895, y: 0.00820002, z: 0}
-    m_Extent: {x: 0.9778, y: 0.7645, z: 0}
+    m_Center: {x: -0.0046499968, y: 0.011649996, z: 0}
+    m_Extent: {x: 0.98765, y: 0.76935005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
