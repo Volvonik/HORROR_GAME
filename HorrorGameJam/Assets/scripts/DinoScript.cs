@@ -27,7 +27,6 @@ public class DinoScript : MonoBehaviour
     bool playerFacingRight;
     bool isPlayerFacingDino;
 
-    [SerializeField] float maxXDistanceToFollow = 6f;
 
     [SerializeField] AudioClip duckDieSFX;
 
