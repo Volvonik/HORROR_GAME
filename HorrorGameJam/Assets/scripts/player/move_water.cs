@@ -87,8 +87,9 @@ public class move_water : MonoBehaviour
         FindObjectOfType<PauseMenuScript>().isAllowedToPause = true;
 
         //hasFlashlight = true;
+        //hasFlashlight = false;
 
-        if(GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
+        if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
             Destroy(GameObject.Find("Flashlight"));
         }
@@ -172,6 +173,21 @@ public class move_water : MonoBehaviour
             isPlayingDefaultMusic = true;
         }
 
+
+        if(pickupObject == null)
+        {
+            return;
+        }
+
+        pickupObject.transform.position = pickupPosition.transform.position;
+
+        if(Input.GetKeyDown("space") && delay)
+        {
+            pickupObject.GetComponent<Collider2D>().enabled = true;
+            pickupObject = null;
+            delay = false;
+        }
+
         if (FindObjectOfType<ArmScript>() == null && !openLegsOnce)
         {
             openLegsOnce = true;
@@ -199,20 +215,6 @@ public class move_water : MonoBehaviour
             {
                 Destroy(FindObjectOfType<BabyScript>().gameObject);
             }
-        }
-
-        if(pickupObject == null)
-        {
-            return;
-        }
-
-        pickupObject.transform.position = pickupPosition.transform.position;
-
-        if(Input.GetKeyDown("space") && delay)
-        {
-            pickupObject.GetComponent<Collider2D>().enabled = true;
-            pickupObject = null;
-            delay = false;
         }
     }
 
@@ -352,6 +354,11 @@ public class move_water : MonoBehaviour
             audioSource.PlayOneShot(legDropSFX);
 
             if (!isPlayingDefaultMusic) { return; }
+
+            if(FindObjectOfType<BabyScript>() != null)
+            {
+                Destroy(FindObjectOfType<BabyScript>().gameObject);
+            }
 
             audioManager.Stop();
             audioManager.clip = BabyRunAway;
