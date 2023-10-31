@@ -199,6 +199,10 @@ public class move_water : MonoBehaviour
             fishSpawner.inLegoArena = false;
             fishSpawner.stopSpawning = true;
 
+            if (FindObjectOfType<BabyScript>() != null)
+            {
+                Destroy(FindObjectOfType<BabyScript>().gameObject);
+            }
 
             if (isPlayingDefaultMusic || disableControls) { return; }
 
@@ -210,11 +214,6 @@ public class move_water : MonoBehaviour
             //defaultAudio.Play();
 
             isPlayingDefaultMusic = true;
-
-            if (FindObjectOfType<BabyScript>() != null)
-            {
-                Destroy(FindObjectOfType<BabyScript>().gameObject);
-            }
         }
     }
 
