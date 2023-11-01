@@ -174,12 +174,10 @@ public class move_water : MonoBehaviour
         }
 
 
-        if(pickupObject == null)
+        if(pickupObject != null)
         {
-            return;
+            pickupObject.transform.position = pickupPosition.transform.position;
         }
-
-        pickupObject.transform.position = pickupPosition.transform.position;
 
         if(Input.GetKeyDown("space") && delay)
         {

@@ -171,6 +171,8 @@ public class ArmScript : MonoBehaviour
 
     void HitAnObject(AudioClip sfx)
     {
+        FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
+
         if(audioSource == null)
         {
             return;
@@ -182,7 +184,6 @@ public class ArmScript : MonoBehaviour
         audioSource.PlayOneShot(sfx);
         audioSource.PlayOneShot(shakeSFX);
 
-        FindObjectOfType<ScreenShakeManager>().CameraShake(GetComponent<CinemachineImpulseSource>());
         StartCoroutine(goUpAfterAttack());
     }
 }
