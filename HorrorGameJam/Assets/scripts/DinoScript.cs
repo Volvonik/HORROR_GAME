@@ -115,6 +115,11 @@ public class DinoScript : MonoBehaviour
             stopMoving = true;
             StartCoroutine(StopEating(other.gameObject, eatingTime));
         }
+        if(other.CompareTag("stopshark"))
+        {
+            stopMoving = true;
+            animator.SetBool("isEating", false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

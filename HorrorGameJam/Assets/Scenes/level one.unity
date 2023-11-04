@@ -27812,8 +27812,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24704999, y: -0.41715002, z: 0}
-    m_Extent: {x: 0.27075, y: 0.21625, z: 0}
+    m_Center: {x: -0.24595, y: -0.4203, z: 0}
+    m_Extent: {x: 0.27055, y: 0.20899999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -30850,6 +30850,79 @@ Transform:
   m_Father: {fileID: 1728815911}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &550143497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550143499}
+  - component: {fileID: 550143500}
+  m_Layer: 0
+  m_Name: stopShark
+  m_TagString: stopshark
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &550143499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550143497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -603.299, y: -162.59312, z: -0.5359349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 44
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &550143500
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550143497}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -20.531982, y: -15.848511}
+  - {x: -31.517456, y: -15.841782}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &562505897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50743,8 +50816,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1592498, y: -2.2403, z: 0}
-    m_Extent: {x: 18.574049, y: 5.1735, z: 0}
+    m_Center: {x: -3.14495, y: -2.2346, z: 0}
+    m_Extent: {x: 18.57405, y: 5.184, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -59342,7 +59415,7 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -3.5210102, y: -0.061362244}
+  - {x: -3.5210102, y: -0.061362248}
   - {x: -3.4074137, y: 0.1494823}
   - {x: -2.3938773, y: 0.76136124}
   - {x: -2.2089424, y: 0.8526099}
@@ -59370,7 +59443,7 @@ MonoBehaviour:
   - {x: -3.1738505, y: -0.4372979}
   - {x: -3.440131, y: -0.37387386}
   - {x: -3.5556931, y: -0.25868863}
-  - {x: -3.5210102, y: -0.061362244}
+  - {x: -3.5210102, y: -0.061362248}
 --- !u!1971053207 &1338253988
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -59479,7 +59552,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.5210102, y: -0.061362244}
+  - {x: -3.5210102, y: -0.061362248}
   - {x: -3.4074137, y: 0.1494823}
   - {x: -2.3938773, y: 0.76136124}
   - {x: -2.2089424, y: 0.8526099}
@@ -59507,7 +59580,7 @@ EdgeCollider2D:
   - {x: -3.1738505, y: -0.4372979}
   - {x: -3.440131, y: -0.37387386}
   - {x: -3.5556931, y: -0.25868863}
-  - {x: -3.5210102, y: -0.061362244}
+  - {x: -3.5210102, y: -0.061362248}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -60422,9 +60495,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 0.23700546, y: 0.22162329, z: 0}
-      leftTangent: {x: 0.6082188, y: 0.056439087, z: 0}
-      rightTangent: {x: -1.2878681, y: -0.119506545, z: 0}
+    - position: {x: 0.24286167, y: 0.3246265, z: 0}
+      leftTangent: {x: 0.63164276, y: 0.17941463, z: 0}
+      rightTangent: {x: -1.2441833, y: -0.35340333, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
@@ -60490,12 +60563,13 @@ MonoBehaviour:
   - {x: 2.11277, y: 0.520796}
   - {x: 2.004174, y: 0.29695192}
   - {x: 1.8155347, y: 0.17564006}
-  - {x: 0.72555286, y: 0.23677751}
-  - {x: 0.23700546, y: 0.22162329}
-  - {x: -0.27389675, y: 0.15377143}
-  - {x: -0.76680756, y: 0.053523216}
-  - {x: -1.441263, y: -0.13231961}
-  - {x: -1.9950697, y: -0.3260675}
+  - {x: 1.3909683, y: 0.24969605}
+  - {x: 0.9754367, y: 0.34756565}
+  - {x: 0.618511, y: 0.37739724}
+  - {x: 0.3690427, y: 0.35390905}
+  - {x: -0.74318445, y: 0.037831318}
+  - {x: -1.8121996, y: -0.29411864}
+  - {x: -2.4620473, y: -0.5308994}
   - {x: -2.5193284, y: -0.560643}
 --- !u!1971053207 &1394165984
 SpriteShapeRenderer:
@@ -60648,12 +60722,13 @@ EdgeCollider2D:
   - {x: 2.11277, y: 0.520796}
   - {x: 2.004174, y: 0.29695192}
   - {x: 1.8155347, y: 0.17564006}
-  - {x: 0.72555286, y: 0.23677751}
-  - {x: 0.23700546, y: 0.22162329}
-  - {x: -0.27389675, y: 0.15377143}
-  - {x: -0.76680756, y: 0.053523216}
-  - {x: -1.441263, y: -0.13231961}
-  - {x: -1.9950697, y: -0.3260675}
+  - {x: 1.3909683, y: 0.24969605}
+  - {x: 0.9754367, y: 0.34756565}
+  - {x: 0.618511, y: 0.37739724}
+  - {x: 0.3690427, y: 0.35390905}
+  - {x: -0.74318445, y: 0.037831318}
+  - {x: -1.8121996, y: -0.29411864}
+  - {x: -2.4620473, y: -0.5308994}
   - {x: -2.5193284, y: -0.560643}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -62707,8 +62782,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.18045, y: -4.4049, z: 0}
-    m_Extent: {x: 17.63605, y: 4.8549, z: 0}
+    m_Center: {x: -3.17595, y: -4.40245, z: 0}
+    m_Extent: {x: 17.631851, y: 4.8572497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -65302,8 +65377,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.008899987, y: 0.010549992, z: 0}
-    m_Extent: {x: 0.9846, y: 0.76745, z: 0}
+    m_Center: {x: -0.009050012, y: 0.010549992, z: 0}
+    m_Extent: {x: 0.98315, y: 0.76925004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
