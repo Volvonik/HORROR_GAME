@@ -129,6 +129,10 @@ public class DinoScript : MonoBehaviour
             StartCoroutine(StopEating(other.gameObject, 0f));
             //actualEatTrigger.gameObject.SetActive(false);
         }
+        if(other.CompareTag("pickup"))
+        {
+            animator.SetBool("isEating", false);
+        }
     }
     void FollowPlayer()
     {
