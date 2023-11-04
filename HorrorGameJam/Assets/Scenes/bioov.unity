@@ -851,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6743536083409344155, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: coyoteTime
-      value: 0.3
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6743536083409344155, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: transition
@@ -9746,7 +9746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 833, y: 470}
+  m_AnchoredPosition: {x: 830, y: 400}
   m_SizeDelta: {x: 527.609, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1597087055
@@ -10388,7 +10388,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -76, y: -3.8}
-  - {x: 24, y: -3.8}
+  - {x: 26, y: -3.8}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -11621,7 +11621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 833, y: 470}
+  m_AnchoredPosition: {x: 830, y: 400}
   m_SizeDelta: {x: 527.609, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911432345
