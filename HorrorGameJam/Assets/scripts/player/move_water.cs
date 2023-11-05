@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class move_water : MonoBehaviour
 {
+    [Header("Joystick")]
+    [SerializeField] FixedJoystick joystick;
+
     [SerializeField] GameObject transition2;
 
     [Header("Components")]
@@ -143,7 +146,7 @@ public class move_water : MonoBehaviour
 
     void Update()
     {
-        moveInput = new Vector2(Input.GetAxis("Horizontal") * speed + force.x, Input.GetAxis("Vertical") * speed + force.y);
+        moveInput = new Vector2(joystick.Horizontal * speed + force.x, joystick.Vertical * speed + force.y);
         
         if(moveInput == new Vector2(0, 0))
         {
