@@ -55,7 +55,7 @@ public class move_water : MonoBehaviour
     [SerializeField] LayerMask flashlightLayer;
     [SerializeField] float raycastLength;
     [SerializeField] GameObject flashlightCheck;
-    [SerializeField] GameObject flashlightText;
+    [SerializeField] GameObject flashlightButton;
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite hasFlashlightSprite;
     [SerializeField] GameObject flashlightLight2D;
@@ -241,7 +241,7 @@ public class move_water : MonoBehaviour
 
         if (flashlightRaycast)
         {
-            flashlightText.SetActive(true);
+            flashlightButton.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -249,16 +249,16 @@ public class move_water : MonoBehaviour
 
                 audioSource.PlayOneShot(flashLightSFX);
 
-                Destroy(flashlightText);
+                Destroy(flashlightButton);
                 Destroy(flashlightCheck);
                 Destroy(flashlightRaycast.transform.gameObject);
             }
         }
         else
         {
-            if (flashlightText == null) return;
+            if (flashlightButton == null) return;
 
-            flashlightText.SetActive(false);
+            flashlightButton.SetActive(false);
         }
 
         if(!disableControls)
