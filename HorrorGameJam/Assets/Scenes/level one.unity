@@ -27676,8 +27676,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.2379, y: -0.42005, z: 0}
-    m_Extent: {x: 0.275, y: 0.21664998, z: 0}
+    m_Center: {x: -0.2408, y: -0.41695, z: 0}
+    m_Extent: {x: 0.27949998, y: 0.21735, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -50784,8 +50784,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1575994, y: -2.2382998, z: 0}
-    m_Extent: {x: 18.567299, y: 5.17, z: 0}
+    m_Center: {x: -3.1532998, y: -2.23755, z: 0}
+    m_Extent: {x: 18.5772, y: 5.17885, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -62891,8 +62891,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1743503, y: -4.4041, z: 0}
-    m_Extent: {x: 17.62475, y: 4.8516, z: 0}
+    m_Center: {x: -3.1745005, y: -4.4073, z: 0}
+    m_Extent: {x: 17.6405, y: 4.8561, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -65486,8 +65486,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005800009, y: 0.015599996, z: 0}
-    m_Extent: {x: 0.9893, y: 0.76769996, z: 0}
+    m_Center: {x: -0.00485, y: 0.01609999, z: 0}
+    m_Extent: {x: 0.98585, y: 0.768, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -65952,7 +65952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687896737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -83719,6 +83719,10 @@ PrefabInstance:
       propertyPath: flashlightText
       value: 
       objectReference: {fileID: 2115805054}
+    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: flashlightButton
+      value: 
+      objectReference: {fileID: 1687896736}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: dinoTheSharkAudio
       value: 

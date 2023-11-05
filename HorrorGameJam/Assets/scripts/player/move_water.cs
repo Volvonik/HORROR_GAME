@@ -230,6 +230,17 @@ public class move_water : MonoBehaviour
         rb.velocity = moveInput;
     }
 
+    public void Pickup(GameObject flashLightObject)
+    {
+        hasFlashlight = true;
+
+        audioSource.PlayOneShot(flashLightSFX);
+
+        Destroy(flashlightButton);
+        Destroy(flashlightCheck);
+        Destroy(flashLightObject);
+    }
+
     void PickFlashLight()
     {
         animator.SetBool("hasFlashLight", hasFlashlight);
