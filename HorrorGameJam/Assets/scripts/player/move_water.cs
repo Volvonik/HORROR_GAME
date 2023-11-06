@@ -8,6 +8,11 @@ public class move_water : MonoBehaviour
 {
     [Header("Joystick")]
     [SerializeField] FixedJoystick joystick;
+    bool pickedUp = false;
+    [SerializeField] GameObject duckButton;
+    bool duckPickup;
+    [SerializeField] GameObject dropButton;
+    bool dropDuck;
 
     [SerializeField] GameObject transition2;
 
@@ -90,7 +95,7 @@ public class move_water : MonoBehaviour
         FindObjectOfType<PauseMenuScript>().isAllowedToPause = true;
 
         //hasFlashlight = true;
-        //hasFlashlight = false;
+        hasFlashlight = false;
 
         if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
@@ -180,10 +185,16 @@ public class move_water : MonoBehaviour
         if(pickupObject != null)
         {
             pickupObject.transform.position = pickupPosition.transform.position;
+            dropButton.SetActive(true);
+        }
+        else
+        {
+            dropButton.SetActive(false);
         }
 
-        if(Input.GetKeyDown("space") && delay)
+        if(dropDuck && delay)
         {
+            dropDuck = false;
             pickupObject.GetComponent<Collider2D>().enabled = true;
             pickupObject = null;
             delay = false;
@@ -230,15 +241,14 @@ public class move_water : MonoBehaviour
         rb.velocity = moveInput;
     }
 
-    public void Pickup(GameObject flashLightObject)
+    public void DropDuckButton()
     {
-        hasFlashlight = true;
+        dropDuck = true;
+    }
 
-        audioSource.PlayOneShot(flashLightSFX);
-
-        Destroy(flashlightButton);
-        Destroy(flashlightCheck);
-        Destroy(flashLightObject);
+    public void Pickup()
+    {
+        pickedUp = true;
     }
 
     void PickFlashLight()
@@ -254,7 +264,7 @@ public class move_water : MonoBehaviour
         {
             flashlightButton.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (pickedUp)
             {
                 hasFlashlight = true;
 
@@ -398,6 +408,12 @@ public class move_water : MonoBehaviour
 
             isPlayingDefaultMusic = false;
         }
+
+        else if (other.CompareTag("pickup"))
+        {
+            duckButton.SetActive(true);
+            //pickupObject = other.gameObject;
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -410,6 +426,18 @@ public class move_water : MonoBehaviour
         {
             fishSpawner.inBallsPool = false;
         }
+
+        
+        else if (other.CompareTag("pickup"))
+        {
+            duckButton.SetActive(false);
+            //pickupObject = null;
+        }
+    }
+
+    public void DuckPickupPressed()
+    {
+        duckPickup = true;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -420,11 +448,12 @@ public class move_water : MonoBehaviour
             fishSpawner.stopSpawning = false;
         }
 
-        if (other.CompareTag("pickup") && Input.GetKeyDown("space"))
+        if (other.CompareTag("pickup") && duckPickup)
         {
             pickupObject = other.gameObject;
             Invoke("Delay", 0.1f);
             other.gameObject.GetComponent<Collider2D>().enabled = false;
+            duckPickup = false;
         }
     }
 
