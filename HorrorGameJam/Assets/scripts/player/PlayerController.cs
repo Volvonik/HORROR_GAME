@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float defaultGravityScale = 4f;
     [SerializeField] float fallingGravityScale = 7f;
 
+    public int BD;
+    bool JP;
+
     [Header("Components")]
     Rigidbody2D rb;
 
@@ -62,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new(horizontalInput * moveSpeed, rb.velocity.y);
+        rb.velocity = new(BD * moveSpeed, rb.velocity.y);
     }
 
     void Jump()
@@ -83,18 +86,16 @@ public class PlayerController : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && coyoteTimeCounter > 0f)
+        if (JP && coyoteTimeCounter > 0f)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
             FindObjectOfType<AudioSource>().PlayOneShot(jumpSFX);
+            JP = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            rb.velocity = new(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
+       
     }
 
     void FlipSprite()
@@ -125,5 +126,21 @@ public class PlayerController : MonoBehaviour
     private void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void buttonR()
+    {
+        BD += 1;
+    }
+    public void buttonL()
+    {
+        BD -= 1;
+    }
+   
+    public void buttonU()
+    {
+        rb.velocity = new(rb.velocity.x, rb.velocity.y * 0.5f);
+        JP = true;
+
+
     }
 }
