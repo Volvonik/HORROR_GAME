@@ -95,7 +95,7 @@ public class move_water : MonoBehaviour
         FindObjectOfType<PauseMenuScript>().isAllowedToPause = true;
 
         //hasFlashlight = true;
-        hasFlashlight = false;
+        //hasFlashlight = false;
 
         if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
