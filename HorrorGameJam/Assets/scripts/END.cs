@@ -13,10 +13,13 @@ public class END : MonoBehaviour
     public bool inStory;
     bool inSecondPage;
 
+    [SerializeField] GameObject movementCanvas;
+    [SerializeField] GameObject pauseButton;
+
     void Update()
     {
 
-        if (Input.GetKeyDown (KeyCode.Space) && inStory)
+        /*if (Input.GetKeyDown (KeyCode.Space) && inStory)
         {
             if(!inSecondPage) //swap pages
             {
@@ -30,8 +33,25 @@ public class END : MonoBehaviour
                 transition2.SetActive(true);
                 Invoke("end",2.1f);
             }
+        }*/
+    }
+
+    public void SkipCutscene()
+    {
+        if (!inSecondPage) //swap pages
+        {
+            story1.SetActive(false);
+            story2.SetActive(true);
+            inSecondPage = true;
+        }
+
+        else
+        {
+            transition2.SetActive(true);
+            Invoke("end", 2.1f);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Finish"))
@@ -42,6 +62,8 @@ public class END : MonoBehaviour
     }
     void Story()
     {
+        movementCanvas.SetActive(false);
+        pauseButton.SetActive(false);
         inStory = true;
         story1.SetActive(true);
     }

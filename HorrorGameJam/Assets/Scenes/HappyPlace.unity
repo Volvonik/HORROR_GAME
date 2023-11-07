@@ -1475,7 +1475,7 @@ PrefabInstance:
     - target: {fileID: 3894214436963096400, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: movementCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1408533580}
     - target: {fileID: 4525717748334769503, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

@@ -94,8 +94,6 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<AudioSource>().PlayOneShot(jumpSFX);
             jumpPressed = false;
         }
-
-       
     }
 
     void FlipSprite()
