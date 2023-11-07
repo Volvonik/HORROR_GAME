@@ -19467,7 +19467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &243769299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27676,8 +27676,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.2477, y: -0.42105, z: 0}
-    m_Extent: {x: 0.2671, y: 0.21464999, z: 0}
+    m_Center: {x: -0.23879999, y: -0.41625, z: 0}
+    m_Extent: {x: 0.27179998, y: 0.21845001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -31514,7 +31514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -743.6102, y: -228.13171}
+  m_AnchoredPosition: {x: -788, y: -228.13171}
   m_SizeDelta: {x: 594.1943, y: 180.4529}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605086345
@@ -31564,8 +31564,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -31600,7 +31600,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -100.167725, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -51267,8 +51267,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1504502, y: -2.23275, z: 0}
-    m_Extent: {x: 18.57385, y: 5.17995, z: 0}
+    m_Center: {x: -3.1609, y: -2.2305, z: 0}
+    m_Extent: {x: 18.5727, y: 5.1765003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61741,8 +61741,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.51
-  m_fontSizeBase: 90.51
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -63501,8 +63501,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1676502, y: -4.40425, z: 0}
-    m_Extent: {x: 17.63155, y: 4.85555, z: 0}
+    m_Center: {x: -3.1707506, y: -4.4101005, z: 0}
+    m_Extent: {x: 17.630451, y: 4.8585, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -66172,8 +66172,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.012350023, y: 0.015650004, z: 0}
-    m_Extent: {x: 0.98315, y: 0.76935005, z: 0}
+    m_Center: {x: -0.0032500029, y: 0.01789999, z: 0}
+    m_Extent: {x: 0.98525, y: 0.7651, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
