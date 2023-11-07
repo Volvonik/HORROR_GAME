@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float defaultGravityScale = 4f;
     [SerializeField] float fallingGravityScale = 7f;
 
-    public int BD;
-    bool JP;
+    public int buttonDirection;
+    bool jumpPressed;
 
     [Header("Components")]
     Rigidbody2D rb;
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new(BD * moveSpeed, rb.velocity.y);
+        rb.velocity = new(buttonDirection * moveSpeed, rb.velocity.y);
     }
 
     void Jump()
@@ -86,13 +86,13 @@ public class PlayerController : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (JP && coyoteTimeCounter > 0f)
+        if (jumpPressed && coyoteTimeCounter > 0f)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
             FindObjectOfType<AudioSource>().PlayOneShot(jumpSFX);
-            JP = false;
+            jumpPressed = false;
         }
 
        
@@ -100,10 +100,10 @@ public class PlayerController : MonoBehaviour
 
     void FlipSprite()
     {
-        bool isRunning = horizontalInput != 0;
+        bool isRunning = buttonDirection != 0;
         if (isRunning)
         {
-            transform.rotation = (horizontalInput > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+            transform.rotation = (buttonDirection > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
             //transform.localScale = new Vector2(-horizontalInput * currentSize, currentSize);
         }
     }
@@ -129,18 +129,17 @@ public class PlayerController : MonoBehaviour
     }
     public void buttonR()
     {
-        BD += 1;
+        buttonDirection += 1;
     }
     public void buttonL()
     {
-        BD -= 1;
+        buttonDirection -= 1;
     }
    
     public void buttonU()
     {
         rb.velocity = new(rb.velocity.x, rb.velocity.y * 0.5f);
-        JP = true;
-
-
+        jumpPressed = true;
+        coyoteTimeCounter = 0f;
     }
 }

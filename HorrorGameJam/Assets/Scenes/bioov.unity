@@ -7053,7 +7053,7 @@ GameObject:
   - component: {fileID: 1144609824}
   - component: {fileID: 1144609823}
   m_Layer: 5
-  m_Name: BJ
+  m_Name: JumpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7068,15 +7068,15 @@ RectTransform:
   m_GameObject: {fileID: 1144609821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.446875, y: 1.446875, z: 1.446875}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1475361969}
+  m_Father: {fileID: 2090776985}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376, y: -252}
+  m_AnchoredPosition: {x: 1100, y: -430}
   m_SizeDelta: {x: 167.3936, y: 161.3767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144609823
@@ -7165,7 +7165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8856,7 +8856,7 @@ GameObject:
   - component: {fileID: 1378169704}
   - component: {fileID: 1378169703}
   m_Layer: 5
-  m_Name: BR
+  m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8871,15 +8871,15 @@ RectTransform:
   m_GameObject: {fileID: 1378169701}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4468749, y: 1.4468749, z: 1.446875}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1475361969}
+  m_Father: {fileID: 2090776985}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: -298}
+  m_AnchoredPosition: {x: -845, y: -430}
   m_SizeDelta: {x: 167.3936, y: 161.3767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378169703
@@ -8984,7 +8984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9443,9 +9443,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1378169702}
-  - {fileID: 1819623776}
-  - {fileID: 1144609822}
   - {fileID: 1863165973}
   - {fileID: 1284184209}
   - {fileID: 1535070392}
@@ -11670,7 +11667,7 @@ GameObject:
   - component: {fileID: 1819623778}
   - component: {fileID: 1819623777}
   m_Layer: 5
-  m_Name: BL
+  m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11685,15 +11682,15 @@ RectTransform:
   m_GameObject: {fileID: 1819623775}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4468749, y: 1.4468749, z: 1.446875}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1475361969}
+  m_Father: {fileID: 2090776985}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -611, y: -298}
+  m_AnchoredPosition: {x: -1160, y: -430}
   m_SizeDelta: {x: 167.3936, y: 161.3767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1819623777
@@ -11798,7 +11795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13048,7 +13045,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1378169702}
+  - {fileID: 1819623776}
+  - {fileID: 1144609822}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
