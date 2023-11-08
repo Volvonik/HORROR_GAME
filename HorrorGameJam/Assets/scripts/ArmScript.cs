@@ -37,6 +37,11 @@ public class ArmScript : MonoBehaviour
         audioSource.loop = false;
     }
 
+    private void Update()
+    {
+        transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
+    }
+
     private void FixedUpdate()
     {
 
@@ -50,7 +55,7 @@ public class ArmScript : MonoBehaviour
             return;
         }
 
-        transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
+        
 
         attackTimer += Time.deltaTime;
         if (attackTimer > attackDelay)

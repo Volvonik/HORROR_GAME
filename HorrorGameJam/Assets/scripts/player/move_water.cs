@@ -121,6 +121,8 @@ public class move_water : MonoBehaviour
             audioManager.Play();
 
             isPlayingDefaultMusic = true;
+
+            hasFlashlight = false;
         }
     }
 
