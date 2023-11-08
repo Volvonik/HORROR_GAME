@@ -37,7 +37,7 @@ public class PauseMenuScript : MonoBehaviour
             pauseMenu.SetActive(true);
             isPaused = true;
 
-            if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3) { return; }
+            if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 5) { return; }
             GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 0.5f;
 
             if(FindObjectsOfType<checkpoint>() == null) { return; }

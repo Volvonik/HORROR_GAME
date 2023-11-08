@@ -9,7 +9,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField]
     GameObject duck;
 
-    public static int difficulty = 1;
+    public static int difficulty = 2;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
@@ -46,5 +46,6 @@ public class MainMenuScript : MonoBehaviour
     private void play2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        checkpoint.didsave = false;
     }
 }

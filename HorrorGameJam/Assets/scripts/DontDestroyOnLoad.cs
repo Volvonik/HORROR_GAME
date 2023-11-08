@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +5,7 @@ public class DontDestroyOnLoad : MonoBehaviour
 {
     void Awake()
     {
-        if(SceneManager.GetActiveScene().buildIndex != 2)
+        if(SceneManager.GetActiveScene().buildIndex != 2 && SceneManager.GetActiveScene().buildIndex != 3 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             return;
         }
@@ -15,7 +13,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     }
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 2 && SceneManager.GetActiveScene().buildIndex != 3 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             Destroy(gameObject);
         }
@@ -23,7 +21,7 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 2 && SceneManager.GetActiveScene().buildIndex != 3 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             Destroy(gameObject);
         }

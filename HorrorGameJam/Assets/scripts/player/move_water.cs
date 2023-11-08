@@ -97,10 +97,7 @@ public class move_water : MonoBehaviour
         //hasFlashlight = true;
         //hasFlashlight = false;
 
-        if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
-        {
-            Destroy(GameObject.Find("Flashlight"));
-        }
+        
 
         //checkpoint.didsave = false;
         if(checkpoint.didsave)
@@ -131,6 +128,11 @@ public class move_water : MonoBehaviour
             isPlayingDefaultMusic = true;
 
             hasFlashlight = false;
+        }
+
+        if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
+        {
+            Destroy(GameObject.Find("Flashlight"));
         }
     }
 

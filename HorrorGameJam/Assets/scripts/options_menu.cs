@@ -26,7 +26,10 @@ public class options_menu : MonoBehaviour
         resolutionDropdown.value = resolutionValue;
         fpsInputField.text = fpsValue.ToString();
         masterVolumeSlider.value = masterVolumeValue;
-        difficultyDropdown.value = MainMenuScript.difficulty;
+        if(difficultyDropdown != null)
+        {
+            difficultyDropdown.value = MainMenuScript.difficulty;
+        }
     }
     void Start()
     {
