@@ -27660,8 +27660,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24670002, y: -0.4213, z: 0}
-    m_Extent: {x: 0.2678, y: 0.21469998, z: 0}
+    m_Center: {x: -0.23655, y: -0.4139, z: 0}
+    m_Extent: {x: 0.27075002, y: 0.21599999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -50664,8 +50664,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1570501, y: -2.23145, z: 0}
-    m_Extent: {x: 18.56985, y: 5.18005, z: 0}
+    m_Center: {x: -3.1574507, y: -2.22985, z: 0}
+    m_Extent: {x: 18.57705, y: 5.17435, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61292,7 +61292,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01011008, y: 0}
+  m_Offset: {x: -0.005698189, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -61303,7 +61303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0202202, y: 1}
+  m_Size: {x: 0.9886035, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1448568225
 Transform:
@@ -62636,8 +62636,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1644497, y: -4.41435, z: 0}
-    m_Extent: {x: 17.63345, y: 4.8562503, z: 0}
+    m_Center: {x: -3.1677995, y: -4.4075503, z: 0}
+    m_Extent: {x: 17.6266, y: 4.84905, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -65231,8 +65231,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0075999796, y: 0.011049986, z: 0}
-    m_Extent: {x: 0.9869, y: 0.76645, z: 0}
+    m_Center: {x: -0.0022000074, y: 0.010850012, z: 0}
+    m_Extent: {x: 0.9771, y: 0.76465, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
