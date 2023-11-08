@@ -9,7 +9,7 @@ public class defult_res : MonoBehaviour
     void Start()
     {
         if (!once) { Screen.SetResolution(1920, 1080, true); once = true; }
-      
+        
     }
 
     // Update is called once per frame
