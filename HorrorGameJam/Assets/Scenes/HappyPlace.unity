@@ -474,7 +474,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.2
+  orthographic size: 3.8284426
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -853,6 +853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782757808}
   - component: {fileID: 782757812}
+  - component: {fileID: 782757813}
   - component: {fileID: 782757811}
   - component: {fileID: 782757810}
   - component: {fileID: 782757809}
@@ -878,11 +879,11 @@ RectTransform:
   m_Father: {fileID: 1408533584}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 750, y: -325}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -150, y: 40}
   m_SizeDelta: {x: 170, y: 170}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &782757809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +995,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782757807}
   m_CullTransparentMesh: 1
+--- !u!114 &782757813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782757807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb8cbcd7c83b9343af33a36d5b927c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 1
+  anchorType: 4
+  anchorOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &870353583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2026571804}
   - component: {fileID: 2026571808}
+  - component: {fileID: 2026571809}
   - component: {fileID: 2026571807}
   - component: {fileID: 2026571806}
   - component: {fileID: 2026571805}
@@ -2153,11 +2170,11 @@ RectTransform:
   m_Father: {fileID: 1408533584}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -560, y: -325}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 350, y: 250}
   m_SizeDelta: {x: 170, y: 170}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &2026571805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,6 +2302,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026571803}
   m_CullTransparentMesh: 1
+--- !u!114 &2026571809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026571803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb8cbcd7c83b9343af33a36d5b927c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 1
+  anchorType: 0
+  anchorOffset: {x: 650, y: 175, z: 0}
 --- !u!1 &2090823547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2139997449}
   - component: {fileID: 2139997453}
+  - component: {fileID: 2139997454}
   - component: {fileID: 2139997452}
   - component: {fileID: 2139997451}
   - component: {fileID: 2139997450}
@@ -2404,11 +2437,11 @@ RectTransform:
   m_Father: {fileID: 1408533584}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -800, y: -325}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 300, y: 40}
   m_SizeDelta: {x: 170, y: 170}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &2139997450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,6 +2569,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139997448}
   m_CullTransparentMesh: 1
+--- !u!114 &2139997454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139997448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb8cbcd7c83b9343af33a36d5b927c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 1
+  anchorType: 0
+  anchorOffset: {x: 250, y: 175, z: 0}
 --- !u!1001 &1317742289686610577
 PrefabInstance:
   m_ObjectHideFlags: 0
