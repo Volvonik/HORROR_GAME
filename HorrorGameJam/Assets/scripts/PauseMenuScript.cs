@@ -14,7 +14,7 @@ public class PauseMenuScript : MonoBehaviour
 
     void Update()
     {
-        if(FindObjectOfType<move_water>() == null) { return; }
+        if(FindObjectOfType<move_water>() == null || isPaused) { return; }
 
         if(FindObjectOfType<move_water>().disableControls)
         {

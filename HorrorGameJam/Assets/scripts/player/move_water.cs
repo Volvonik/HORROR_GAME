@@ -411,7 +411,7 @@ public class move_water : MonoBehaviour
             isPlayingDefaultMusic = false;
         }
 
-        else if (other.CompareTag("pickup"))
+        else if (other.CompareTag("pickup") && pickupObject == null)
         {
             duckButton.SetActive(true);
             //pickupObject = other.gameObject;

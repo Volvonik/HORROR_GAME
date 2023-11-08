@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        if(horizontalInput == 0 )
+        if(buttonDirection == 0 )
         {
             GetComponent<Animator>().speed = 0f;
         }
