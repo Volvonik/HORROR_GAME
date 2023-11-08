@@ -1482,11 +1482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2839390375452432477, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 219.90002
+      value: 70.900024
       objectReference: {fileID: 0}
     - target: {fileID: 3762209713131001326, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: -189
       objectReference: {fileID: 0}
     - target: {fileID: 3894214436963096400, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: movementCanvas

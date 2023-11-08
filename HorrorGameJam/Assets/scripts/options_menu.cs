@@ -16,6 +16,7 @@ public class options_menu : MonoBehaviour
 
     [SerializeField] TMP_Dropdown graphicsDropdown;
     [SerializeField] TMP_Dropdown resolutionDropdown;
+    [SerializeField] TMP_Dropdown difficultyDropdown;
     [SerializeField] TMP_InputField fpsInputField;
     [SerializeField] Slider masterVolumeSlider;
 
@@ -25,6 +26,7 @@ public class options_menu : MonoBehaviour
         resolutionDropdown.value = resolutionValue;
         fpsInputField.text = fpsValue.ToString();
         masterVolumeSlider.value = masterVolumeValue;
+        difficultyDropdown.value = MainMenuScript.difficulty;
     }
     void Start()
     {
@@ -36,6 +38,11 @@ public class options_menu : MonoBehaviour
         graphicsValue = value;
 
         QualitySettings.SetQualityLevel(value);
+    }
+
+    public void ChangeDifficulty(int value)
+    {
+        MainMenuScript.difficulty = value;
     }
 
     public void changeresolution(int value)

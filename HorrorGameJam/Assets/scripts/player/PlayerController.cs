@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
     }
     private void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(MainMenuScript.difficulty + 2);
     }
     public void buttonR()
     {

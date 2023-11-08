@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7159357722302018961}
   - component: {fileID: 267696039090078911}
   m_Layer: 0
-  m_Name: TinokMagil
+  m_Name: Easy_TinokMagil
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

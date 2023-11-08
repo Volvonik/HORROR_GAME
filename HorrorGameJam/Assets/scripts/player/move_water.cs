@@ -561,7 +561,7 @@ public class move_water : MonoBehaviour
     }
     void loadscene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(5);
         disableControls = true;
         checkpoint.didsave = false;
         hasFlashlight = false;

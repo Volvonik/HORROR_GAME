@@ -74,4 +74,12 @@ public class BabyScript : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("LEGO"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
