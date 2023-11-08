@@ -27,6 +27,11 @@ public class options_menu : MonoBehaviour
         masterVolumeSlider.value = masterVolumeValue;
     }
 
+    void Start()
+    {
+        QualitySettings.SetQualityLevel(2);
+    }
+
     public void changegraphics(int value)
     {
         graphicsValue = value;
