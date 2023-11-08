@@ -26,6 +26,10 @@ public class options_menu : MonoBehaviour
         fpsInputField.text = fpsValue.ToString();
         masterVolumeSlider.value = masterVolumeValue;
     }
+    void Start()
+    {
+        QualitySettings.SetQualityLevel(2);
+    }
 
     public void changegraphics(int value)
     {
