@@ -129,6 +129,8 @@ public class move_water : MonoBehaviour
             audioManager.Play();
 
             isPlayingDefaultMusic = true;
+
+            hasFlashlight = false;
         }
     }
 
@@ -565,4 +567,10 @@ public class move_water : MonoBehaviour
         hasFlashlight = false;
         GetComponent<Collider2D>().enabled = false;
     }
+
+    /*public void ResetStats()
+    {
+        checkpoint.didsave = false;
+        hasFlashlight = false;
+    }*/
 }

@@ -99,6 +99,7 @@ public class PauseMenuScript : MonoBehaviour
     { 
         SceneManager.LoadScene(0);
         checkpoint.didsave = false;
+        //FindObjectOfType<move_water>().ResetStats();
     }
 
     public void GoToOptions()
