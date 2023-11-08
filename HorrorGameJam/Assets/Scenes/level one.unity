@@ -68422,7 +68422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bfc9ba6b062f84ebf8462f7d7219b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 5.5
   eatingTime: 1.5
   eatingSFX: {fileID: 0}
   runningSFX: {fileID: 0}
