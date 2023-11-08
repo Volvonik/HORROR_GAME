@@ -14,19 +14,15 @@ public class PauseMenuScript : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(FindObjectOfType<move_water>() == null) { return; }
+
+        if(FindObjectOfType<move_water>().disableControls)
         {
-            if(isAllowedToPause || SceneManager.GetActiveScene().buildIndex == 1) //So u'll always be allowed to pause in the happy scene
-            {
-                if(optionsMenu.activeInHierarchy)
-                {
-                    BackFromOptions();
-                }
-                else
-                {
-                    Pause();
-                }
-            }
+            pauseButton.SetActive(false);
+        }
+        else
+        {
+            pauseButton.SetActive(true);
         }
     }
 

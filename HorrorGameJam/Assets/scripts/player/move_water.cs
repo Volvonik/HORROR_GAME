@@ -25,7 +25,7 @@ public class move_water : MonoBehaviour
     Animator animator;
 
     [Header("Movement")]
-    bool disableControls;
+    public bool disableControls;
     [SerializeField] float speed;
     public static Vector2 force;
     Vector2 moveInput;

@@ -27676,8 +27676,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.244, y: -0.41635, z: 0}
-    m_Extent: {x: 0.27, y: 0.21575, z: 0}
+    m_Center: {x: -0.23605001, y: -0.417, z: 0}
+    m_Extent: {x: 0.27515, y: 0.2144, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -51267,8 +51267,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1523004, y: -2.2281, z: 0}
-    m_Extent: {x: 18.5797, y: 5.1743, z: 0}
+    m_Center: {x: -3.1522498, y: -2.22785, z: 0}
+    m_Extent: {x: 18.56535, y: 5.17845, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -57712,7 +57712,7 @@ RectTransform:
   m_GameObject: {fileID: 1269093444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0884, y: 1.0884, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1492986103}
@@ -57743,7 +57743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 886fb7942d996f942965ae99f23a989d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b76df03cff8abbc4493352d4955ce896, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -63501,8 +63501,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1769996, y: -4.4077, z: 0}
-    m_Extent: {x: 17.6337, y: 4.8561997, z: 0}
+    m_Center: {x: -3.1752996, y: -4.3996997, z: 0}
+    m_Extent: {x: 17.637299, y: 4.8577, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -64630,7 +64630,7 @@ RectTransform:
   m_GameObject: {fileID: 1591925165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.168, y: 1.168, z: 1.168}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1113826358}
@@ -64661,7 +64661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 886fb7942d996f942965ae99f23a989d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0d6e3fc0b845a6429dc50d2315cde09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -66172,8 +66172,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.010600001, y: 0.016599983, z: 0}
-    m_Extent: {x: 0.98029995, y: 0.76269996, z: 0}
+    m_Center: {x: 0.0027500093, y: 0.006700009, z: 0}
+    m_Extent: {x: 0.98405004, y: 0.76559997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
