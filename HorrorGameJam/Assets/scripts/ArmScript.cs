@@ -39,30 +39,26 @@ public class ArmScript : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
+        throwHazardTimer += Time.deltaTime;
+        attackTimer += Time.deltaTime;
+
+        if (!isAttacking)
+        {
+            transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
+        }
     }
 
     private void FixedUpdate()
     {
-
-        throwHazardTimer += Time.deltaTime;
         if (throwHazardTimer > throwHazardDelay)
         {
             ThrowHazard();
         }
-        if(isAttacking)
-        {
-            return;
-        }
 
-        
-
-        attackTimer += Time.deltaTime;
-        if (attackTimer > attackDelay)
+        if (!isAttacking && attackTimer > attackDelay)
         {
             Attack();
         }
-
     }
 
     private void ThrowHazard()
