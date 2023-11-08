@@ -37,27 +37,28 @@ public class ArmScript : MonoBehaviour
         audioSource.loop = false;
     }
 
+    private void Update()
+    {
+        throwHazardTimer += Time.deltaTime;
+        attackTimer += Time.deltaTime;
+
+        if (!isAttacking)
+        {
+            transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
+        }
+    }
+
     private void FixedUpdate()
     {
-
-        throwHazardTimer += Time.deltaTime;
         if (throwHazardTimer > throwHazardDelay)
         {
             ThrowHazard();
         }
-        if(isAttacking)
-        {
-            return;
-        }
 
-        transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
-
-        attackTimer += Time.deltaTime;
-        if (attackTimer > attackDelay)
+        if (!isAttacking && attackTimer > attackDelay)
         {
             Attack();
         }
-
     }
 
     private void ThrowHazard()
