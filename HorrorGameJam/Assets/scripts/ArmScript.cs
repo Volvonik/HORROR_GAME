@@ -40,11 +40,12 @@ public class ArmScript : MonoBehaviour
     private void Update()
     {
         throwHazardTimer += Time.deltaTime;
-        attackTimer += Time.deltaTime;
+
 
         if (!isAttacking)
         {
             transform.position = new Vector3(FindObjectOfType<move_water>().transform.position.x, -15, 0);
+            attackTimer += Time.deltaTime;
         }
     }
 
