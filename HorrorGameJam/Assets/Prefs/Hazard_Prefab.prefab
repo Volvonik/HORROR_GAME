@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c58e043b155988b4e88bbb2e1d9e3214, type: 3}
   - {fileID: 21300000, guid: 4dd87b87e97bdc94e80e5c2784b16c2d, type: 3}
   - {fileID: 21300000, guid: f850db2cc2cffcf4d9c7853603a7dcdb, type: 3}
-  moveSpeed: 12
+  moveSpeed: 8
   rotateSpeed: -3
   explosionSFX: {fileID: 8300000, guid: d678a9bfbaffb8d4a865d6eeed6f60cc, type: 3}
 --- !u!114 &4510635596342051126
