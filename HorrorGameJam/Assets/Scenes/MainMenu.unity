@@ -4891,7 +4891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   executeInUpdate: 1
   anchorType: 7
-  anchorOffset: {x: -3.44, y: -1.15, z: 0}
+  anchorOffset: {x: -3.6, y: -1.15, z: 0}
 --- !u!4 &1108390106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
@@ -6211,7 +6211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -347.62106
+      value: -363.7895
       objectReference: {fileID: 0}
     - target: {fileID: 5837784787732587068, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: m_LocalPosition.y
