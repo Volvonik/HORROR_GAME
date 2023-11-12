@@ -72,8 +72,15 @@ public class move_water : MonoBehaviour
     [SerializeField] AudioClip babyDeathSFX;
     [SerializeField] AudioClip dinoDeathSFX;
 
+    [SerializeField] int startDifficulty;
+
     void Start()
     {
+        if (startDifficulty >= 0 && startDifficulty < 3)
+        {
+            MainMenuScript.difficulty = startDifficulty;
+        }
+
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
@@ -88,7 +95,6 @@ public class move_water : MonoBehaviour
 
         //hasFlashlight = true;
         //hasFlashlight = false;
-
 
         //checkpoint.didsave = false;
         if(checkpoint.didsave)
@@ -146,6 +152,8 @@ public class move_water : MonoBehaviour
 
     void Update()
     {
+        print(MainMenuScript.difficulty);
+
         moveInput = new Vector2(Input.GetAxis("Horizontal") * speed + force.x, Input.GetAxis("Vertical") * speed + force.y);
         
         if(moveInput == new Vector2(0, 0))
