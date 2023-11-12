@@ -30,11 +30,13 @@ public class ArmScript : MonoBehaviour
     [SerializeField] float throwHazardDelay = 2f;
     float throwHazardTimer;
     [SerializeField] GameObject hazardPrefab;
+    Rigidbody2D rb;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -78,8 +80,8 @@ public class ArmScript : MonoBehaviour
         isAttacking = true;
         attackTimer = 0f;
 
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        GetComponent<Rigidbody2D>().AddForce(-transform.up * attackSpeed, ForceMode2D.Impulse);
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        rb.AddForce(-transform.up * attackSpeed, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -120,9 +122,9 @@ public class ArmScript : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(transform.up * upPushForce, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(goingUpTime);
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
 
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         isAttacking = false;
 
