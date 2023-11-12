@@ -8,6 +8,8 @@ public class move_water : MonoBehaviour
 {
     [SerializeField] GameObject transition2;
 
+    public static bool beatHand;
+
     [Header("Components")]
     AudioSource audioSource;
     AudioSource audioManager;
@@ -101,6 +103,12 @@ public class move_water : MonoBehaviour
         //hasFlashlight = true;
         //hasFlashlight = false;
 
+        if(beatHand)
+        {
+            Destroy(FindObjectOfType<ArmScript>().gameObject);
+            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
+        }
+
         //checkpoint.didsave = false;
         if(checkpoint.didsave)
         {
@@ -130,6 +138,7 @@ public class move_water : MonoBehaviour
             isPlayingDefaultMusic = true;
 
             hasFlashlight = false;
+            beatHand = false;
         }
 
         if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists

@@ -22,8 +22,6 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-
-
     public void Options()
     {
         mainMenu.SetActive(false);
@@ -43,8 +41,6 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
-
-
 
     public void Play()
     {

@@ -139,6 +139,8 @@ public class ArmScript : MonoBehaviour
 
         if(lifeTotal <= 0 )
         {
+            move_water.beatHand = true;
+
             AudioSource globalAudioSource = FindObjectOfType<move_water>().GetComponent<AudioSource>();
             globalAudioSource.PlayOneShot(dieSFX);
             globalAudioSource.PlayOneShot(hitSFX);
