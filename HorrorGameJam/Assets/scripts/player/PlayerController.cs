@@ -27,11 +27,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Components")]
     Rigidbody2D rb;
+    Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = defaultGravityScale;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -40,11 +42,11 @@ public class PlayerController : MonoBehaviour
 
         if(horizontalInput == 0 )
         {
-            GetComponent<Animator>().speed = 0f;
+            animator.speed = 0f;
         }
         else
         {
-            GetComponent<Animator>().speed = 1f;
+            animator.speed = 1f;
         }
 
         if(Mathf.Abs(rb.velocity.y) < velocityWhenIncreasingGravity)
