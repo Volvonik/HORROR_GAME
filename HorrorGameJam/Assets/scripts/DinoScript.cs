@@ -178,4 +178,10 @@ public class DinoScript : MonoBehaviour
     {
         actualEatTrigger.gameObject.SetActive(true);
     }
+
+    public void SetStats(float speed, float eatTime)
+    {
+        moveSpeed = speed;
+        eatingTime = eatTime;
+    }
 }

@@ -12,14 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/HappyPlace.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Easy.unity
-    guid: 95ff623289e29ff4fb70ab9c0653ccc3
-  - enabled: 1
     path: Assets/Scenes/Medium.unity
     guid: fae5cafa399991a4bbb917db488cb973
-  - enabled: 1
-    path: Assets/Scenes/Hard.unity
-    guid: 59de729eb22ae574e89b1670f20d296d
   - enabled: 1
     path: Assets/Scenes/bioov.unity
     guid: 73aaf952e933c7b4d9dd865f3aa87250

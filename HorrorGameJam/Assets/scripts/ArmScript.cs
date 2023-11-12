@@ -137,6 +137,8 @@ public class ArmScript : MonoBehaviour
 
         if(lifeTotal <= 0 )
         {
+            move_water.beatArm = true;
+
             AudioSource globalAudioSource = FindObjectOfType<move_water>().GetComponent<AudioSource>();
             globalAudioSource.PlayOneShot(dieSFX);
             globalAudioSource.PlayOneShot(hitSFX);
@@ -187,5 +189,12 @@ public class ArmScript : MonoBehaviour
         audioSource.PlayOneShot(shakeSFX);
 
         StartCoroutine(goUpAfterAttack());
+    }
+
+    public void SetStats(float attackDelayPreset, int life, float throwDelay)
+    {
+        attackDelay = attackDelayPreset;
+        lifeTotal = life;
+        throwHazardDelay = throwDelay;
     }
 }

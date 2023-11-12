@@ -82,4 +82,9 @@ public class BabyScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetStats(float speed)
+    {
+        moveSpeed = speed;
+    }
 }

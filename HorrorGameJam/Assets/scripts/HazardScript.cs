@@ -16,6 +16,8 @@ public class HazardScript : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        moveSpeed = FindObjectOfType<DifficultyManager>().hazardMoveSpeed[MainMenuScript.difficulty];
     }
 
     private void Start()

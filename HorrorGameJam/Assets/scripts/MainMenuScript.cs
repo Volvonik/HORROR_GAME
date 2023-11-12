@@ -49,7 +49,7 @@ public class MainMenuScript : MonoBehaviour
     }
     private void play2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(3 /*SceneManager.GetActiveScene().buildIndex + 1*/);
         checkpoint.didsave = false;
     }
     public void RealyPlay()

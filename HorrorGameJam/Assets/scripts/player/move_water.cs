@@ -13,6 +13,7 @@ public class move_water : MonoBehaviour
     bool duckPickup;
     [SerializeField] GameObject dropButton;
     bool dropDuck;
+    [SerializeField] GameObject movementCanvas;
 
     [SerializeField] GameObject transition2;
 
@@ -54,6 +55,7 @@ public class move_water : MonoBehaviour
 
     [Header("Baby Chase")]
     [SerializeField] GameObject tinok;
+    public static bool beatArm;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -94,13 +96,15 @@ public class move_water : MonoBehaviour
 
         FindObjectOfType<PauseMenuScript>().isAllowedToPause = true;
 
+        movementCanvas.SetActive(true);
+
         //hasFlashlight = true;
         //hasFlashlight = false;
 
-        
+
 
         //checkpoint.didsave = false;
-        if(checkpoint.didsave)
+        if (checkpoint.didsave)
         {
             transform.position = checkpoint.position;
 
@@ -128,11 +132,18 @@ public class move_water : MonoBehaviour
             isPlayingDefaultMusic = true;
 
             hasFlashlight = false;
+            beatArm = false;
         }
 
         if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
         {
             Destroy(GameObject.Find("Flashlight"));
+        }
+
+        if(beatArm)
+        {
+            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
+            Destroy(FindObjectOfType<ArmScript>().gameObject);
         }
     }
 
@@ -204,7 +215,7 @@ public class move_water : MonoBehaviour
             delay = false;
         }
 
-        if (FindObjectOfType<ArmScript>() == null && !openLegsOnce)
+        if (FindObjectOfType<ArmScript>() == null && !openLegsOnce && !beatArm)
         {
             openLegsOnce = true;
 
@@ -430,12 +441,13 @@ public class move_water : MonoBehaviour
         {
             fishSpawner.inBallsPool = false;
         }
-
         
         else if (other.CompareTag("pickup"))
         {
-            duckButton.SetActive(false);
-            //pickupObject = null;
+            if(duckButton != null)
+            {
+                duckButton.SetActive(false);
+            }
         }
     }
 
@@ -534,6 +546,7 @@ public class move_water : MonoBehaviour
         transition.SetActive(true);
 
         flashlightLight2D.SetActive(false);
+        movementCanvas.SetActive(false);
 
         sp.enabled = false;
 
@@ -553,6 +566,7 @@ public class move_water : MonoBehaviour
         baby_scary.GetComponent<AudioSource>().clip = sfx;
         baby_scary.GetComponent<Image>().sprite = jumpscareImage;
         baby_scary.SetActive(true);
+        movementCanvas.SetActive(false);
         Invoke("Die", 2f);
     }
 
@@ -563,7 +577,7 @@ public class move_water : MonoBehaviour
     }
     void loadscene()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(2);
         disableControls = true;
         checkpoint.didsave = false;
         hasFlashlight = false;
