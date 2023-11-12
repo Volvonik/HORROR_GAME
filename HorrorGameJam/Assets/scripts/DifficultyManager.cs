@@ -32,7 +32,7 @@ public class DifficultyManager : MonoBehaviour
 
     [SerializeField] ArmScript hand;
     [SerializeField] DinoScript dino;
-
+    
     private void Start()
     {
         globalLightObject.intensity = globalLightStrength[MainMenuScript.difficulty];

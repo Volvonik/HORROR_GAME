@@ -9,7 +9,7 @@ public class options_menu : MonoBehaviour
 {
     [SerializeField] AudioMixer masterAudioMixer;
 
-    private static int graphicsValue = 2;
+    public static int graphicsValue = 2;
     private static int resolutionValue = 2;
     private static int fpsValue = 144;
     private static float masterVolumeValue = 0; //max volume

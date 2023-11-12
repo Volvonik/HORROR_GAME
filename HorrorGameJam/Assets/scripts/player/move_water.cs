@@ -74,13 +74,18 @@ public class move_water : MonoBehaviour
 
     [SerializeField] int startDifficulty;
 
-    void Start()
+    private void Awake()
     {
         if (startDifficulty >= 0 && startDifficulty < 3)
         {
             MainMenuScript.difficulty = startDifficulty;
         }
 
+        QualitySettings.SetQualityLevel(options_menu.graphicsValue);
+    }
+
+    void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();

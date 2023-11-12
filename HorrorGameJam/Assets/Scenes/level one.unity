@@ -35742,8 +35742,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24780001, y: -0.4188, z: 0}
-    m_Extent: {x: 0.2381, y: 0.21020001, z: 0}
+    m_Center: {x: -0.2489, y: -0.41070002, z: 0}
+    m_Extent: {x: 0.2399, y: 0.2115, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -64816,10 +64816,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1033116025
@@ -70179,10 +70179,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1180928594
@@ -83719,8 +83719,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.07584953, y: -4.4253497, z: 0}
-    m_Extent: {x: 19.81325, y: 6.25915, z: 0}
+    m_Center: {x: -0.07269955, y: -4.4243503, z: 0}
+    m_Extent: {x: 19.819801, y: 6.25695, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -91832,8 +91832,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0027499795, y: 0.018700004, z: 0}
-    m_Extent: {x: 0.98415, y: 0.7627, z: 0}
+    m_Center: {x: 0.0021499991, y: 0.006249994, z: 0}
+    m_Extent: {x: 0.98675, y: 0.76125, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -95504,10 +95504,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1766008841
@@ -96559,8 +96559,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7318497, y: -6.06265, z: 0}
-    m_Extent: {x: 18.22115, y: 5.78865, z: 0}
+    m_Center: {x: 0.72679996, y: -6.06535, z: 0}
+    m_Extent: {x: 18.209702, y: 5.7806497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -118095,6 +118095,10 @@ PrefabInstance:
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: movementCanvas
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
+      propertyPath: startDifficulty
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: flashlightButton
