@@ -188,4 +188,11 @@ public class ArmScript : MonoBehaviour
 
         StartCoroutine(goUpAfterAttack());
     }
+
+    public void SetStats(float delay, int life, float throwDelay)
+    {
+        attackDelay = delay;
+        lifeTotal = life;
+        throwHazardDelay = throwDelay;
+    }
 }

@@ -9,6 +9,8 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField]
     GameObject duck;
 
+    public static int difficulty;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
