@@ -9,19 +9,30 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField]
     GameObject duck;
 
+
+    [SerializeField] GameObject Diff;
+
+    GameObject globalL;
+
+    private void Start()
+    {
+        globalL = GameObject.Find("GlobalLight");
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
         {
-            GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
+            globalL.GetComponent<AudioSource>().Play();
             Back();
         }
     }
 
     public void Play()
     {
-        transition.SetActive(true);
-        Invoke("play2", 2.1f);
+        mainMenu.SetActive(false);
+        duck.SetActive(false);
+        Diff.SetActive(true);
     }
 
     public void Options()
@@ -34,6 +45,7 @@ public class MainMenuScript : MonoBehaviour
     public void Back()
     {
         optionsMenu.SetActive(false);
+        Diff.SetActive(false);
         mainMenu.SetActive(true);
         duck.SetActive(true);
     }
@@ -45,5 +57,11 @@ public class MainMenuScript : MonoBehaviour
     private void play2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        checkpoint.didsave = false;
+    }
+    public void RealyPlay()
+    {
+        transition.SetActive(true);
+        Invoke("play2", 2.1f);
     }
 }
