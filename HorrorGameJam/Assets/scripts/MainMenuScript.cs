@@ -9,22 +9,20 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField]
     GameObject duck;
 
+    [SerializeField] GameObject Diff;
+
     public static int difficulty;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
         {
             GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
             Back();
         }
     }
 
-    public void Play()
-    {
-        transition.SetActive(true);
-        Invoke("play2", 2.1f);
-    }
+
 
     public void Options()
     {
@@ -44,8 +42,23 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+
+
+    public void Play()
+    {
+        mainMenu.SetActive(false);
+        duck.SetActive(false);
+        Diff.SetActive(true);
+    }
     private void play2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        checkpoint.didsave = false;
+    }
+    public void RealyPlay()
+    {
+        transition.SetActive(true);
+        Invoke("play2", 2.1f);
     }
 }
