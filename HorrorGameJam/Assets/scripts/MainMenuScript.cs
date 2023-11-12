@@ -34,6 +34,7 @@ public class MainMenuScript : MonoBehaviour
     public void Back()
     {
         optionsMenu.SetActive(false);
+        Diff.SetActive(false);
         mainMenu.SetActive(true);
         duck.SetActive(true);
     }
