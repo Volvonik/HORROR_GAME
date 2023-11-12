@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     }
     private void NextScene()
     {
-        SceneManager.LoadScene(MainMenuScript.difficulty + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void buttonR()
     {
