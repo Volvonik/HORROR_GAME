@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float defaultGravityScale = 4f;
     [SerializeField] float fallingGravityScale = 7f;
 
+    Animator animator;
+
     public int buttonDirection;
     bool jumpPressed;
 
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = defaultGravityScale;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -43,11 +46,11 @@ public class PlayerController : MonoBehaviour
 
         if(buttonDirection == 0 )
         {
-            GetComponent<Animator>().speed = 0f;
+            animator.speed = 0f;
         }
         else
         {
-            GetComponent<Animator>().speed = 1f;
+            animator.speed = 1f;
         }
 
         if(Mathf.Abs(rb.velocity.y) < velocityWhenIncreasingGravity)

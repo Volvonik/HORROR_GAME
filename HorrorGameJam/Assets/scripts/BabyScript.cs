@@ -15,10 +15,18 @@ public class BabyScript : MonoBehaviour
     [SerializeField] AudioClip[] laughSFX;
     [SerializeField] AudioClip startSFX;
 
+    AudioSource ao;
+    Rigidbody2D rb;
+    Animator animator;
+
     private void Start()
     {
         random = Random.Range(timesToLaugh[0], timesToLaugh[1]);
         GetComponent<AudioSource>().PlayOneShot(startSFX);
+
+        ao = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -27,7 +35,7 @@ public class BabyScript : MonoBehaviour
         {
             transform.localScale = Vector3.one * 3;
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
             return;
         }
 
@@ -42,7 +50,7 @@ public class BabyScript : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > random)
         {
-            GetComponent<AudioSource>().PlayOneShot(laughSFX[Random.Range(0, laughSFX.Length)]);
+            ao.PlayOneShot(laughSFX[Random.Range(0, laughSFX.Length)]);
             random = Random.Range(timesToLaugh[0], timesToLaugh[1]);
             timer = 0;
         }
@@ -55,23 +63,23 @@ public class BabyScript : MonoBehaviour
         float distance = Vector3.Distance(transform.position, FindObjectOfType<move_water>().gameObject.transform.position);
         if(distance < .6f)
         {
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
             return;
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.time / 100);
         finalMoveSpeed = direction.normalized * moveSpeed;
-        GetComponent<Rigidbody2D>().velocity = finalMoveSpeed;
+        rb.velocity = finalMoveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("BallPool"))
         {
-            GetComponent<Animator>().SetBool("playBalls", true);
+            animator.SetBool("playBalls", true);
             disableMovement = true;
 
-            GetComponent<AudioSource>().Play();
+           ao.Play();
         }
     }
 

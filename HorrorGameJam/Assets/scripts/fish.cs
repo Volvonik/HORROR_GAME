@@ -8,6 +8,11 @@ public class fish : MonoBehaviour
     [SerializeField]
     float speed;
     float num = 0;
+    Rigidbody2D rb;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -24,7 +29,7 @@ public class fish : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        
         if(timer < num / 2)
         {
             rb.velocity = new Vector2(0, -speed);
