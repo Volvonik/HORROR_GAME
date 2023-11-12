@@ -16625,9 +16625,9 @@ MonoBehaviour:
   - {fileID: 1180948860}
   - {fileID: 1403606211}
   babySpeed:
-  - 3.8
   - 4
   - 4.2
+  - 4.4
   babyAttackDelay:
   - 3
   - 2.5
@@ -35742,8 +35742,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24784999, y: -0.41335002, z: 0}
-    m_Extent: {x: 0.23985, y: 0.21505001, z: 0}
+    m_Center: {x: -0.25455, y: -0.4192, z: 0}
+    m_Extent: {x: 0.23195, y: 0.21130002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -36844,7 +36844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472924186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.684691, y: 3.3736424, z: 0}
+  m_LocalPosition: {x: 13.994692, y: 4.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83803,8 +83803,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.06550026, y: -4.4296002, z: 0}
-    m_Extent: {x: 19.8185, y: 6.2477, z: 0}
+    m_Center: {x: -0.07890034, y: -4.4160004, z: 0}
+    m_Extent: {x: 19.8138, y: 6.2521, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -84188,7 +84188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414693516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 3.3736424, z: 0}
+  m_LocalPosition: {x: 12.31, y: 4.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92000,8 +92000,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.013700008, y: 0.0138500035, z: 0}
-    m_Extent: {x: 0.9823, y: 0.76995003, z: 0}
+    m_Center: {x: -0.011000007, y: 0.012649983, z: 0}
+    m_Extent: {x: 0.9826, y: 0.76555, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96727,8 +96727,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7270498, y: -6.0687, z: 0}
-    m_Extent: {x: 18.221851, y: 5.7778997, z: 0}
+    m_Center: {x: 0.7281494, y: -6.065, z: 0}
+    m_Extent: {x: 18.21405, y: 5.7830997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -107573,7 +107573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989808494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.68, y: -37.57, z: 0}
+  m_LocalPosition: {x: -46.58, y: -37.57, z: 0}
   m_LocalScale: {x: 1.2298, y: 1.2298, z: 1.2298}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107649,7 +107649,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6822667, y: -0.08605242}
+  m_Offset: {x: 0.6822667, y: 0.14218271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -107660,7 +107660,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7228518, y: 4.514762}
+  m_Size: {x: 7.7228518, y: 4.9712324}
   m_EdgeRadius: 0
 --- !u!1 &1996727854
 GameObject:
@@ -118266,7 +118266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: startDifficulty
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: flashlightButton

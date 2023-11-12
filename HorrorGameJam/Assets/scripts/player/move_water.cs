@@ -166,8 +166,6 @@ public class move_water : MonoBehaviour
 
     void Update()
     {
-        print(MainMenuScript.difficulty);
-
         moveInput = new Vector2(Input.GetAxis("Horizontal") * speed + force.x, Input.GetAxis("Vertical") * speed + force.y);
         
         if(moveInput == new Vector2(0, 0))
