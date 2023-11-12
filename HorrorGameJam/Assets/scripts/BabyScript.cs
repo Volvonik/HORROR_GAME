@@ -74,4 +74,9 @@ public class BabyScript : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
     }
+
+    public void SetStats(float speed)
+    {
+        moveSpeed = speed;
+    }
 }
