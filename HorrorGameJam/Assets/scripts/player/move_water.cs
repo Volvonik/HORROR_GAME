@@ -84,6 +84,8 @@ public class move_water : MonoBehaviour
 
     void Start()
     {
+        QualitySettings.SetQualityLevel(options_menu.graphicsValue);
+
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();

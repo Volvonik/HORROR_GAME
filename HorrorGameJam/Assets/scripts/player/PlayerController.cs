@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        QualitySettings.SetQualityLevel(options_menu.graphicsValue);
+
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = defaultGravityScale;
         animator = GetComponent<Animator>();
