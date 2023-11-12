@@ -98,4 +98,8 @@ public class options_menu : MonoBehaviour
 
         masterAudioMixer.SetFloat("masterVolume", volume);
     }
+    public void ChangeDifficulty(int value)
+    {
+        MainMenuScript.difficulty = value;
+    }
 }
