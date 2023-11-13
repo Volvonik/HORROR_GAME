@@ -141,6 +141,8 @@ public class move_water : MonoBehaviour
             hasFlashlight = false;
             beatHand = false;
             babySpawned = false;
+
+            checkpoint.checkpointTimes = 0;
         }
 
         if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
@@ -413,10 +415,12 @@ public class move_water : MonoBehaviour
         }
 
         
-        else if(other.transform.parent.name == "BreadCheckpoint_3")
-        {
-            babySpawned = true;
-            Debug.Log("Beat baby");
+        else if(other.transform.parent != null)
+        { 
+            if(other.transform.parent.name == "BreadCheckpoint_2")
+            {
+                babySpawned = true;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other)

@@ -7,12 +7,26 @@ public class checkpoint : MonoBehaviour
     public static Vector2 position;
     public static bool didsave;
     public AudioClip musicAfterCheckpoint;
-    private Animator animator;
     AudioSource ao;
+
+    [SerializeField] int checkpointNumber;
+    public static int checkpointTimes;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        Debug.Log(checkpointTimes);
+        if(checkpointNumber < checkpointTimes)
+        {
+            Debug.Log(checkpointNumber + "Was Destroyed");
+            if(gameObject.transform.parent != null)
+            {
+                Destroy(gameObject.transform.parent.gameObject);
+                return;
+            }
+
+            Destroy(gameObject);
+        }
+
         ao = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +38,7 @@ public class checkpoint : MonoBehaviour
             GetComponent<Animator>().SetTrigger("checkpoint");
             ao.Play();
             move_water.lastCheckpointMusic = musicAfterCheckpoint;
+            checkpointTimes++;
         }
     }
 }
