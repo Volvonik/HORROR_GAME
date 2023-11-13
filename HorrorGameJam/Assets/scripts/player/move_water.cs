@@ -81,13 +81,13 @@ public class move_water : MonoBehaviour
         if (startDifficulty >= 0 && startDifficulty < 3)
         {
             MainMenuScript.difficulty = startDifficulty;
-        }
-
-        QualitySettings.SetQualityLevel(options_menu.graphicsValue);
+        } 
     }
 
     void Start()
     {
+        QualitySettings.SetQualityLevel(options_menu.graphicsValue);
+
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioSource>();
