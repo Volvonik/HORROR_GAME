@@ -48,6 +48,7 @@ public class move_water : MonoBehaviour
 
     [Header("Baby Chase")]
     [SerializeField] GameObject tinok;
+    private static bool babySpawned;
 
     [Header("Flashlight")]
     private static bool hasFlashlight;
@@ -139,6 +140,7 @@ public class move_water : MonoBehaviour
 
             hasFlashlight = false;
             beatHand = false;
+            babySpawned = false;
         }
 
         if (GameObject.Find("Flashlight") != null && hasFlashlight) //So if you have the flashlight and you die the flashlight at the start still exists
@@ -461,6 +463,8 @@ public class move_water : MonoBehaviour
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
     {
+        if(babySpawned) { return; }
+
         if (hasFlashlight)
         {
             flashlightLight2D.SetActive(true);
@@ -477,6 +481,7 @@ public class move_water : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
 
         Instantiate(tinok);
+        babySpawned = true;
 
         if (!isPlayingDefaultMusic) { return; }
 
