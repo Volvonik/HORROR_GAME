@@ -14,7 +14,6 @@ public class checkpoint : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(checkpointTimes);
         if(checkpointNumber < checkpointTimes)
         {
             Debug.Log(checkpointNumber + "Was Destroyed");
