@@ -307,6 +307,8 @@ public class move_water : MonoBehaviour
     {
         if(other.CompareTag("CreepyBob"))
         {
+            if(babySpawned) { return; }
+
             BoxCollider2D[] colliders = other.gameObject.GetComponents<BoxCollider2D>();
             for(int i = 0; i < colliders.Length; i++)
             {
@@ -409,6 +411,13 @@ public class move_water : MonoBehaviour
 
             isPlayingDefaultMusic = false;
         }
+
+        
+        else if(other.transform.parent.name == "BreadCheckpoint_3")
+        {
+            babySpawned = true;
+            Debug.Log("Beat baby");
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -463,8 +472,6 @@ public class move_water : MonoBehaviour
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
     {
-        if(babySpawned) { return; }
-
         if (hasFlashlight)
         {
             flashlightLight2D.SetActive(true);
@@ -481,7 +488,7 @@ public class move_water : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
 
         Instantiate(tinok);
-        babySpawned = true;
+        
 
         if (!isPlayingDefaultMusic) { return; }
 
