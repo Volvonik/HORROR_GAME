@@ -13,6 +13,7 @@ public class options_menu : MonoBehaviour
     private static int resolutionValue = 2;
     private static int fpsValue = 144;
     private static float masterVolumeValue = 0; //max volume
+    private static bool once = false;
 
     [SerializeField] TMP_Dropdown graphicsDropdown;
     [SerializeField] TMP_Dropdown resolutionDropdown;
@@ -29,7 +30,12 @@ public class options_menu : MonoBehaviour
 
     void Start()
     {
-        QualitySettings.SetQualityLevel(2);
+        if(!once)
+        {
+            QualitySettings.SetQualityLevel(2);
+            once = true;
+        }
+        
     }
 
     public void changegraphics(int value)
