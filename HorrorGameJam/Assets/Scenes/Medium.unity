@@ -35758,8 +35758,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.25439999, y: -0.4186, z: 0}
-    m_Extent: {x: 0.23509999, y: 0.21629998, z: 0}
+    m_Center: {x: -0.2465, y: -0.4154, z: 0}
+    m_Extent: {x: 0.24069999, y: 0.2139, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -84533,8 +84533,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.08080006, y: -4.4232497, z: 0}
-    m_Extent: {x: 19.8219, y: 6.24705, z: 0}
+    m_Center: {x: -0.07119942, y: -4.41865, z: 0}
+    m_Extent: {x: 19.8235, y: 6.24985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -92857,8 +92857,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0076000094, y: 0.0135499835, z: 0}
-    m_Extent: {x: 0.9861, y: 0.76505, z: 0}
+    m_Center: {x: -0.0069000125, y: 0.011849999, z: 0}
+    m_Extent: {x: 0.9807, y: 0.76075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -97719,8 +97719,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.72439957, y: -6.0709, z: 0}
-    m_Extent: {x: 18.2162, y: 5.7889004, z: 0}
+    m_Center: {x: 0.72090054, y: -6.0755, z: 0}
+    m_Extent: {x: 18.216301, y: 5.786, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -119525,30 +119525,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1022285848485894515, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432876664856231717, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432876664856231717, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.19215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432876664856231717, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432876664856231717, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4290139136
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432876664856231717, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3894214436963096400, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: movementCanvas
       value: 
@@ -119637,10 +119613,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5897339735611628208, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8787697398305489825, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -119648,31 +119620,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 677344892840097536, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5471461775080524481}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
---- !u!1 &5471461775080524480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 677344892840097536, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
-  m_PrefabInstance: {fileID: 5471461775080524479}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5471461775080524481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5471461775080524480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb8cbcd7c83b9343af33a36d5b927c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeInUpdate: 0
-  anchorType: 0
-  anchorOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &5473202468179154252
 PrefabInstance:
   m_ObjectHideFlags: 0

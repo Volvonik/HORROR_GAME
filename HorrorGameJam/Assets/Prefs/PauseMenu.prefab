@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 9206391728301725044}
   - component: {fileID: 1841888728913860595}
   - component: {fileID: 3678590407046040127}
+  - component: {fileID: 7494776050122979853}
   m_Layer: 5
   m_Name: Back_Button
   m_TagString: Untagged
@@ -2189,8 +2190,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294914304
-  m_fontColor: {r: 0, g: 0.19188643, b: 1, a: 1}
+    rgba: 4290139136
+  m_fontColor: {r: 0, g: 0.19215687, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2246,7 +2247,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3881206376080533514
@@ -3433,7 +3434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3449883512581317149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4907,7 +4908,7 @@ RectTransform:
   - {fileID: 6020759895310685786}
   - {fileID: 4525717748334769503}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5010,6 +5011,7 @@ MonoBehaviour:
   masterAudioMixer: {fileID: 24100000, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   graphicsDropdown: {fileID: 7948107940834209318}
   resolutionDropdown: {fileID: 8314405797471330237}
+  difficultyDropdown: {fileID: 0}
   fpsInputField: {fileID: 7288009086680207430}
   masterVolumeSlider: {fileID: 3619865035201065522}
 --- !u!1 &8811325124629956141
@@ -5405,10 +5407,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 144
+  m_text: Enter FPS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ec583e267ec1548a44324f472f05b5, type: 2}
+  m_sharedMaterial: {fileID: 1620061657257910653, guid: 61ec583e267ec1548a44324f472f05b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5967,5 +5969,23 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7966983514213302077, guid: 645ec70501be95f4f9712ac5fc1cccb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7494776050122979853}
   m_SourcePrefab: {fileID: 100100000, guid: 645ec70501be95f4f9712ac5fc1cccb3, type: 3}
+--- !u!114 &7494776050122979853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677344892840097536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb8cbcd7c83b9343af33a36d5b927c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 0
+  anchorType: 0
+  anchorOffset: {x: 0, y: 0, z: 0}
