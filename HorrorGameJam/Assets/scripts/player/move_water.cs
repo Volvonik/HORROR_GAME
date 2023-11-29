@@ -103,7 +103,10 @@ public class move_water : MonoBehaviour
         //hasFlashlight = true;
         //hasFlashlight = false;
 
-
+        if(hasFlashlight)
+        {
+            flashlightLight2D.SetActive(false);
+        }
 
         //checkpoint.didsave = false;
         if (checkpoint.didsave)
