@@ -11,7 +11,19 @@ public class MainMenuScript : MonoBehaviour
 
     [SerializeField] GameObject Diff;
 
+    private static bool once_F = false;
+
     public static int difficulty = 2;
+
+    private void Start()
+    {
+        if(!once_F)
+        {
+            Application.targetFrameRate = 144;
+            once_F = true;
+        }
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && optionsMenu.activeInHierarchy)
