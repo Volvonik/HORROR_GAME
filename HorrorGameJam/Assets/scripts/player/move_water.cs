@@ -103,6 +103,11 @@ public class move_water : MonoBehaviour
 
         //hasFlashlight = true;
         //hasFlashlight = false;
+        
+        if(hasFlashlight)
+        {
+            flashlightLight2D.SetActive(true);
+        }
 
         if(beatHand)
         {
