@@ -26,7 +26,7 @@ public class BabyScript : MonoBehaviour
         ao = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        moveSpeed = FindObjectOfType<DifficultyManager>().babySpeed[MainMenuScript.difficulty];
+        moveSpeed = FindObjectOfType<DS>().babySpeed[MainMenuScript.difficulty];
     }
 
     private void Update()

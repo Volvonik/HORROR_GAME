@@ -316,11 +316,7 @@ public class move_water : MonoBehaviour
         {
             if(babySpawned) { return; }
 
-            BoxCollider2D[] colliders = other.gameObject.GetComponents<BoxCollider2D>();
-            for(int i = 0; i < colliders.Length; i++)
-            {
-                colliders[i].enabled = false;
-            }
+            other.enabled = false;
 
             disableControls = true;
             GameObject prefab = Instantiate(creepyBobCutscene, transform.position, Quaternion.identity);

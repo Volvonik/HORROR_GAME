@@ -13,7 +13,7 @@ public class DS : MonoBehaviour
     [SerializeField] GameObject[] dinoArenasPresets;
 
     [Header("Baby Chase")]
-    [SerializeField] float[] babySpeed;
+    public float[] babySpeed;
 
     [Header("Hand")]
     [SerializeField] float[] babyAttackDelay;
