@@ -27,6 +27,8 @@ public class BabyScript : MonoBehaviour
         ao = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        moveSpeed = FindAnyObjectByType<DifficultyManager>().babySpeed[MainMenuScript.difficulty];
     }
 
     private void Update()
