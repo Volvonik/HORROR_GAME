@@ -224,7 +224,6 @@ public class move_water : MonoBehaviour
         {
             openLegsOnce = true;
 
-            audioSource.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
 
