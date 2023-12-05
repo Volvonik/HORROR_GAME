@@ -16606,16 +16606,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalLightStrength:
   - 0.1
-  - 0.04
+  - 0.03
   - 0.012
   playerLightStrength:
   - 0.2
-  - 0.15
-  - 0.05
+  - 0.07
+  - 0.03
   groundLightStrength:
-  - 0.2
-  - 0.08
-  - 0.04
+  - 0.13
+  - 0.035
+  - 0.02
   signsPresets:
   - {fileID: 1441932412}
   - {fileID: 472643252}
@@ -35742,8 +35742,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24634999, y: -0.4227, z: 0}
-    m_Extent: {x: 0.22865, y: 0.21509999, z: 0}
+    m_Center: {x: -0.24645, y: -0.4205, z: 0}
+    m_Extent: {x: 0.23835, y: 0.2092, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -83719,8 +83719,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.070049286, y: -4.4191003, z: 0}
-    m_Extent: {x: 19.82045, y: 6.2518, z: 0}
+    m_Center: {x: -0.07600021, y: -4.4165497, z: 0}
+    m_Extent: {x: 19.8249, y: 6.25325, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -91832,8 +91832,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.011799991, y: 0.010650009, z: 0}
-    m_Extent: {x: 0.9821, y: 0.77065, z: 0}
+    m_Center: {x: -0.007400006, y: 0.0066000223, z: 0}
+    m_Extent: {x: 0.98230004, y: 0.7633, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96559,8 +96559,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7318001, y: -6.06355, z: 0}
-    m_Extent: {x: 18.2213, y: 5.7863503, z: 0}
+    m_Center: {x: 0.7376499, y: -6.06025, z: 0}
+    m_Extent: {x: 18.21565, y: 5.78515, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -118027,7 +118027,7 @@ PrefabInstance:
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: tinok
       value: 
-      objectReference: {fileID: 3964522570983770079, guid: 27acaee3ee80f37449193274e18bc5ca, type: 3}
+      objectReference: {fileID: 3964522570983770079, guid: 0b9d2092652859349883e98cc1a372ec, type: 3}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: deathSFX
       value: 
@@ -118098,7 +118098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: startDifficulty
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1427905112971963226, guid: 162ce8d21334e83428642e81ace74c6f, type: 3}
       propertyPath: flashlightButton
