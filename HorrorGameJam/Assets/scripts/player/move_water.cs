@@ -189,16 +189,17 @@ public class move_water : MonoBehaviour
 
         if(FindObjectOfType<BabyScript>() != null && FindObjectOfType<BabyScript>().GetComponent<Animator>().GetBool("playBalls") == true)
         {
-            if (isPlayingDefaultMusic || disableControls) { return; }
+            if (!isPlayingDefaultMusic && !disableControls)
+            {
+                audioManager.Stop();
+                audioManager.clip = defaultTheme;
+                audioManager.Play();
 
-            audioManager.Stop();
-            audioManager.clip = defaultTheme;
-            audioManager.Play();
+                //StopAllMusic();
+                //defaultAudio.Play();
 
-            //StopAllMusic();
-            //defaultAudio.Play();
-
-            isPlayingDefaultMusic = true;
+                isPlayingDefaultMusic = true;
+            }
         }
 
 
@@ -325,11 +326,7 @@ public class move_water : MonoBehaviour
     {
         if(other.CompareTag("CreepyBob"))
         {
-            BoxCollider2D[] colliders = other.gameObject.GetComponents<BoxCollider2D>();
-            for(int i = 0; i < colliders.Length; i++)
-            {
-                colliders[i].enabled = false;
-            }
+            other.enabled = false;
 
             disableControls = true;
             GameObject prefab = Instantiate(creepyBobCutscene, transform.position, Quaternion.identity);
