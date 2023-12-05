@@ -475,6 +475,7 @@ public class move_water : MonoBehaviour
         if(other.gameObject.CompareTag("Finish"))
         {
             transition2.SetActive(true);
+            disableControls = true;
             Invoke("loadscene", 2.1f);
         }
     }
