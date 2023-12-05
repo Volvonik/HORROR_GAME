@@ -25,7 +25,7 @@ public class HazardScript : MonoBehaviour
         int random = Random.Range(0, hazardSprites.Length);
         GetComponent<SpriteRenderer>().sprite = hazardSprites[random];
 
-        moveSpeed = FindObjectOfType<DifficultyManager>().hazardMoveSpeed[MainMenuScript.difficulty];
+        moveSpeed = FindObjectOfType<DS>().hazardMoveSpeed[MainMenuScript.difficulty];
     }
 
     private void FixedUpdate()
