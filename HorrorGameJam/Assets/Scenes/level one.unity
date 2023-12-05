@@ -3136,7 +3136,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82d2ebcc441fdb94d8b4bbd76fa8061e, type: 3}
   - {fileID: 8300000, guid: a21a0920ee443d542afdd7fb324ec7d2, type: 3}
   throwHazardDelay: 3
-  hazardPrefab: {fileID: 5078988301863296191, guid: 08bfc0a95d0baf54a846edb39db7b19f, type: 3}
+  hazardPrefab: {fileID: 5078988301863296191, guid: 715286d2ab9add1458ad565c37c11a15, type: 3}
 --- !u!82 &76908289
 AudioSource:
   m_ObjectHideFlags: 0
