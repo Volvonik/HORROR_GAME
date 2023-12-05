@@ -40,7 +40,7 @@ public class move_water : MonoBehaviour
     public static AudioClip lastCheckpointMusic;
     [SerializeField] AudioClip dinoMusic;
     bool isPlayingDefaultMusic;
-    bool openLegsOnce;
+    private static bool openLegsOnce;
 
     [SerializeField] AudioSource defaultAudio;
     [SerializeField] AudioSource babyAudio;
@@ -222,7 +222,7 @@ public class move_water : MonoBehaviour
         {
             openLegsOnce = true;
 
-            audioSource.PlayOneShot(openLegsSFX);
+            //audioSource.PlayOneShot(openLegsSFX);
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
 
