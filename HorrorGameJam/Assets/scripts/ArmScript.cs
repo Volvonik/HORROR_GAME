@@ -187,7 +187,12 @@ public class ArmScript : MonoBehaviour
         audioSource.pitch = 1f;
         audioSource.volume = 0.6f;
 
+       
+        
         audioSource.PlayOneShot(sfx);
+        
+
+       
         audioSource.PlayOneShot(shakeSFX);
 
         StartCoroutine(goUpAfterAttack());

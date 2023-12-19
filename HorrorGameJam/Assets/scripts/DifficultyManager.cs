@@ -35,6 +35,7 @@ public class DifficultyManager : MonoBehaviour
     
     private void Start()
     {
+        
         globalLightObject.intensity = globalLightStrength[MainMenuScript.difficulty];
         playerLightObject.intensity = playerLightStrength[MainMenuScript.difficulty];
         groundLightObject.intensity = groundLightStrength[MainMenuScript.difficulty];
@@ -56,6 +57,8 @@ public class DifficultyManager : MonoBehaviour
         hand.SetStats(babyAttackDelay[MainMenuScript.difficulty], babyLifeTotal[MainMenuScript.difficulty], throwHazardDelay[MainMenuScript.difficulty]);
 
         dino.SetStats(dinoMoveSpeed[MainMenuScript.difficulty], dinoEatingTime[MainMenuScript.difficulty]);
+
+        
     }
 
     private void Update()

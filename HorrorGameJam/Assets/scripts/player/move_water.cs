@@ -154,6 +154,11 @@ public class move_water : MonoBehaviour
         {
             Destroy(GameObject.Find("Flashlight"));
         }
+
+        if(openLegsOnce)
+        {
+            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
+        }
     }
 
     private void StopAllMusic()
@@ -245,6 +250,7 @@ public class move_water : MonoBehaviour
 
             isPlayingDefaultMusic = true;
         }
+        
     }
 
     void FixedUpdate()
@@ -364,7 +370,7 @@ public class move_water : MonoBehaviour
             Jumpscare(dinoImage, dinoDeathSFX);
         }
 
-        else if(other.CompareTag("LegoArena"))
+        else if(other.CompareTag("LegoArena") && GameObject.Find("arm_shpitz#2") != null)
         {
             other.enabled = false;
 

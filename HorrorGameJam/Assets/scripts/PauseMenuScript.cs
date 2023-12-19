@@ -6,6 +6,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject transition;
+    [SerializeField] GameObject AudioManager;
     public bool isAllowedToPause = true;
     bool isPaused;
 
@@ -36,7 +37,7 @@ public class PauseMenuScript : MonoBehaviour
             isPaused = true;
 
             if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3) { return; }
-            GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 0.5f;
+            AudioManager.GetComponent<AudioSource>().pitch = 0.5f;
 
             if(FindObjectsOfType<checkpoint>() == null) { return; }
             checkpoint[] checkpointAudioSources = FindObjectsOfType<checkpoint>();
@@ -64,7 +65,7 @@ public class PauseMenuScript : MonoBehaviour
         isPaused = false;
 
         if (SceneManager.GetActiveScene().buildIndex == 1) { return; }
-        GameObject.Find("AudioManager").GetComponent<AudioSource>().pitch = 1f;
+        AudioManager.GetComponent<AudioSource>().pitch = 1f;
 
         if (FindObjectsOfType<checkpoint>() == null) { return; }
         AudioSource[] checkpointAudioSources = FindObjectsOfType<AudioSource>();
