@@ -16604,23 +16604,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d623ca95aad098d42a2e28660d1b1ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalLightStrength: []
-  playerLightStrength: []
-  groundLightStrength: []
-  signsPresets: []
-  dinoArenasPresets: []
-  babySpeed: []
-  babyAttackDelay: []
-  babyLifeTotal: 
-  throwHazardDelay: []
-  hazardMoveSpeed: []
-  dinoMoveSpeed: []
+  globalLightStrength:
+  - 0.1
+  - 0.07
+  - 0.02
+  playerLightStrength:
+  - 0.2
+  - 0.15
+  - 0.05
+  groundLightStrength:
+  - 0.2
+  - 0.08
+  - 0.04
+  signsPresets:
+  - {fileID: 1441932412}
+  - {fileID: 472643252}
+  - {fileID: 659641799}
+  dinoArenasPresets:
+  - {fileID: 1102259758}
+  - {fileID: 1180948860}
+  - {fileID: 1403606211}
+  babySpeed:
+  - 3.5
+  - 3.8
+  - 4.03
+  babyAttackDelay:
+  - 3
+  - 2.5
+  - 2
+  babyLifeTotal: 030000000400000005000000
+  throwHazardDelay:
+  - 4
+  - 3
+  - 2
+  hazardMoveSpeed:
+  - 6
+  - 9
+  - 12
+  dinoMoveSpeed:
+  - 4.7
+  - 5.5
+  - 5.9
   dinoEatingTime: []
-  globalLightObject: {fileID: 0}
-  playerLightObject: {fileID: 0}
-  groundLightObject: {fileID: 0}
-  hand: {fileID: 0}
-  dino: {fileID: 0}
+  globalLightObject: {fileID: 435210138}
+  playerLightObject: {fileID: 51459331}
+  groundLightObject: {fileID: 1715847308}
+  hand: {fileID: 76908288}
+  dino: {fileID: 1494037809}
 --- !u!1 &178062271
 GameObject:
   m_ObjectHideFlags: 0
@@ -35709,8 +35739,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.25475, y: -0.4204, z: 0}
-    m_Extent: {x: 0.23145, y: 0.2049, z: 0}
+    m_Center: {x: -0.24780001, y: -0.4193, z: 0}
+    m_Extent: {x: 0.2393, y: 0.21169999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -84519,8 +84549,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.08425045, y: -4.4247503, z: 0}
-    m_Extent: {x: 19.81845, y: 6.25375, z: 0}
+    m_Center: {x: -0.06774998, y: -4.4238, z: 0}
+    m_Extent: {x: 19.82285, y: 6.2513003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -92640,8 +92670,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.012600005, y: 0.008049995, z: 0}
-    m_Extent: {x: 0.982, y: 0.76734996, z: 0}
+    m_Center: {x: -0.010349989, y: 0.0071499944, z: 0}
+    m_Extent: {x: 0.98465, y: 0.76505, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -97343,8 +97373,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7331495, y: -6.0662, z: 0}
-    m_Extent: {x: 18.22255, y: 5.7904, z: 0}
+    m_Center: {x: 0.7204504, y: -6.0701, z: 0}
+    m_Extent: {x: 18.21585, y: 5.7886, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
