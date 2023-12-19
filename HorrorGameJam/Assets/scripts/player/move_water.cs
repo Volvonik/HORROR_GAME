@@ -150,6 +150,10 @@ public class move_water : MonoBehaviour
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
             Destroy(FindObjectOfType<ArmScript>().gameObject);
         }
+        if(openLegsOnce)
+        {
+            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
+        }
     }
 
     private void StopAllMusic()
@@ -392,7 +396,7 @@ public class move_water : MonoBehaviour
 
             if (!isPlayingDefaultMusic) { return; }
 
-            if(FindObjectOfType<BabyScript>() != null)
+            if(FindObjectOfType<BabyScript>() != null && GameObject.Find("arm_shpitz#2") != null)
             {
                 Destroy(FindObjectOfType<BabyScript>().gameObject);
             }
