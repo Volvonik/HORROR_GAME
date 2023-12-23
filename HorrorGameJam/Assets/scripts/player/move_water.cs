@@ -147,12 +147,13 @@ public class move_water : MonoBehaviour
 
         if(beatArm)
         {
-            GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
+           // GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("fall");
             Destroy(FindObjectOfType<ArmScript>().gameObject);
         }
         if(openLegsOnce)
         {
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
+            
         }
     }
 
@@ -225,11 +226,12 @@ public class move_water : MonoBehaviour
             delay = false;
         }
 
-        if (FindObjectOfType<ArmScript>() == null && !openLegsOnce && !beatArm)
+        if (FindObjectOfType<ArmScript>() == null && !openLegsOnce && beatArm)
         {
             openLegsOnce = true;
 
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
+            
             //GameObject.Find("Right_Leg").GetComponent<Animator>().SetTrigger("up"); //so you will not be able to come back after this
 
             fishSpawner.inLegoArena = false;
