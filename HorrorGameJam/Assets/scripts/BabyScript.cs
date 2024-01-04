@@ -17,6 +17,9 @@ public class BabyScript : MonoBehaviour
     [SerializeField] AudioClip[] laughSFX;
     [SerializeField] AudioClip startSFX;
     Rigidbody2D rb;
+    [SerializeField] GameObject BallPool;
+
+    SpriteRenderer spr;
 
     private void Start()
     {
@@ -27,6 +30,8 @@ public class BabyScript : MonoBehaviour
         animator = GetComponent<Animator>();
 
         moveSpeed = FindObjectOfType<DS>().babySpeed[MainMenuScript.difficulty];
+
+        SpriteRenderer spr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -80,6 +85,11 @@ public class BabyScript : MonoBehaviour
             disableMovement = true;
 
             ao.Play();
+
+            if(BallPool.transform.position.x < transform.position.x)
+            {
+                spr.flipX = true;
+            }
         }
     }
 
