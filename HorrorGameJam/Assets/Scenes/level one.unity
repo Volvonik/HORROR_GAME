@@ -16625,8 +16625,8 @@ MonoBehaviour:
   - {fileID: 1180948860}
   - {fileID: 1403606211}
   babySpeed:
-  - 3.75
-  - 3.9
+  - 3.8
+  - 3.95
   - 4.05
   babyAttackDelay:
   - 3
@@ -35744,8 +35744,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.25025, y: -0.41785, z: 0}
-    m_Extent: {x: 0.24025, y: 0.21774998, z: 0}
+    m_Center: {x: -0.2456, y: -0.4185, z: 0}
+    m_Extent: {x: 0.23099999, y: 0.2148, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -83703,8 +83703,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.079649925, y: -4.4219, z: 0}
-    m_Extent: {x: 19.823349, y: 6.2536, z: 0}
+    m_Center: {x: -0.07684994, y: -4.4197, z: 0}
+    m_Extent: {x: 19.81165, y: 6.2558, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -91816,8 +91816,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00425002, y: 0.009650022, z: 0}
-    m_Extent: {x: 0.99115, y: 0.76094997, z: 0}
+    m_Center: {x: -0.0036999881, y: 0.0071499944, z: 0}
+    m_Extent: {x: 0.9905, y: 0.76315, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96543,8 +96543,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7314491, y: -6.06215, z: 0}
-    m_Extent: {x: 18.21245, y: 5.7850504, z: 0}
+    m_Center: {x: 0.7347994, y: -6.06655, z: 0}
+    m_Extent: {x: 18.2137, y: 5.79345, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -107465,7 +107465,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19822025, y: -0.08605242}
+  m_Offset: {x: -3.0197968, y: -0.08605242}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -107476,7 +107476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.483826, y: 4.514762}
+  m_Size: {x: 15.126979, y: 4.514762}
   m_EdgeRadius: 0
 --- !u!1 &1996727854
 GameObject:
