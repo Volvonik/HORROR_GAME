@@ -40,7 +40,7 @@ public class move_water : MonoBehaviour
     public static AudioClip lastCheckpointMusic;
     [SerializeField] AudioClip dinoMusic;
     bool isPlayingDefaultMusic;
-    private static bool openLegsOnce;
+    public static bool openLegsOnce;
 
     [SerializeField] AudioSource defaultAudio;
     [SerializeField] AudioSource babyAudio;

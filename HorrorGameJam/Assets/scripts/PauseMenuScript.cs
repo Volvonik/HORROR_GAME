@@ -88,6 +88,8 @@ public class PauseMenuScript : MonoBehaviour
         move_water.DC = false;
         checkpoint.didsave = false;
         checkpoint.checkpointTimes = 0;
+        move_water.openLegsOnce = false;
+        move_water.beatHand = false;
         //continue
         transition.SetActive(true);
         Invoke("menu2", 2.1f);
