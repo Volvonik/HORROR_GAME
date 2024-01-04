@@ -421,6 +421,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7848323668756030967, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848323668756030967, guid: d9029d9cee0bea8499814881f87e2e2b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cc36131c9baa7004d9d83b534ff3866e, type: 3}
@@ -529,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e16a755e256b24c8f0023fbe53aba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition2: {fileID: 0}
   speed: 4
   transition: {fileID: 0}
   creepyBobCutscene: {fileID: 5879279876364127161, guid: a33491a530c1ea44c8168eee9bab0c8f, type: 3}
@@ -539,7 +544,10 @@ MonoBehaviour:
   legDropSFX: {fileID: 8300000, guid: f2b64e8c18fe6c0418faa7185f0e7023, type: 3}
   openLegsSFX: {fileID: 8300000, guid: 8332644d8837824438afdddd3cfddd5d, type: 3}
   hitByLegoSFX: {fileID: 8300000, guid: d678a9bfbaffb8d4a865d6eeed6f60cc, type: 3}
-  deathSFX: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
+  dinoMusic: {fileID: 0}
+  defaultAudio: {fileID: 0}
+  babyAudio: {fileID: 0}
+  dinoTheSharkAudio: {fileID: 0}
   tinok: {fileID: 3964522570983770079, guid: 0b9d2092652859349883e98cc1a372ec, type: 3}
   flashlightLayer:
     serializedVersion: 2
@@ -551,20 +559,15 @@ MonoBehaviour:
   hasFlashlightSprite: {fileID: 21300000, guid: cc36131c9baa7004d9d83b534ff3866e, type: 3}
   flashlightLight2D: {fileID: 1376671197561280956}
   flashLightSFX: {fileID: 8300000, guid: a0542a239296177468df1d19ef278ce5, type: 3}
-  dinoIsAllowedToFollowPlayer: 1
-  dinoLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  isPlayerLookingAtDino: 0
-  visionLength: 3
-  visionRotations:
-  - {fileID: 620067357401370556}
-  - {fileID: 3014653870189836403}
-  - {fileID: 3873397827624206154}
-  - {fileID: 3148318104865962998}
-  - {fileID: 5932791884493548478}
-  baby_scary: {fileID: 0}
   pickupPosition: {fileID: 1262336321564012686}
+  dinoIsAllowedToFollowPlayer: 1
+  baby_scary: {fileID: 0}
+  babyImage: {fileID: 0}
+  dinoImage: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 1df9d92ce9fbb5d4e895928fb5b5517c, type: 3}
+  babyDeathSFX: {fileID: 0}
+  dinoDeathSFX: {fileID: 0}
+  startDifficulty: 0
 --- !u!82 &5008558438603710053
 AudioSource:
   m_ObjectHideFlags: 0
