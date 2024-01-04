@@ -35744,8 +35744,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24715, y: -0.41785, z: 0}
-    m_Extent: {x: 0.24155, y: 0.21745, z: 0}
+    m_Center: {x: -0.24895, y: -0.41950002, z: 0}
+    m_Extent: {x: 0.23095, y: 0.215, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -83703,8 +83703,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.08030033, y: -4.421, z: 0}
-    m_Extent: {x: 19.8166, y: 6.2551, z: 0}
+    m_Center: {x: -0.073599815, y: -4.42535, z: 0}
+    m_Extent: {x: 19.8205, y: 6.24825, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -91816,8 +91816,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0033000112, y: 0.012349993, z: 0}
-    m_Extent: {x: 0.9878, y: 0.76915, z: 0}
+    m_Center: {x: -0.004700005, y: 0.013500005, z: 0}
+    m_Extent: {x: 0.9871, y: 0.7693, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96543,8 +96543,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7347498, y: -6.06745, z: 0}
-    m_Extent: {x: 18.21325, y: 5.78245, z: 0}
+    m_Center: {x: 0.7300997, y: -6.0701, z: 0}
+    m_Extent: {x: 18.212399, y: 5.7866, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -107465,7 +107465,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.23202825, y: -0.08605242}
+  m_Offset: {x: -1.9676623, y: -0.03907895}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -107476,7 +107476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.623329, y: 4.514762}
+  m_Size: {x: 13.02271, y: 4.608709}
   m_EdgeRadius: 0
 --- !u!1 &1996727854
 GameObject:
@@ -113131,7 +113131,7 @@ MonoBehaviour:
   m_CornerAngleThreshold: 30
   m_ColliderDetail: 16
   m_ColliderOffset: 0.5
-  m_UpdateCollider: 1
+  m_UpdateCollider: 0
   m_EnableTangents: 0
   m_GeometryCached: 0
   m_UTess2D: 1
@@ -113243,6 +113243,15 @@ EdgeCollider2D:
   m_Points:
   - {x: 1.309272, y: 0.74133825}
   - {x: -0.714437, y: 0.79462457}
+  - {x: -0.84107614, y: 0.75802934}
+  - {x: -0.9043498, y: 0.7403007}
+  - {x: -0.9472767, y: 0.73170894}
+  - {x: -1.0044987, y: 0.7330464}
+  - {x: -1.0527436, y: 0.74033946}
+  - {x: -1.1307677, y: 0.7514558}
+  - {x: -1.2076724, y: 0.7825209}
+  - {x: -1.2842435, y: 0.8154647}
+  - {x: -1.2993695, y: 0.8271701}
   - {x: -1.3053405, y: 0.8473371}
   - {x: -1.1699755, y: 0.89306617}
   - {x: 0.66958386, y: 0.85072756}

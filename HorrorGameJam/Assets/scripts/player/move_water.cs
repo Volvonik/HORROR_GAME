@@ -196,7 +196,7 @@ public class move_water : MonoBehaviour
         PickFlashLight();
         FlipSprite();
 
-        if(FindObjectOfType<BabyScript>() != null && FindObjectOfType<BabyScript>().GetComponent<Animator>().GetBool("playBalls") == true)
+        if(FindObjectOfType<BabyScript>() != null && FindObjectOfType<BabyScript>().GetComponent<Animator>().GetBool("playBalls") == true || FindObjectOfType<BabyScript>() != null && FindObjectOfType<BabyScript>().GetComponent<Animator>().GetBool("playBalls2") == true)
         {
             if (isPlayingDefaultMusic || disableControls) { return; }
 
@@ -391,7 +391,8 @@ public class move_water : MonoBehaviour
             if(FindObjectOfType<BabyScript>() != null)
             {
                 Destroy(FindObjectOfType<BabyScript>().gameObject);
-            }
+            }                
+
 
             audioManager.Stop();
             audioManager.clip = BabyRunAway;

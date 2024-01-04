@@ -82,8 +82,15 @@ public class BabyScript : MonoBehaviour
     {
         if(other.CompareTag("BallPool"))
         {
-            animator.SetBool("playBalls", true);
             disableMovement = true;
+
+            if(GameObject.FindGameObjectWithTag("BallPool").transform.position.x > transform.position.x)
+            {
+                animator.SetBool("playBalls2", true);
+            }else
+            {
+                animator.SetBool("playBalls", true);
+            }
 
             ao.Play();
 
