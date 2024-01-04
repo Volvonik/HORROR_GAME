@@ -35744,8 +35744,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24895, y: -0.41950002, z: 0}
-    m_Extent: {x: 0.23095, y: 0.215, z: 0}
+    m_Center: {x: -0.24935, y: -0.4131, z: 0}
+    m_Extent: {x: 0.23425, y: 0.2144, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39059,6 +39059,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: checkpointNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
       objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
@@ -41422,6 +41426,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: checkpointNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
       objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
@@ -43010,6 +43018,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
+    - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: checkpointNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
@@ -83703,8 +83715,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.073599815, y: -4.42535, z: 0}
-    m_Extent: {x: 19.8205, y: 6.24825, z: 0}
+    m_Center: {x: -0.078300476, y: -4.4233, z: 0}
+    m_Extent: {x: 19.8148, y: 6.2541, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -89362,6 +89374,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
     - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
+      propertyPath: checkpointNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142419156306754245, guid: e1794865783533a42aace80ba9c573d7, type: 3}
       propertyPath: musicAfterCheckpoint
       value: 
       objectReference: {fileID: 8300000, guid: a6dd0516f8a66d045b3adb28e9514ad8, type: 3}
@@ -91816,8 +91832,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.004700005, y: 0.013500005, z: 0}
-    m_Extent: {x: 0.9871, y: 0.7693, z: 0}
+    m_Center: {x: -0.0039000213, y: 0.00850001, z: 0}
+    m_Extent: {x: 0.9833, y: 0.7642, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96543,8 +96559,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7300997, y: -6.0701, z: 0}
-    m_Extent: {x: 18.212399, y: 5.7866, z: 0}
+    m_Center: {x: 0.7293501, y: -6.0683, z: 0}
+    m_Extent: {x: 18.22115, y: 5.7847, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
