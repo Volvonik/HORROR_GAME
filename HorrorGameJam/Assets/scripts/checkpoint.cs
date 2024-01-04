@@ -37,7 +37,7 @@ public class checkpoint : MonoBehaviour
             GetComponent<Animator>().SetTrigger("checkpoint");
             ao.Play();
             move_water.lastCheckpointMusic = musicAfterCheckpoint;
-            checkpointTimes++;
+            checkpointTimes = checkpointNumber;
         }
     }
 }
