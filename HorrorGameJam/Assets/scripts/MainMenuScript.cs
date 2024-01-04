@@ -11,7 +11,7 @@ public class MainMenuScript : MonoBehaviour
 
     [SerializeField] GameObject Diff;
 
-    private static bool once_F = false;
+    private static bool once_F;
 
     public static int difficulty;
 
