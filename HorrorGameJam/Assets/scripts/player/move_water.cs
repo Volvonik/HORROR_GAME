@@ -77,6 +77,8 @@ public class move_water : MonoBehaviour
 
     [SerializeField] int startDifficulty;
 
+    public static bool DC;
+
     private void Awake()
     {
         if (startDifficulty >= 0 && startDifficulty < 3)
@@ -208,6 +210,8 @@ public class move_water : MonoBehaviour
             //defaultAudio.Play();
 
             isPlayingDefaultMusic = true;
+
+            DC = true;
         }
 
 

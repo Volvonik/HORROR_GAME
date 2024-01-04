@@ -35744,8 +35744,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24935, y: -0.4131, z: 0}
-    m_Extent: {x: 0.23425, y: 0.2144, z: 0}
+    m_Center: {x: -0.2494, y: -0.4179, z: 0}
+    m_Extent: {x: 0.2343, y: 0.20729998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38160,6 +38160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520683349}
   - component: {fileID: 520683350}
+  - component: {fileID: 520683351}
   m_Layer: 0
   m_Name: Stuff
   m_TagString: CreepyBob
@@ -38266,6 +38267,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &520683351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520683348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866d9dca3af20a841bd084cacb7b6707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520792813
 GameObject:
   m_ObjectHideFlags: 0
@@ -83715,8 +83728,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.078300476, y: -4.4233, z: 0}
-    m_Extent: {x: 19.8148, y: 6.2541, z: 0}
+    m_Center: {x: -0.06729984, y: -4.42055, z: 0}
+    m_Extent: {x: 19.817001, y: 6.24935, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -91832,8 +91845,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0039000213, y: 0.00850001, z: 0}
-    m_Extent: {x: 0.9833, y: 0.7642, z: 0}
+    m_Center: {x: -0.0040500164, y: 0.008850008, z: 0}
+    m_Extent: {x: 0.98915, y: 0.75905, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96559,8 +96572,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7293501, y: -6.0683, z: 0}
-    m_Extent: {x: 18.22115, y: 5.7847, z: 0}
+    m_Center: {x: 0.72490025, y: -6.06065, z: 0}
+    m_Extent: {x: 18.2191, y: 5.78625, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

@@ -84,6 +84,7 @@ public class PauseMenuScript : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
+        move_water.DC = false;
         transition.SetActive(true);
         Invoke("menu2", 2.1f);
     }
