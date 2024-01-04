@@ -84,7 +84,11 @@ public class PauseMenuScript : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
+        //reset static veriables
         move_water.DC = false;
+        checkpoint.didsave = false;
+        checkpoint.checkpointTimes = 0;
+        //continue
         transition.SetActive(true);
         Invoke("menu2", 2.1f);
     }
