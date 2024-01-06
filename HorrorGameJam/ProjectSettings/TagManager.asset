@@ -20,6 +20,7 @@ TagManager:
   - Food
   - DinoArena
   - stopshark
+  - ground
   layers:
   - Default
   - TransparentFX

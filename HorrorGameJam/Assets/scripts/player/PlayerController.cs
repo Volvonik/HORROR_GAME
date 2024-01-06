@@ -71,10 +71,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (FindObjectOfType<END>() != null)
-        {
-            if (GetComponent<END>().inStory) { return; }
-        }
+       
 
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.05f, groundLayer);
 
