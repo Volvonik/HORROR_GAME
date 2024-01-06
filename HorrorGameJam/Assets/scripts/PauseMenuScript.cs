@@ -43,7 +43,7 @@ public class PauseMenuScript : MonoBehaviour
             checkpoint[] checkpointAudioSources = FindObjectsOfType<checkpoint>();
             foreach(checkpoint audioSource in checkpointAudioSources)
             {
-                audioSource.GetComponent<AudioSource>().pitch = 0f;
+                //audioSource.GetComponent<AudioSource>().pitch = 0f;
             }
 
             if(FindObjectOfType<BabyScript>() == null) { return; }
