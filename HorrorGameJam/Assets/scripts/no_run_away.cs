@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class no_run_away : MonoBehaviour
 {
+    [SerializeField] EdgeCollider2D edge;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class no_run_away : MonoBehaviour
     {
         if(move_water.DC)
         {
-            Destroy(gameObject);
+            edge.enabled = false;
         }
     }
 }
