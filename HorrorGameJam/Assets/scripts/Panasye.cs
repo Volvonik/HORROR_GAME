@@ -22,7 +22,7 @@ public class Panasye : MonoBehaviour
         {
             transform.Translate(-transform.right * moveSpeed);
 
-            if(transform.position.x < -10)
+            if(transform.position.x < -20)
             {
                 Destroy(gameObject);
             }

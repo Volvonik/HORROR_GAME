@@ -5560,8 +5560,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321026140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 10.7, z: 0}
-  m_LocalScale: {x: 10.710553, y: 11.603512, z: 0.153406}
+  m_LocalPosition: {x: 1.9735, y: 23.1208, z: 0}
+  m_LocalScale: {x: 24.1186, y: 25.659998, z: 0.153406}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6534,7 +6534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWithoutPlayer: 1
   panasE: {fileID: 1429905618354843347, guid: 50a6a9e4499e1e54181553ab72ba6c95, type: 3}
-  xPosition: 10
+  xPosition: 20
   yPositionBorders:
   - 4
   - -4
