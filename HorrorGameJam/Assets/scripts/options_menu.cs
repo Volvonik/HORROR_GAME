@@ -90,7 +90,7 @@ public class options_menu : MonoBehaviour
 
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            GameObject.Find("GlobalLight").GetComponent<AudioSource>().Play();
+            GameObject.Find("sound").GetComponent<AudioSource>().Play(); 
         }
         else
         {
