@@ -47,6 +47,8 @@ public class END : MonoBehaviour
     }
     private void end()
     {
+        // reset all
+        FindObjectOfType<PauseMenuScript>().GoToMainMenu();
         SceneManager.LoadScene(0);
     }
 }

@@ -35,22 +35,9 @@ public class PauseMenuScript : MonoBehaviour
             Time.timeScale = 0f;
             pauseMenu.SetActive(true);
             isPaused = true;
-
-            if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3) { return; }
             AudioManager.GetComponent<AudioSource>().pitch = 0.5f;
 
-            if(FindObjectsOfType<checkpoint>() == null) { return; }
-            checkpoint[] checkpointAudioSources = FindObjectsOfType<checkpoint>();
-            foreach(checkpoint audioSource in checkpointAudioSources)
-            {
-                //audioSource.GetComponent<AudioSource>().pitch = 0f;
-            }
-
-            if(FindObjectOfType<BabyScript>() == null) { return; }
-            FindObjectOfType<BabyScript>().GetComponent<AudioSource>().pitch = 0f;
-
-            if(FindObjectOfType<ArmScript>() == null) { return; }
-            FindObjectOfType<ArmScript>().GetComponent<AudioSource>().pitch = 0f;
+                        
         }
         else
         {
