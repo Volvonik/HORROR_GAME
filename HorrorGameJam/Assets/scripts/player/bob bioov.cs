@@ -17,22 +17,22 @@ public class bobbioov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!once && Input.GetKeyDown("a"))
+        if (!once && Input.GetKeyDown("a") || !once && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-3, 8);
             once = true;
             
         }
-        else if (!once && Input.GetKeyDown("d"))
+        else if (!once && Input.GetKeyDown("d") || !once && Input.GetKeyDown(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(3,8);
             once = true;
         }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("a") || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             SR.flipX = true;
         }
-        else if (Input.GetKeyDown("d"))
+        else if (Input.GetKeyDown("d") ||  Input.GetKeyDown(KeyCode.RightArrow))
         {
             SR.flipX = false;
         }
