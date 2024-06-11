@@ -32575,8 +32575,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.25065, y: -0.41224998, z: 0}
-    m_Extent: {x: 0.23494999, y: 0.21445, z: 0}
+    m_Center: {x: -0.23985, y: -0.42005002, z: 0}
+    m_Extent: {x: 0.23415, y: 0.21545, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -76537,8 +76537,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.077150345, y: -4.4233, z: 0}
-    m_Extent: {x: 19.81175, y: 6.2604, z: 0}
+    m_Center: {x: -0.06939983, y: -4.4216, z: 0}
+    m_Extent: {x: 19.8214, y: 6.2455, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -81954,7 +81954,7 @@ AudioSource:
   m_GameObject: {fileID: 1607305861}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8332644d8837824438afdddd3cfddd5d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -83140,8 +83140,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.006949991, y: 0.006850004, z: 0}
-    m_Extent: {x: 0.98665, y: 0.76215, z: 0}
+    m_Center: {x: -0.010649979, y: 0.015450001, z: 0}
+    m_Extent: {x: 0.98205, y: 0.76045, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -87121,8 +87121,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.72269917, y: -6.0679502, z: 0}
-    m_Extent: {x: 18.2142, y: 5.78415, z: 0}
+    m_Center: {x: 0.73204994, y: -6.0669, z: 0}
+    m_Extent: {x: 18.21655, y: 5.7825, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -107506,6 +107506,14 @@ PrefabInstance:
     - target: {fileID: 2839390375452432477, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619865035201065522, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619865035201065522, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_MinValue
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 3674388979524081572, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_AnchoredPosition.y

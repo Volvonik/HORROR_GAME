@@ -471,7 +471,7 @@ public class move_water : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("LEGO") || other.gameObject.CompareTag("Dino"))
+        if(other.gameObject.CompareTag("LEGO") || other.gameObject.CompareTag("Dino") || other.gameObject.CompareTag("hand"))
         {
             audioSource.PlayOneShot(deathSFX);
             Die();
@@ -485,6 +485,7 @@ public class move_water : MonoBehaviour
             disableControls = true;
             Invoke("loadscene", 2.1f);
         }
+        
     }
 
     public void EnableMovementAfterCutscene(GameObject cutscenePlayer)
@@ -550,6 +551,8 @@ public class move_water : MonoBehaviour
         {
             everyAudioSource[i].Stop();
         }*/
+        //stop time
+        Invoke("StopTime", 0.6f);
     }
 
     private void Jumpscare(Sprite jumpscareImage, AudioClip sfx)
@@ -573,5 +576,10 @@ public class move_water : MonoBehaviour
         checkpoint.didsave = false;
         hasFlashlight = false;
         GetComponent<Collider2D>().enabled = false;
+    }
+    private void StopTime()
+    {
+        Time.timeScale = 0;
+
     }
 }

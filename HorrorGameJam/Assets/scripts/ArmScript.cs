@@ -104,10 +104,7 @@ public class ArmScript : MonoBehaviour
             return;
         }
 
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<move_water>().Die();
-        }
+       
         else if(other.gameObject.CompareTag("LEGO"))
         {
             GetHit();
