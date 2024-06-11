@@ -161,6 +161,8 @@ public class move_water : MonoBehaviour
         {
             GameObject.Find("Left_Leg").GetComponent<Animator>().SetTrigger("up");
         }
+
+        Time.timeScale = 1;
     }
 
     private void StopAllMusic()

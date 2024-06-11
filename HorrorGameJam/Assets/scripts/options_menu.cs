@@ -11,9 +11,8 @@ public class options_menu : MonoBehaviour
 
     public static int graphicsValue = 2;
     private static int resolutionValue = 2;
-    private static int fpsValue = 144;
+    private static int fpsValue = 60;
     private static float masterVolumeValue = 0; //max volume
-    private static bool once = false;
 
     [SerializeField] TMP_Dropdown resolutionDropdown;
     [SerializeField] TMP_InputField fpsInputField;
@@ -26,15 +25,7 @@ public class options_menu : MonoBehaviour
         masterVolumeSlider.value = masterVolumeValue;
     }
 
-    void Start()
-    {
-        if(!once)
-        {
-            QualitySettings.SetQualityLevel(2);
-            once = true;
-        }
-        
-    }
+   
 
     public void changegraphics(int value)
     {

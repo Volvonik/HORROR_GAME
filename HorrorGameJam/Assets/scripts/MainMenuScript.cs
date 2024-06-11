@@ -19,7 +19,7 @@ public class MainMenuScript : MonoBehaviour
     {
          if(!once_F)
         {
-            Application.targetFrameRate = 144;
+            Application.targetFrameRate = 60;
             once_F = true;
         }
     }
