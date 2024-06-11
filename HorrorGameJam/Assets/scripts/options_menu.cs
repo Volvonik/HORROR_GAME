@@ -15,14 +15,12 @@ public class options_menu : MonoBehaviour
     private static float masterVolumeValue = 0; //max volume
     private static bool once = false;
 
-    [SerializeField] TMP_Dropdown graphicsDropdown;
     [SerializeField] TMP_Dropdown resolutionDropdown;
     [SerializeField] TMP_InputField fpsInputField;
     [SerializeField] Slider masterVolumeSlider;
 
     void OnEnable()
     {
-        graphicsDropdown.value = graphicsValue;
         resolutionDropdown.value = resolutionValue;
         fpsInputField.text = fpsValue.ToString();
         masterVolumeSlider.value = masterVolumeValue;

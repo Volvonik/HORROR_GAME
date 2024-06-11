@@ -21033,7 +21033,7 @@ AudioSource:
   m_GameObject: {fileID: 228393758}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee935f810acf21246926f8b6f3725e52, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3a854a0b1ab9c8a4c8cb166ba9ae8065, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -21338,8 +21338,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.07214928, y: -5.7329, z: 0}
-    m_Extent: {x: 19.02705, y: 6.1198, z: 0}
+    m_Center: {x: -0.080550194, y: -5.7324, z: 0}
+    m_Extent: {x: 19.018051, y: 6.1112003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -32575,8 +32575,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24745001, y: -0.41689998, z: 0}
-    m_Extent: {x: 0.23645, y: 0.2181, z: 0}
+    m_Center: {x: -0.25065, y: -0.41224998, z: 0}
+    m_Extent: {x: 0.23494999, y: 0.21445, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -64230,8 +64230,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.07145023, y: -4.42415, z: 0}
-    m_Extent: {x: 19.81535, y: 6.24715, z: 0}
+    m_Center: {x: -0.07740021, y: -4.42185, z: 0}
+    m_Extent: {x: 19.8234, y: 6.25595, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -76537,8 +76537,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.07124996, y: -4.4221, z: 0}
-    m_Extent: {x: 19.822552, y: 6.2446003, z: 0}
+    m_Center: {x: -0.077150345, y: -4.4233, z: 0}
+    m_Extent: {x: 19.81175, y: 6.2604, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -83140,8 +83140,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005700022, y: 0.00940001, z: 0}
-    m_Extent: {x: 0.97679996, y: 0.7647, z: 0}
+    m_Center: {x: -0.006949991, y: 0.006850004, z: 0}
+    m_Extent: {x: 0.98665, y: 0.76215, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -87121,8 +87121,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.7322998, y: -6.06425, z: 0}
-    m_Extent: {x: 18.2193, y: 5.7863503, z: 0}
+    m_Center: {x: 0.72269917, y: -6.0679502, z: 0}
+    m_Extent: {x: 18.2142, y: 5.78415, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -107499,6 +107499,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1022285848485894515, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839390375452432477, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674388979524081572, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73
+      objectReference: {fileID: 0}
     - target: {fileID: 3894214436963096400, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: AudioManager
       value: 
@@ -107591,12 +107603,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5897339735611628208, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046932894391114038, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046932894391114038, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304827215727906606, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -257
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641205975950848199, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641205975950848199, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641205975950848199, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8787697398305489825, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3132532108169374536, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2fb0e4b9023b442b6baf94a79c820b, type: 3}
